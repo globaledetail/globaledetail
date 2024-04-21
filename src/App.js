@@ -1,10 +1,17 @@
 
+import { Route } from 'react-router-dom';
 import './App.css';
 
+import NavBar from './components/NavBar/NavBar';
+
 function App() {
+
+
+
+
   return (
     <div className="App">
-      <h2>ged-WEB SITE</h2>
+      <NavBar></NavBar>
     </div>
   );
 }
