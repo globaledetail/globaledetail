@@ -3,6 +3,7 @@ import React,{ useEffect, useRef, useState } from "react";
 import Dots from "./Dots";
 import styled from "styled-components";
 
+import { SecondeBackgroundContent } from "../../components/MainBackground/SecondBackgroundContent";
 
 
 const Outer = styled.div`
@@ -13,11 +14,17 @@ const Outer = styled.div`
   }
 `;
 
-const Inner = styled.div`
+const Inner1 = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 50px;
+`;
+const Inner2 = styled.div`
+  height: 100vh;
+  display: flex;
+
   font-size: 100px;
 `;
 
@@ -44,15 +51,15 @@ const VideoElement = styled.video`
   object-fit: cover;
 `;
 
-const FirstBackground = styled(Inner)`
+const FirstBackground = styled(Inner1)`
   
 `;
 
-const SecondBackground = styled(Inner)`
-  background-color: #b6d8f2;
+const SecondBackground = styled(Inner2)`
+  background-color: #111111;
 `;
 
-const ThirdBackground = styled(Inner)`
+const ThirdBackground = styled(Inner1)`
   background-color: #f4cfdf;
 `;
 
@@ -157,7 +164,13 @@ export const Home = () => {
       </FirstBackground>
 
       <Driver className="divider"></Driver>
-      <SecondBackground className="inner bg-blue">2</SecondBackground>
+      <SecondBackground className="inner bg-blue">
+        <SecondeBackgroundContent>
+          
+        </SecondeBackgroundContent>
+
+
+      </SecondBackground>
 
       <Driver className="divider"></Driver>
       <ThirdBackground className="inner bg-pink">3</ThirdBackground>

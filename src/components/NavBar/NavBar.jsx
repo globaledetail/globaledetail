@@ -83,7 +83,7 @@ const NavBar = () =>{
     setShowSubMenu(false);
   };
 
-  console.log(Array(pages.length).fill(false))
+ 
 
   return (
     <>
