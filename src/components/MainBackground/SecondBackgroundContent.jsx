@@ -1,9 +1,8 @@
 
 
 
-
+import React from "react";
 import styled from "styled-components";
-
 
 
 const SecondBackgroundWrapper = styled.div`
@@ -15,19 +14,68 @@ const SecondBackgroundWrapper = styled.div`
     justify-content: space-between;
 `;
 
-const ImageContainer = styled.div`
+const ContentContainer = styled.div`
     width: 100%;
-    height: 400px;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: row;
-    div{
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    gap: 20px; 
+    .image-container{
+        width: 100%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content-text-container{
         flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span{
+            font-size: 50px;
+            font-weight: 800px;
+            color: white;
+        }
     }
     img{
-        width: 600px;
-        height: 400px;
+        max-width: 100%;
+        min-width: 300px;
+        height: auto;
         border-radius: 10px;
+        transition: transform 0.5s ease; 
+    }
+    .image-container:hover img {
+        transform: scale(1.05); 
+    }
+    @media (min-width: 1400px) {
+        img {
+            max-width: 600px; 
+        }
+    }
+    @media (max-width: 1019px) {
+        img {
+            width: auto; 
+            max-width: 70%;
+            height: auto;
+        }
+    }
+    @media (max-width:619px) {
+        img {
+            width: auto; 
+            max-width: 330px;
+            height: auto;
+        }
+        .content-text-container{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span{
+            font-size: 30px;
+            font-weight: 800px;
+            color: white;
+        }
+    }
     }
 `;
 
@@ -36,25 +84,23 @@ export const SecondeBackgroundContent = () =>{
     return (
         <>
             <SecondBackgroundWrapper>
-                <ImageContainer>
-                    <div>
+                <ContentContainer>
+                    <div className="image-container">
                         <img src="/img/CharleBot1.png" alt="charle-bot2"></img>
                     </div>
-                    <div>
+                    <div className="content-text-container">
                         <span> CharLe bot2</span>
                     </div>
-                </ImageContainer>
-                <ImageContainer>
-                    <div>
+                </ContentContainer>
+                <ContentContainer>
+                    <div className="image-container">
                         <img src="/img/CharleBot1.png" alt="charle-bot2"></img>
                     </div>
-                    <div>
+                    <div className="content-text-container">
                         <span> CharLe bot2</span>
                     </div>
-                </ImageContainer>
-
+                </ContentContainer>
             </SecondBackgroundWrapper>
-        
         </>
     )
 };

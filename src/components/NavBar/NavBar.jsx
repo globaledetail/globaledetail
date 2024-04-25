@@ -13,12 +13,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { SubMenu } from "./SubMenu";
 
 import styles from './NavBar.module.css'
-import ReactPlayer from 'react-player'
-import { hover } from "@testing-library/user-event/dist/hover";
+
 
 const pages = ['Company', 'Business', 'PR/IR', 'CONTACTS'];
 
@@ -69,9 +67,10 @@ const NavBar = () =>{
 
  
 
-  const hoverEnterHandler = (index) =>{
+  const hoverEnterHandler = (page,index) =>{
     const updatedHovered = [...isHovered];
     updatedHovered[index] = true;
+    console.log(page)
     setIsHovered(updatedHovered);
     setShowSubMenu(true);
   };
@@ -192,9 +191,11 @@ const NavBar = () =>{
                     size="large"
                     key={index}
                     onClick={handleCloseNavMenu}
-                    onMouseEnter={() => hoverEnterHandler(index)}
+                    onMouseEnter={() => hoverEnterHandler(page,index)}
                     onMouseLeave={() => hoverLeaveHandler(index)}
-                    sx={{ mr: 2,my: 2, color: `${isHovered[index] === true? "black":"white"}`, display: 'block',fontWeight:"700" }}
+                    sx={{ mr: 2,my: 2, color: "white",
+                          "&:hover": {color: 'black'},
+                          display: 'block', fontWeight:"700" }}
                   >
                     {page}
                   </Button>
