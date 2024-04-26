@@ -4,7 +4,7 @@ import Dots from "./Dots";
 import styled from "styled-components";
 
 import { SecondeBackgroundContent } from "../../components/MainBackground/SecondBackgroundContent";
-
+import { ThirdBackgroundContent } from "../../components/MainBackground/ThirdBackgroundContent";
 
 const Outer = styled.div`
   height: 100vh;
@@ -22,6 +22,14 @@ const Inner1 = styled.div`
   font-size: 50px;
 `;
 const Inner2 = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+`;
+
+const Inner3 = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -60,7 +68,7 @@ const SecondBackground = styled(Inner2)`
   background-color: #111111;
 `;
 
-const ThirdBackground = styled(Inner1)`
+const ThirdBackground = styled(Inner3)`
   background-color: #f4cfdf;
 `;
 
@@ -174,7 +182,9 @@ export const Home = () => {
       </SecondBackground>
 
       <Driver className="divider"></Driver>
-      <ThirdBackground className="inner bg-pink">3</ThirdBackground>
+      <ThirdBackground className="inner bg-pink">
+        <ThirdBackgroundContent></ThirdBackgroundContent>
+      </ThirdBackground>
     </Outer>
   );
 }
