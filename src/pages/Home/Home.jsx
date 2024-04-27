@@ -69,7 +69,9 @@ const SecondBackground = styled(Inner2)`
 `;
 
 const ThirdBackground = styled(Inner3)`
-  background-color: #f4cfdf;
+  background-color: #f9f9f9;
+  display:flex;
+  flex-direction: column;
 `;
 
 const Driver = styled.div`
@@ -174,11 +176,7 @@ export const Home = () => {
 
       <Driver className="divider"></Driver>
       <SecondBackground className="inner bg-blue">
-        <SecondeBackgroundContent>
-          
-        </SecondeBackgroundContent>
-
-
+        <SecondeBackgroundContent/>
       </SecondBackground>
 
       <Driver className="divider"></Driver>
