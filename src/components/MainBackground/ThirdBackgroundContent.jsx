@@ -85,7 +85,7 @@ const PartnersContainer  = styled.div`
         }
     }
     @media (max-width: 900px) {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(3, 1fr); 
     }
     @media (max-width: 400px) {
         width: 80%;
@@ -121,7 +121,7 @@ export const ThirdBackgroundContent = () =>{
                         <OverLayRight></OverLayRight>
                     </OverLayContainer>
                     <Swiper	  
-                        initialSlide= "5"
+                        initialSlide= "4"
                         effect={'coverflow'}
                         grabCursor={true}
                         centeredSlides={true}
@@ -186,18 +186,6 @@ export const ThirdBackgroundContent = () =>{
                             </a>
                         </SwiperSlide>
                         <SwiperSlide>
-                            {/* AWARD1 */}
-                            <img className="icon" src="/img/icons/awards.png"></img>
-                            <div className="slide-container">
-                                <a href="https://www.gukjenews.com/news/articleView.html?idxno=2599665" target='_blank'> 
-                                    <img src="/img/awards/award1.png" alt="news"/> 
-                                </a>
-                            </div>
-                            <a href="https://www.gukjenews.com/news/articleView.html?idxno=2599665" target='_blank'>  
-                                23' 발명특허대전 찰리충전기술 "특허청장상 수상"
-                            </a>
-                        </SwiperSlide>
-                        <SwiperSlide>
                             {/* AWARD2 */}
                             <img className="icon" src="/img/icons/awards.png"></img>
                             <div className="slide-container">
@@ -207,6 +195,18 @@ export const ThirdBackgroundContent = () =>{
                             </div>
                             <a href="https://www.hankyung.com/article/2024031533555" target='_blank'>  
                                 지이디 찰리 기술, '2024 독일IF 어워드 최종 Winner' 본상 수상
+                            </a>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            {/* AWARD1 */}
+                            <img className="icon" src="/img/icons/awards.png"></img>
+                            <div className="slide-container">
+                                <a href="https://www.gukjenews.com/news/articleView.html?idxno=2599665" target='_blank'> 
+                                    <img src="/img/awards/award1.png" alt="news"/> 
+                                </a>
+                            </div>
+                            <a href="https://www.gukjenews.com/news/articleView.html?idxno=2599665" target='_blank'>  
+                                23' 발명특허대전 찰리충전기술 "특허청장상 수상"
                             </a>
                         </SwiperSlide>
                         <SwiperSlide>

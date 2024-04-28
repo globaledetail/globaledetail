@@ -26,6 +26,8 @@ const NavBar = () =>{
 	const [ expanded, setExpanded ] = useState(false);
   const [ screenSize, setScreenSize ] = useState({ width: window.innerWidth, height: window.innerHeight });
   const [ isHovered, setIsHovered ] = useState(Array(pages.length).fill(false)); // 메뉴 아이템별 hover 상태
+  const [ navBarIndex, setNavBarIndex ] = useState(null);
+  const [ submenuTimer, setSubmenuTimer ] = useState(null);
   const [ showSubMenu, setShowSubMenu ] = useState(false)
 
   const handleOpenNavMenu = (event) => {
@@ -67,27 +69,55 @@ const NavBar = () =>{
 
  
 
-  const hoverEnterHandler = (page,index) =>{
+  const hoverEnterHandler = (index) => {
+    const trueCount = isHovered.reduce((acc, val) => acc + (val === true ? 1 : 0), 0);
+    if(trueCount > 1 ){
+      setIsHovered([false,false,false,false]);
+    };
+
     const updatedHovered = [...isHovered];
     updatedHovered[index] = true;
-    console.log(page)
+
+    setIsHovered([false,false,false,false]);
     setIsHovered(updatedHovered);
+    setNavBarIndex(index);
     setShowSubMenu(true);
   };
 
-  const hoverLeaveHandler = (index) =>{
-    const updatedHovered = [...isHovered];
-    updatedHovered[index] = false;
-    setIsHovered(updatedHovered);
+console.log(navBarIndex)
+  const hoverLeaveHandler = (index) => {
+    setIsHovered([false,false,false,false]);
     setShowSubMenu(false);
   };
 
- 
+  const handleSubMenuEnter = () => {
+    // 서브메뉴에 마우스가 들어왔을 때, 타이머 초기화하여 서브메뉴 유지
+    const updatedHovered = [...isHovered];
+    updatedHovered[navBarIndex] = true;
+    setIsHovered(updatedHovered)
+    setShowSubMenu(true)
+  };
+
+  const cleaerIsHover = () =>{
+
+  };
+
+  const handleSubMenuLeave = () => {
+    // 서브메뉴에서 마우스가 벗어났을 때, 타이머 시작하여 submenu가 사라지도록 함
+    setIsHovered([false, false, false, false]);
+
+
+    console.log("실행")
+
+    setShowSubMenu(false);
+  };
+
+  console.log(isHovered)
 
   return (
     <>
-      <div className={styles.navBarWrapper}>
-        <AppBar position="static" sx={{transform: `scaleX(${expanded ? '1' : '0'})`, transition: 'transform ,1.5s', margin: 'auto', borderRadius:"0 0 10px 10px", backgroundColor:"transparent",border: "0px", boxShadow: "none" }}>
+      <div className={styles.navBarWrapper} >
+        <AppBar position="static"  sx={{transform: `scaleX(${expanded ? '1' : '0'})`, transition: 'transform ,1.5s', margin: 'auto', borderRadius:"0 0 10px 10px", backgroundColor:"transparent",border: "0px", boxShadow: "none" }}>
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               {screenSize.width > 899 ? 
@@ -185,27 +215,32 @@ const NavBar = () =>{
                  <span style={{color:"white"}}>D</span>
               </Typography>
               {/*  확장 메뉴 */}
-              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
                 {pages.map((page, index) => (
-                  <Button
-                    size="large"
-                    key={index}
-                    onClick={handleCloseNavMenu}
-                    onMouseEnter={() => hoverEnterHandler(page,index)}
-                    onMouseLeave={() => hoverLeaveHandler(index)}
-                    sx={{ mr: 2,my: 2, color: "white",
-                          "&:hover": {color: 'black'},
-                          display: 'block', fontWeight:"700" }}
-                  >
-                    {page}
-                  </Button>
-                ))}
+                      <Button
+                        size="large"
+                        key={index}
+                        onClick={handleCloseNavMenu}
+                        onMouseEnter={() => hoverEnterHandler(index)}
+                        onMouseLeave={() => hoverLeaveHandler(index)}
+                        sx={{ mr: 2,my: 2, color:  `${isHovered[index]? "black":"white"}`,
+                              display: 'block', fontWeight:"700", height:"100%", marginRight:"15px",marginBottom: "0px", paddingBottom: "16px" }}
+                      >
+                        {page}
+                      </Button>
+                    )
+                )}
               </Box>
             </Toolbar>
           </Container>
         </AppBar>
         {showSubMenu === true ? 
-          (<SubMenu isHovered ={isHovered}/>) 
+          (<SubMenu
+            navBarIndex={navBarIndex}
+            isHovered={isHovered}
+            handleSubMenuEnter={handleSubMenuEnter}
+            handleSubMenuLeave={handleSubMenuLeave}
+          />) 
           : 
           null}
       </div>	

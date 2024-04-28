@@ -1,6 +1,6 @@
 
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
 import styled from "styled-components";
 
 
@@ -37,47 +37,83 @@ const submenuData = [
 
 
 const SubMenuWrapper = styled.div`
-    background-color: white;
+    background-color: #ffffff;
     width: 100%;
-    height: 300px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 99;
+    transition: opacity 1ms ease; /* 투명도 변화를 천천히 처리*/
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 `;
 
 const MenusContainer = styled.div`
   flex: 1;
-  background-color: bisque;
+  height: 92%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+    color: #222222;
+    font-size: 15px;
+    font-weight: 700;
+    height: 20%;
+  }
 `;
 
 const MenuImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1;
-  background-color: blueviolet;
+
+`;
+
+const ImageContent = styled.div`
+  width: 100%;
+  height: 100%;
+  img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    clip-path: inset(0 round 0px);
+    background: linear-gradient(to left, #999999, transparent); /* 왼쪽 흐릿한 부분 */
+  }
 `;
 
 
-export const SubMenu = () => {
-    const [isHovered, setIsHovered] = useState(false);
+export const SubMenu = ({isHovered, navBarIndex, handleSubMenuEnter, handleSubMenuLeave}) => {
 
-    // 호버 이벤트 핸들러
-    const handleHover = () => {
-      setIsHovered(!isHovered); // 호버 상태를 토글합니다.
-    };
-  
     return (
-      <SubMenuWrapper className="navbar" >
-          {isHovered && (
-            <MenusContainer >
-              <div className="sub-menu-item">Sub Menu Item 1</div>
-              <div className="sub-menu-item">Sub Menu Item 2</div>
-              <div className="sub-menu-item">Sub Menu Item 3</div>
-            </MenusContainer>
-          )}
+      <SubMenuWrapper 
+        className="navbar" 
+        onMouseEnter={()=>handleSubMenuEnter(navBarIndex)}
+        onMouseLeave={()=>handleSubMenuLeave(navBarIndex)} 
+      >
+          <MenusContainer >
+            {submenuData[navBarIndex]?.submenu?.map((menu,idx)=>{
+              return(
+                <Link to={"/temp"}>
+                  <span 
+                    key={idx} 
+                    className="sub-menu-item"
+                  >{menu}</span>
+                </Link>
+              )
+            })}
+          </MenusContainer>
 
           <MenuImageContainer >
-
+            <ImageContent>
+              <img src="/img/company.jpg"></img>
+            </ImageContent>
           </MenuImageContainer>
-
       </SubMenuWrapper>
     );
 }
