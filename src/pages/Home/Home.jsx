@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import { SecondeBackgroundContent } from "../../components/MainBackground/SecondBackgroundContent";
 import { ThirdBackgroundContent } from "../../components/MainBackground/ThirdBackgroundContent";
+import { Footer } from "../../components/Footer/Footer";
 
 const Outer = styled.div`
   height: 100vh;
@@ -183,6 +184,9 @@ export const Home = () => {
       <ThirdBackground className="inner bg-pink">
         <ThirdBackgroundContent></ThirdBackgroundContent>
       </ThirdBackground>
+
+      <Driver className="divider"></Driver>
+
     </Outer>
   );
 }
