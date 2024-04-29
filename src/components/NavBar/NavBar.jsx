@@ -119,7 +119,7 @@ const NavBar = () =>{
                   marginLeft:"10px"
                 }}
               > 
-                <Link to={"/"} style={{textDecoration: "none", cursor:"pointer"}}>
+                <Link to={"/"} style={{textDecoration: "none", cursor:"pointer", marginBottom: "0px", paddingBottom: "-5px"}}>
                   <span style={{color:"white"}}>G</span>
                   <span style={{color:"white"}}>E</span>
                   <span style={{color:"white"}}>D</span>
@@ -203,7 +203,7 @@ const NavBar = () =>{
                         onMouseEnter={() => hoverEnterHandler(index, data.stateName)}
                         onMouseLeave={() => hoverLeaveHandler(index, data.stateName)}
                         sx={{ mr: 2, my: 2, color: `${hoverStates[`${data.stateName}`]? "black":"white"}`,
-                            display: 'block', fontWeight:"700", height:"100%",marginRight:"15px", marginBottom: "0px", paddingBottom: "16px" }}
+                            display: 'block', fontWeight:"700", height:"100%", marginRight:"15px", marginBottom: "0px", paddingBottom: "16px" }}
                       >
                         {data.menu}
                       </Button>
