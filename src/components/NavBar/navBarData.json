@@ -1,0 +1,45 @@
+
+[
+    {
+      "id": 0,
+      "menu": "COMPANY",
+      "stateName":"COMAPNY",
+      "subMenus": [
+        { "id": 1, "title": "회사소개", "route": "/intro" },
+        { "id": 2, "title": "회사연혁", "route": "/intro" },
+        { "id": 3, "title": "회사비전", "route": "/intro" },
+        { "id": 4, "title": "수상 및 특허", "route": "/intro" }
+      ]
+    },
+    {
+      "id": 1,
+      "menu": "BUSINESS",
+      "stateName":"BUSINESS",
+      "subMenus": [
+        { "id": 11, "title": "찰리 기술소개" },
+        { "id": 12, "title": "찰스 기술소개" },
+        { "id": 13, "title": "리부즈" }
+      ]
+    },
+    {
+      "id": 2,
+      "menu": "PR/IR",
+      "stateName":"PRIR",
+      "subMenus": [
+        { "id": 21, "title": "공시정보" },
+        { "id": 22, "title": "언론보도" },
+        { "id": 23, "title": "IR자료" }
+      ]
+    },
+    {
+      "id": 3,
+      "menu": "CONTACT",
+      "stateName":"CONTACT",
+      "subMenus": [
+        { "id": 31, "title": "Submenu 4-1" },
+        { "id": 32, "title": "Submenu 4-2" },
+        { "id": 33, "title": "Submenu 4-3" },
+        { "id": 34, "title": "Submenu 4-4" }
+      ]
+    }
+]

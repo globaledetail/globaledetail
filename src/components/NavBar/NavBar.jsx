@@ -1,6 +1,4 @@
 
-
-
 import React, { useState, useEffect } from "react"
 
 import AppBar from '@mui/material/AppBar';
@@ -16,22 +14,21 @@ import MenuItem from '@mui/material/MenuItem';
 import { SubMenu } from "./SubMenu";
 
 import styles from './NavBar.module.css'
-
-
-const pages = ['Company', 'Business', 'PR/IR', 'CONTACTS'];
+import menuData from './navBarData.json'
+import { Link } from "react-router-dom";
 
 const NavBar = () =>{
+
   const [ anchorElNav, setAnchorElNav ] = useState(null);
   const [ anchorElUser, setAnchorElUser ] = useState(null);
 	const [ expanded, setExpanded ] = useState(false);
   const [ screenSize, setScreenSize ] = useState({ width: window.innerWidth, height: window.innerHeight });
-  const [ isHovered, setIsHovered ] = useState(Array(pages.length).fill(false)); // 메뉴 아이템별 hover 상태
-  const [ navBarIndex, setNavBarIndex ] = useState(null);
-  const [ submenuTimer, setSubmenuTimer ] = useState(null);
+  const [hoverStates, setHoverStates] = useState({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
+  const [ activatedHoverData, setActivatedHoverData] = useState({});
   const [ showSubMenu, setShowSubMenu ] = useState(false)
 
   const handleOpenNavMenu = (event) => {
-    console.log("aa")
+
     setAnchorElNav(event.currentTarget);
   };
 
@@ -40,7 +37,6 @@ const NavBar = () =>{
   };
 
   const handleCloseNavMenu = () => {
-    console.log("aadfasdfasd")
     setAnchorElNav(null);
   };
 
@@ -67,52 +63,31 @@ const NavBar = () =>{
     };
   }, []);
 
- 
-
-  const hoverEnterHandler = (index) => {
-    const trueCount = isHovered.reduce((acc, val) => acc + (val === true ? 1 : 0), 0);
-    if(trueCount > 1 ){
-      setIsHovered([false,false,false,false]);
-    };
-
-    const updatedHovered = [...isHovered];
-    updatedHovered[index] = true;
-
-    setIsHovered([false,false,false,false]);
-    setIsHovered(updatedHovered);
-    setNavBarIndex(index);
+  const hoverEnterHandler = (index, stateName) => {
+    // const trueCount = isHovered.reduce((acc, val) => acc + (val === true ? 1 : 0), 0);
+    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
+    setHoverStates((prev) => { return {...prev, [stateName]: true } });
+    setActivatedHoverData(menuData[index])
     setShowSubMenu(true);
   };
 
-console.log(navBarIndex)
   const hoverLeaveHandler = (index) => {
-    setIsHovered([false,false,false,false]);
+    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
     setShowSubMenu(false);
   };
 
-  const handleSubMenuEnter = () => {
+  const handleSubMenuEnter = (stateName) => {
     // 서브메뉴에 마우스가 들어왔을 때, 타이머 초기화하여 서브메뉴 유지
-    const updatedHovered = [...isHovered];
-    updatedHovered[navBarIndex] = true;
-    setIsHovered(updatedHovered)
+    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
+    setHoverStates((prev) => { return {...prev, [stateName]: true } });
     setShowSubMenu(true)
-  };
-
-  const cleaerIsHover = () =>{
-
   };
 
   const handleSubMenuLeave = () => {
     // 서브메뉴에서 마우스가 벗어났을 때, 타이머 시작하여 submenu가 사라지도록 함
-    setIsHovered([false, false, false, false]);
-
-
-    console.log("실행")
-
+    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
     setShowSubMenu(false);
   };
-
-  console.log(isHovered)
 
   return (
     <>
@@ -121,7 +96,9 @@ console.log(navBarIndex)
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               {screenSize.width > 899 ? 
-                (<img src="/img/logo.png" style={{width:"25.5px", height:"26px"}} alt="logo"/>)
+                (<Link to={"/"} style={{textDecoration: "none", cursor:"pointer"}}>
+                  <img src="/img/logo.png" style={{width:"25.5px", height:"26px"}} alt="logo"/>
+                </Link>)
                 : 
                 null }
               {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex', fontSize: "30px" }, mr: 1 }} /> */}
@@ -141,10 +118,12 @@ console.log(navBarIndex)
                   fontSize: "30px",
                   marginLeft:"10px"
                 }}
-              >
-                 <span style={{color:"white"}}>G </span>
-                 <span style={{color:"white"}}>E</span>
-                 <span style={{color:"white"}}>D</span>
+              > 
+                <Link to={"/"} style={{textDecoration: "none", cursor:"pointer"}}>
+                  <span style={{color:"white"}}>G</span>
+                  <span style={{color:"white"}}>E</span>
+                  <span style={{color:"white"}}>D</span>
+                </Link>
               </Typography>
 
               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -176,13 +155,13 @@ console.log(navBarIndex)
                     display: { xs: 'block', md: 'none' },
                   }}
                 >
-                  {pages.map((page, index) => (
+                  {menuData.map((data, index) => (
                     <MenuItem 
-                      key={page} 
+                      key={data.id} 
                       onClick={handleCloseNavMenu}
 
                     >
-                      <Typography textAlign="center">{page}</Typography>
+                      <Typography textAlign="center">{data.menu}</Typography>
                     </MenuItem>
                   ))}
                 </Menu>
@@ -216,17 +195,17 @@ console.log(navBarIndex)
               </Typography>
               {/*  확장 메뉴 */}
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
-                {pages.map((page, index) => (
+                {menuData.map((data, index) => (
                       <Button
                         size="large"
-                        key={index}
+                        key={index + data.id}
                         onClick={handleCloseNavMenu}
-                        onMouseEnter={() => hoverEnterHandler(index)}
-                        onMouseLeave={() => hoverLeaveHandler(index)}
-                        sx={{ mr: 2,my: 2, color:  `${isHovered[index]? "black":"white"}`,
-                              display: 'block', fontWeight:"700", height:"100%", marginRight:"15px",marginBottom: "0px", paddingBottom: "16px" }}
+                        onMouseEnter={() => hoverEnterHandler(index, data.stateName)}
+                        onMouseLeave={() => hoverLeaveHandler(index, data.stateName)}
+                        sx={{ mr: 2, my: 2, color: `${hoverStates[`${data.stateName}`]? "black":"white"}`,
+                            display: 'block', fontWeight:"700", height:"100%",marginRight:"15px", marginBottom: "0px", paddingBottom: "16px" }}
                       >
-                        {page}
+                        {data.menu}
                       </Button>
                     )
                 )}
@@ -236,8 +215,7 @@ console.log(navBarIndex)
         </AppBar>
         {showSubMenu === true ? 
           (<SubMenu
-            navBarIndex={navBarIndex}
-            isHovered={isHovered}
+            activatedHoverData={activatedHoverData}
             handleSubMenuEnter={handleSubMenuEnter}
             handleSubMenuLeave={handleSubMenuLeave}
           />) 

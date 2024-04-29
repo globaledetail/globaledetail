@@ -21,6 +21,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/intro' element={<Introduce></Introduce>}></Route>
       </Routes>
 
       {/* <div className='footer-container'>
