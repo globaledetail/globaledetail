@@ -1,10 +1,16 @@
 
 
 
-import React from "react";
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 import { IntroCompanyContent } from "../components/Intro/IntroCompanyContent";
+import { HistoryContent } from "../components/Intro/HistoryContent";
+import { VisionContent } from "../components/Intro/VisionContent";
+import { AwardsContent } from "../components/Intro/AwardsContent";
+
+
 
 const IntroWrapper = styled.div`
   width: 100%;
@@ -93,8 +99,14 @@ const TabContainer = styled.div`
 `;
 
 
-
 export const Introduce = () => {
+  const [ currentPage, setCurrentPage ] = useState([{ page:'회사소개', index: 0}]);
+
+  const currentPageHandler = (pageName, index) => {
+    setCurrentPage(() => {
+      return [{ page: pageName, index: index }]
+    });
+  };
 
   return (
       <>
@@ -103,23 +115,84 @@ export const Introduce = () => {
           <IntroImgContainer>
             <img src="/img/companies.png" alt="companies"></img>
             <TabContainer>
-              <div style={{backgroundColor:"#4975db", color:"white", fontWeight:"800"}}>
-                <span style={{color:"white", fontWeight:"800"}}>회사소개</span>
+              <div 
+                onClick={()=>{currentPageHandler('회사소개')}}
+                style={{
+                  backgroundColor: `${ currentPage[0].page === "회사소개" ? "#4975db" : "#e5e5e5" }`,
+                  fontWeight: "800"
+                }}
+              >
+                <span style={{
+                  color: `${ currentPage[0].page === "회사소개" ? "white" : "#6f6f6f" }`,
+                  fontWeight: `${ currentPage[0].page === "회사소개" ? "800" : "600" }`,
+                }}>회사소개</span>
               </div>
-              <div>
-                <span>회사연혁</span>
+
+              <div 
+                onClick={()=>{currentPageHandler('회사연혁')}}
+                style={{
+                  backgroundColor: `${ currentPage[0].page === "회사연혁" ? "#4975db" : "#e5e5e5" }`,
+                  fontWeight: "800"
+                }}
+              >
+                <span style={{
+                  color: `${ currentPage[0].page === "회사연혁" ? "white" : "#6f6f6f" }`,
+                  fontWeight: `${ currentPage[0].page === "회사연혁" ? "800" : "600" }`,
+                }}>회사연혁</span>
               </div>
-              <div>
-                <span>회사비전</span>
+
+              <div 
+                onClick={()=>{currentPageHandler('회사비전')}}
+                style={{
+                  backgroundColor: `${ currentPage[0].page === "회사비전" ? "#4975db" : "#e5e5e5" }`,
+                  fontWeight: "800"
+                }}
+              >
+                <span style={{
+                  color: `${ currentPage[0].page === "회사비전" ? "white" : "#6f6f6f" }`,
+                  fontWeight: `${ currentPage[0].page === "회사비전" ? "800" : "600" }`,
+                }}>회사비전</span>
               </div>
-              <div>
-                <span>수상&특허</span>
+
+              <div 
+                onClick={()=>{currentPageHandler('수상&특허')}}
+                style={{
+                  backgroundColor: `${ currentPage[0].page === "수상&특허" ? "#4975db" : "#e5e5e5" }`,
+                  fontWeight: "800"
+                }}
+              >
+                <span style={{
+                  color: `${ currentPage[0].page === "수상&특허" ? "white" : "#6f6f6f" }`,
+                  fontWeight: `${ currentPage[0].page === "수상&특허" ? "800" : "600" }`,
+                }}>수상&특허</span>
               </div>
             </TabContainer>
           </IntroImgContainer>
 
           <IntroContentContainer>
-            <IntroCompanyContent/>
+
+            {currentPage?.map((page, idx) => {
+              if( '회사소개' === page.page ){
+                return(
+                  <IntroCompanyContent key={idx + 1} />
+                )
+              };
+              if( '회사연혁' === page.page ){
+                return (
+                  <HistoryContent key={idx + 2}/>
+                )
+              };
+              if( '회사비전' === page.page ){
+                return (
+                  <VisionContent key={idx + 3}/>
+                )
+              };
+              if( '수상&특허' === page.page ){
+                return (
+                  <AwardsContent key={idx + 3}/>
+                )
+              };
+            })}
           </IntroContentContainer>
         </IntroWrapper>
       </>
