@@ -107,12 +107,13 @@ const partnersName = [
 ]
 
 export const ThirdBackgroundContent = () =>{
+// news awards 부분을 news로 변경, awards 이모티콘 제거 -> news 이모티콘으로 변경 
 
     return (
         <>
             <ContentWrapper>
                 <TitleContainer>
-                    <h2>News /Awards</h2>
+                    <h2>News </h2>
                 </TitleContainer>
 
                 <ContentContainer >
