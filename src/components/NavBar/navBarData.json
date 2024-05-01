@@ -5,10 +5,10 @@
       "menu": "COMPANY",
       "stateName":"COMAPNY",
       "subMenus": [
-        { "id": 1, "title": "회사소개", "route": "/intro/companyintro" },
-        { "id": 2, "title": "회사연혁", "route": "/intro/history" },
-        { "id": 3, "title": "회사비전", "route": "/intro/vision" },
-        { "id": 4, "title": "수상 및 특허", "route": "/intro/awards" }
+        { "id": 1, "title": "회사소개", "route": "/intro" },
+        { "id": 2, "title": "회사연혁", "route": "/intro" },
+        { "id": 3, "title": "회사비전", "route": "/intro" },
+        { "id": 4, "title": "수상 및 특허", "route": "/intro" }
       ]
     },
     {

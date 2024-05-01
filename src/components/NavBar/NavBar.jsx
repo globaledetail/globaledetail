@@ -89,6 +89,10 @@ const NavBar = () =>{
     setShowSubMenu(false);
   };
 
+  const movePageHandler = (URL) => {
+    //  페이지 이동 핸들러
+  };
+
   return (
     <>
       <div className={styles.navBarWrapper} >

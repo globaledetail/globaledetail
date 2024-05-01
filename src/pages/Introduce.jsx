@@ -1,7 +1,7 @@
 
 
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
@@ -101,6 +101,11 @@ const TabContainer = styled.div`
 
 export const Introduce = () => {
   const [ currentPage, setCurrentPage ] = useState([{ page:'회사소개', index: 0}]);
+  const targetPageName = useNavigate();
+
+  useEffect(() => {
+    //파라미터를 받아서 currentPage를 바로 셋팅 해줘야한다.
+  }, [])
 
   const currentPageHandler = (pageName, index) => {
     setCurrentPage(() => {
