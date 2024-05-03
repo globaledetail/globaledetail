@@ -34,7 +34,7 @@ const IntroContentContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); 
   gap: 10px; /* 요소 사이의 간격 */
   margin-bottom: 100px;
-  @media (max-width: 400px) {  
+  @media (max-width: 450px) {  
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   }
 `;
@@ -68,9 +68,9 @@ const ContentTitleContainer = styled.div`
       width: 100%;
     }
   }
-  @media (max-width: 400px) {  
+  @media (max-width: 450px) {  
     .sayHi{
-      font-size: 30px;
+      font-size: 25px;
       margin: 0;
       padding: 0px;
       white-space: nowrap; 
@@ -78,7 +78,7 @@ const ContentTitleContainer = styled.div`
       animation: revealText 2s steps(70, end); 
     }
     h3{
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 800;
       margin: 0;
       padding: 0px;
@@ -94,10 +94,14 @@ const ContentTextContainer = styled.div`
   justify-content: center;
   align-items: center;
   span{
-    font-size: 18px;
+    font-size: 20px;
     line-height : 2;
-    word-wrap: break-word; 
+    word-wrap: break-word;
+    @media (max-width: 450px) {
+    font-size: 16px;
+    }
   }
+  
 `;
 
 const CompanyStateContainer = styled.div`
@@ -127,7 +131,7 @@ const StatesContainer = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(50%, 2fr)); 
     grid-template-rows: auto; /* 화면이 작을 때는 자동으로 행 크기 조정 */
   }
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     grid-template-columns: repeat(auto-fit, minmax(60%, 1fr)); 
     grid-template-rows: auto; /* 화면이 작을 때는 자동으로 행 크기 조정 */
   }
@@ -182,7 +186,7 @@ export const IntroCompanyContent = () => {
           </ContentTitleContainer>
           <ContentTextContainer>
             <span>지이디는 R&D 중심의 특허기술기업으로 122건의 특허를 보유하고 있습니다.
-                특히 전력 제어 분야의 기술에 집중하고 있으며 관련 된 펌웨어 블루투스 및 초음파 통신 기술을 보유하고, 공용상용전기유·무선제어 및 전기차 무선 충전 시스템 개발에 주력중입니다.
+                특히 전력 제어 분야의 기술에 집중하고 있으며 펌웨어 블루투스 및 초음파 통신 기술을 보유하고, 공용상용전기유·무선제어 및 전기차 무선 충전 시스템 개발에 주력중입니다.
                 국내외에서 인정받은 기술인 “CharLe” , “CharS"를 기반으로 소통하며 성장하는 글로벌 기업으로 나아가는 것이 GED의 목표입니다</span>
           </ContentTextContainer>
         </IntroContentContainer>

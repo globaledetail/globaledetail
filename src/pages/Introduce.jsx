@@ -76,7 +76,7 @@ const TabContainer = styled.div`
       justify-content: center;
     }
   }
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     margin-left: 0px;
     width: 100%;
     height: 30px;
@@ -194,7 +194,7 @@ export const Introduce = () => {
               };
               if( '수상&특허' === page.page ){
                 return (
-                  <AwardsContent key={idx + 3}/>
+                  <AwardsContent key={idx + 4}/>
                 )
               };
             })}

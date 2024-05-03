@@ -12,8 +12,8 @@ const CompanyHistoryWapper = styled.div`
   align-items: center;
   padding: 0 80px 0 80px;
 
-  @media (max-width: 400px) {
-    padding: 0 40px 0 40px;
+  @media (max-width: 450px) {
+    padding: 0 0px 0 0px;
     margin-bottom: 30px;
   }
 `;
