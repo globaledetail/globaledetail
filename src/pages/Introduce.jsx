@@ -17,6 +17,7 @@ const IntroWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
 `;
 
 const IntroImgContainer = styled.div`
@@ -41,8 +42,8 @@ const IntroContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #cecece;
-
+  /* border: 1px solid #cecece; */
+  background-color: #ffffff;
   @media (min-width: 1536px) {
     max-width: 1536px;
     margin: 0 auto; /* 가로 중앙 정렬 */

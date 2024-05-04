@@ -11,7 +11,6 @@ const CompanyHistoryWapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0 80px 0 80px;
-
   @media (max-width: 450px) {
     padding: 0 0px 0 0px;
     margin-bottom: 30px;
@@ -58,12 +57,12 @@ const HistoryContentContainer = styled.div`
     background-color: #ffb700;
     position: absolute;
     opacity: 0.4;
-    left: 36%;
-    margin-left: -px;
-    width: 2px;
+    left: 36.3%;
+    margin-left: -6px;
+    width: 4px;
     top: 90px;
     bottom: 150px;
-    z-index: -1;
+    z-index: 3;
   }
   .history-item{
     margin: 40px 0;
@@ -129,11 +128,16 @@ const HistoryContentContainer = styled.div`
       }
     }
     &::before{
-      left: 49px;
+      left: 54px;
       top: 60px;
       bottom: 250px;
-      
+    }
   }
+  @media (min-width: 769px) and (max-width: 1450px) {
+    &::before{
+      left: 36.8%;
+;
+    }
   }
 `;
 

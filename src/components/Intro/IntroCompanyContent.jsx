@@ -112,7 +112,6 @@ const CompanyStateContainer = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  /* background-color: #dfdfdf; */
   h1{
     margin-bottom: 30px;
   }
