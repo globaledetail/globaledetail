@@ -117,7 +117,6 @@ export const Introduce = () => {
   return (
       <>
         <IntroWrapper>
-          <div></div>
           <IntroImgContainer>
             <img src="/img/companies.png" alt="companies"></img>
             <TabContainer>

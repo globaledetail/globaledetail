@@ -10,6 +10,14 @@ import Button from '@mui/material/Button';
 // import FormControl from '@mui/material/FormControl';
 // import Select from '@mui/material/Select';
 // import styledEngineSc from "@mui/styled-engine-sc";
+import { styled as MUIstyle} from '@mui/material/styles';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Typography from '@mui/material/Typography';
 
 
 
@@ -105,7 +113,14 @@ const ContentList = styled.div`
   }
 `; 
 
-
+const BootstrapDialog = MUIstyle(Dialog)(({ theme }) => ({
+  '& .MuiDialogContent-root': {
+    padding: theme.spacing(2),
+  },
+  '& .MuiDialogActions-root': {
+    padding: theme.spacing(1),
+  },
+}));
 
 
 export const AwardsContent = () =>{
@@ -148,6 +163,16 @@ console.log(selectorState.awards)
 //     </FormControl>
 //   )
 // }
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 
   return(
     <>
@@ -292,14 +317,62 @@ console.log(selectorState.awards)
             <ContentList>
             <img src="/img/patents/award3.png" alt="patent"></img>
             <div className="text-container">
-              <span>10" 라스베가스CES 최고 혁신상 수상</span>
+              <span>2010 라스베가스 CES 최고 혁신상 수상</span>
             </div>
             </ContentList>
           </>)}
-
-
         </ContentsListContainer>
+        <div>
 
+        <React.Fragment>
+      <Button variant="outlined" onClick={handleClickOpen}>
+        Open dialog
+      </Button>
+      <BootstrapDialog
+        onClose={handleClose}
+        aria-labelledby="customized-dialog-title"
+        open={open}
+      >
+        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+          Modal title
+        </DialogTitle>
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+        <DialogContent dividers>
+          <Typography gutterBottom>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+            consectetur ac, vestibulum at eros.
+          </Typography>
+          <Typography gutterBottom>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+          </Typography>
+          <Typography gutterBottom>
+            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
+            magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
+            ullamcorper nulla non metus auctor fringilla.
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={handleClose}>
+            Save changes
+          </Button>
+        </DialogActions>
+      </BootstrapDialog>
+    </React.Fragment>
+
+        </div>
 
       </AwardsPatentsWrapper>
     </>

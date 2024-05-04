@@ -6,6 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import { Home } from './pages/Home/Home';
 import { Footer } from './components/Footer/Footer';
 import { Introduce } from './pages/Introduce';
+import { Business } from './pages/Business';
 
 
 function App() {
@@ -20,8 +21,9 @@ function App() {
       </div>
 
       <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/intro' element={<Introduce></Introduce>}></Route>
+        <Route path='/' element={<Home></Home>}/>
+        <Route path='/intro' element={<Introduce></Introduce>}/>
+        <Route path='/business' element={<Business></Business>}/>
       </Routes>
 
       {/* <div className='footer-container'>
