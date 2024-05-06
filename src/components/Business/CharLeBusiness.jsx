@@ -3,14 +3,14 @@ import React from "react";
 
 import styled from "styled-components";
 
-
+import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 
 const CharLeBusinessWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 0px 0 0px;
+
   h1{
     font-size: 35px;
     margin-bottom: 10px;
@@ -34,7 +34,25 @@ const CharLeContentsContainer = styled.div`
     padding: 0 30px 0 30px;
     font-size: 25px;
   }
-
+  .content-title{
+    display: flex;
+    align-items: center;
+    h2{
+    padding: 0 30px 0 10px;
+    font-size: 25px;
+    }
+  }
+  @media (max-width: 450px) {
+    .content-title{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    h2{
+      padding: 0 30px 0 10px;
+      font-size: 25px;
+    }
+  }
+  }
 
 `;
 
@@ -153,6 +171,35 @@ const CharLeActiveRightContainer = styled.div`
   
 `;
 
+const ActiveProsConstainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  margin-bottom: 60px;
+  h2{
+    padding: 0 30px 0 30px;
+    font-size: 25px;
+  }
+  .activeProps-title{
+    display: flex;
+    align-items: center;
+    h2{
+      padding: 0 30px 0 30px;
+      font-size: 25px;
+    }
+  }
+  .ActivePropsImg-container{
+    display: flex;
+    img{
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+  //그리드로 나눠서 스크린 사이즈가 작아질때 이미지가 각각 하나씩 떨어져서 보여야할꺼같음
+  }
+
+`;
 
 
 export const CharLeBusiness = () => {
@@ -161,7 +208,10 @@ export const CharLeBusiness = () => {
       <CharLeBusinessWrapper>
         <h1>찰스 기술소개</h1>
         <CharLeContentsContainer>
-          <h2>Active ( 레일형 )</h2>
+          <div className="content-title">
+            <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
+            <h2>Polar 전극단자기술 기반의 Active ( 레일형 )</h2>
+          </div>
 
           <CharLeActiveLeftContainer className="charLeActive-box">
             <div className="header-number">
@@ -223,6 +273,16 @@ export const CharLeBusiness = () => {
             </div>
           </CharLeActiveRightContainer>
         </CharLeContentsContainer>
+
+        <ActiveProsConstainer>
+          <div className="activeProps-title">
+            <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
+            <h2>찰리 무선 충전 기술 Active 장점</h2>
+          </div>
+          <div className="ActivePropsImg-container">
+            <img src="/img/business/activePros.png" alt="pros"></img>
+          </div>
+        </ActiveProsConstainer>
       </CharLeBusinessWrapper>
 
     </>

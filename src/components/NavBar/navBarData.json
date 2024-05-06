@@ -16,9 +16,10 @@
       "menu": "BUSINESS",
       "stateName":"BUSINESS",
       "subMenus": [
-        { "id": 11, "title": "찰리 기술소개", "route": "/business"},
-        { "id": 12, "title": "찰스 기술소개", "route": "/business" },
-        { "id": 13, "title": "리부즈", "route": "/business" }
+        { "id": 11, "title": "Polar 전극단자 기술", "route": "/business"},
+        { "id": 12, "title": "찰리 기술소개", "route": "/business"},
+        { "id": 13, "title": "찰스 기술소개", "route": "/business" },
+        { "id": 14, "title": "리부즈", "route": "/business" }
       ]
     },
     {

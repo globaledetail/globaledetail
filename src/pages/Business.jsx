@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { CharLeBusiness } from "../components/Business/CharLeBusiness"
 import { CharlesBusiness } from "../components/Business/CharlesBusiness";
 import { ReboozBusiness } from "../components/Business/Rebooz";
+import { PolarBusiness } from "../components/Business/PolarBusiness";
 
 
 
@@ -44,7 +45,6 @@ const BusinessContentContainer = styled.div`
     margin: 0 auto; /* 가로 중앙 정렬 */
   }
 `;
-
 
 const TabContainer = styled.div`
   width: 50%;
@@ -99,7 +99,7 @@ const TabContainer = styled.div`
 
 
 export const Business = () => {
-  const [ currentPage, setCurrentPage ] = useState([{ page:'찰리 기술소개', index: 0}]);
+  const [ currentPage, setCurrentPage ] = useState([{ page:'Polar 전극단자 기술', index: 0}]);
 
   const currentPageHandler = (pageName, index) => {
     setCurrentPage(() => {
@@ -113,6 +113,19 @@ export const Business = () => {
         <BusinessImgContainer>
           <img src="/img/business.png" alt="companies"></img>
           <TabContainer>
+            <div 
+              onClick={()=>{currentPageHandler('Polar 전극단자 기술')}}
+              style={{
+                backgroundColor: `${ currentPage[0].page === "Polar 전극단자 기술" ? "#4975db" : "#e5e5e5" }`,
+                fontWeight: "800"
+              }}
+            >
+              <span style={{
+                color: `${ currentPage[0].page === "Polar 전극단자 기술" ? "white" : "#6f6f6f" }`,
+                fontWeight: `${ currentPage[0].page === "Polar 전극단자 기술" ? "800" : "600" }`,
+              }}>Polar 전극단자 기술</span>
+            </div>
+
             <div 
               onClick={()=>{currentPageHandler('찰리 기술소개')}}
               style={{
@@ -156,21 +169,24 @@ export const Business = () => {
 
         <BusinessContentContainer>
         {currentPage?.map((page, idx) => {
+              if( 'Polar 전극단자 기술' === page.page ){
+                return(
+                  <PolarBusiness key={idx + 1}></PolarBusiness>
+                )
+              };
               if( '찰리 기술소개' === page.page ){
                 return(
-                  // <IntroCompanyContent key={idx + 1} />
-                  <CharLeBusiness key={idx + 1}></CharLeBusiness>
+                  <CharLeBusiness key={idx + 2}></CharLeBusiness>
                 )
               };
               if( '찰스 기술소개' === page.page ){
                 return (
-                  <CharlesBusiness key={idx + 2}></CharlesBusiness>
+                  <CharlesBusiness key={idx + 3}></CharlesBusiness>
                 )
               };
               if( '리부즈' === page.page ){
                 return (
-                  // <VisionContent key={idx + 3}/>
-                  <ReboozBusiness></ReboozBusiness>
+                  <ReboozBusiness key={idx + 4}></ReboozBusiness>
                 )
               };
             })}
