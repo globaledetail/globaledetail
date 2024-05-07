@@ -32,7 +32,7 @@ export const PolarBusiness = () => {
   return (
     <>
       <PolarWrapper>
-
+        <h1>Polar 전극단자 기술 소개</h1>
 
 
       </PolarWrapper>
