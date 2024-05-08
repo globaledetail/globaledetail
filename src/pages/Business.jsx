@@ -123,6 +123,7 @@ export const Business = () => {
               <span style={{
                 color: `${ currentPage[0].page === "Polar 전극단자 기술" ? "white" : "#6f6f6f" }`,
                 fontWeight: `${ currentPage[0].page === "Polar 전극단자 기술" ? "800" : "600" }`,
+                minWidth:"135px",
               }}>Polar 전극단자 기술</span>
             </div>
 
