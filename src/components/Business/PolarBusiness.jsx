@@ -33,8 +33,7 @@ export const PolarBusiness = () => {
     <>
       <PolarWrapper>
         <h1>Polar 전극단자 기술 소개</h1>
-
-
+        <h1>polar 전극단자 기술 소개</h1>
       </PolarWrapper>
     
     </>
