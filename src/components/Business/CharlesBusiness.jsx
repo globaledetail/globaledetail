@@ -30,7 +30,6 @@ export const CharlesBusiness = () => {
     <>
       <CharlesBusinessWrapper>
         <h1>찰리 기술소개</h1>
-        <h1>찰리 기술소개</h1>
         <h1>Hold on it until tomorrow</h1>
 
       </CharlesBusinessWrapper>

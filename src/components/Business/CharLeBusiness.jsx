@@ -47,11 +47,11 @@ const CharLeContentsContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-    h2{
-      padding: 0 30px 0 10px;
-      font-size: 25px;
+      h2{
+        padding: 0 30px 0 10px;
+        font-size: 25px;
+      }
     }
-  }
   }
 
 `;
@@ -110,6 +110,17 @@ const CharLeActiveLeftContainer = styled.div`
       border-radius: 10px;
     }
   }
+  @media (max-width: 950px) {
+    .line-box{
+      span{
+        font-weight: 700;
+        font-size: 25px;
+        color: #222222;
+        word-break: normal;
+        z-index: 9;
+      }
+    }
+  }
   
 `;
 
@@ -166,6 +177,17 @@ const CharLeActiveRightContainer = styled.div`
       height: 400px;
       object-fit: cover;
       border-radius: 10px;
+    }
+  }
+  @media (max-width: 950px) {
+    .line-box{
+      span{
+        font-weight: 700;
+        font-size: 25px;
+        color: #222222;
+        word-break: normal;
+        z-index: 9;
+      }
     }
   }
   
