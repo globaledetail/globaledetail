@@ -15,7 +15,7 @@ const VideoElement = styled.video`
   height: 100%;
   object-fit: cover;
 `;
-
+ 
 const FirstBackgroundContainer = styled(Inner)`
     
 `;
