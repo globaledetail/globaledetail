@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import styled from "styled-components";
 import { CharLeBusiness } from "../components/Business/CharLeBusiness"
-import { CharlesBusiness } from "../components/Business/CharlesBusiness";
+import { CharsBusiness } from "../components/Business/CharsBusiness";
 import { ReboozBusiness } from "../components/Business/Rebooz";
 import { PolarBusiness } from "../components/Business/PolarBusiness";
 
@@ -182,7 +182,7 @@ export const Business = () => {
               };
               if( '찰스 기술소개' === page.page ){
                 return (
-                  <CharlesBusiness key={idx + 3}></CharlesBusiness>
+                  <CharsBusiness key={idx + 3}></CharsBusiness>
                 )
               };
               if( '리부즈' === page.page ){

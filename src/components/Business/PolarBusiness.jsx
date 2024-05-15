@@ -3,7 +3,6 @@ import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import ReactPlayer from 'react-player';
 
-
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 
 const PolarWrapper = styled.div`
@@ -28,41 +27,6 @@ const PolarWrapper = styled.div`
   @media (min-width: 1536px) {
     padding: 0 30px 0 30px;
   }
-`;
-
-
-const PlayerButton = styled.button`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate( -50%, -50% );
-    opacity: .7;
-    width: 80px;
-    height: 80px;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    margin: auto;
-    border-radius: 90px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #b6b6b6;
-    font-size: 3rem;
-    text-align: center;
-    line-height: 75px;
-    display: ${( props ) =>  props.isPlayerBtnActive ? "flex" : "none"};
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    &:hover {
-      background-color: #dcdcdc;
-      border-color: #dcdcdc;
-    }
-    span{
-      margin: 0px;
-      margin-right: 5px;
-    }
 `;
 
 const PolarTitleVedioContainer = styled.div`
@@ -191,8 +155,6 @@ const ContentContainer = styled.div`
 `;
 
 export const PolarBusiness = () => {
-  // const { playing, setPlaying, playlist } = props; // 상위 컴포넌트에 playing, setPlaying true로 정의
-  const [ isPlayerBtnActive, setIsPalyerBtnActive ] = useState(true);
   const [ playing, setPlaying ] = useState(false);
   const videoState = useRef(null);
   const [ ready, setReady ] = useState(false);
@@ -209,10 +171,7 @@ export const PolarBusiness = () => {
     setPlaying((prev)=>!prev)
   };
 
-  const playerBtnHandler = () => {
-    setPlaying(true);
-    setIsPalyerBtnActive(false);
-  };
+
 
   return (
     <>
@@ -263,14 +222,10 @@ export const PolarBusiness = () => {
               width="100%" 
               height="auto" 
               muted={true}
+              playIcon={<button>Play</button>}
               style={{ objectFit: "cover", borderRadius:" 20px", position: "relative" }}
             >
             </ReactPlayer>
-            {/* <PlayerButton 
-              className="play-btn"
-              onClick={playerBtnHandler}
-              isPlayerBtnActive = { isPlayerBtnActive }
-            ><span>◀</span></PlayerButton> */}
           </PolarTitleVedioContainer>
 
         </PolarContentWrapper>
