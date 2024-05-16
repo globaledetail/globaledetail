@@ -89,7 +89,7 @@ export const SecondeBackgroundContent = () =>{
                         <img src={process.env.PUBLIC_URL + `/img/charleBot2.png`} alt="charle-bot2"></img>
                     </div>
                     <div className="content-text-container">
-                        <span> CharLe bot2</span>
+                        <span> CharLe Bot</span>
                     </div>
                 </ContentContainer>
                 <ContentContainer>
@@ -97,7 +97,7 @@ export const SecondeBackgroundContent = () =>{
                         <img src={process.env.PUBLIC_URL + "/img/charlePolar.png"} alt="charle-bot2"></img>
                     </div>
                     <div className="content-text-container">
-                        <span> CharLe bot2</span>
+                        <span> CharLe Polar </span>
                     </div>
                 </ContentContainer>
             </SecondBackgroundWrapper>
