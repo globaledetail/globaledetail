@@ -112,7 +112,7 @@ export const CharsBusiness = () => {
             {/* <div className="sub-title">
               <h2>Char<span style={{color: "red"}}>S</span>는 하드웨어 + 디바이스 + 서버 패키지가 결합된 <span style={{color: "#3869db"}}> 유일의 충전 특허 기술 !</span></h2>
             </div> */}
-            <h1>Coming soon</h1>
+            <h1>Coming soon...</h1>
             {/* <TableContent>
               <div className="table">
                 <div className="tableTitle"></div>
