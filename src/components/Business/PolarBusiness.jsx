@@ -187,7 +187,7 @@ export const PolarBusiness = () => {
           <ContentContainer>
             <div className="content">
               <div className="img-container">
-                <img src="/img/polar/polarFull.png" alt="bot"></img>
+                <img src={process.env.PUBLIC_URL + "/business/img/polar/polarFull.png"} alt="bot"></img>
               </div>
               <div className="text-container">
                 <span>전기차, 지게차, 농기계 등에 적용 가능한 무선충전 확장기술</span>
@@ -196,7 +196,7 @@ export const PolarBusiness = () => {
 
             <div className="content">
               <div className="img-container">
-                <img src="/img/polar/polarWorking.png" alt="bot"></img>
+                <img src={process.env.PUBLIC_URL + "/business/img/polar/polarWorking.png"} alt="bot"></img>
               </div>
               <div className="text-container">
                 <span>인공지능 기술로 목표물을 찾아 로봇팔을 움직이고 충전을 제어하며 통신하는 최신 기술들의 집합체</span>
@@ -213,7 +213,7 @@ export const PolarBusiness = () => {
           <PolarTitleVedioContainer>
             <ReactPlayer
               ref={videoState}
-              url={"/videos/polar.mp4"}
+              url={process.env.PUBLIC_URL + "/business/videos/polar.mp4"}
               className='player' // 클래스 이름 지정하여 스타일 적용
               playing={playing} // 재생 상태, true = 재생중 / false = 일시 정지
               controls={true} // 유튜브 재생 컨트롤바 노출 여부

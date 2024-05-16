@@ -111,7 +111,8 @@ export const Business = () => {
     <>
       <BusinessWrapper>
         <BusinessImgContainer>
-          <img src="/img/business.png" alt="companies"></img>
+          {/* 임시 이미지 경로 */}
+          <img src={ process.env.PUBLIC_URL + "/business/img/business.png" }alt="companies"></img>
           <TabContainer>
             <div 
               onClick={()=>{currentPageHandler('Polar 전극단자 기술')}}
