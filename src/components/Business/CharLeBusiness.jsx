@@ -246,7 +246,7 @@ export const CharLeBusiness = () => {
               </div>
             </div>
             <div className="img-container">
-              <img src={ process.env.PUBLIC_URL + "/business/img/business/activeCharle1.png"} alt="charle"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/business/activeCharle1.png"} alt="charle"></img>
             </div>
           </CharLeActiveLeftContainer>
 
@@ -255,7 +255,7 @@ export const CharLeBusiness = () => {
               <span>02</span>
             </div>
             <div className="img-container">
-              <img src={ process.env.PUBLIC_URL + "/business/img/business/activeCharle2.png"} alt="charle"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/business/activeCharle2.png"} alt="charle"></img>
             </div>
             <div className="content-container">
               <div className="line-box">
@@ -276,7 +276,7 @@ export const CharLeBusiness = () => {
               </div>
             </div>
             <div className="img-container">
-              <img src={ process.env.PUBLIC_URL + "/business/img/business/activeCharle3.png"} alt="charle"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/business/activeCharle3.png"} alt="charle"></img>
             </div>
           </CharLeActiveLeftContainer>
 
@@ -285,7 +285,7 @@ export const CharLeBusiness = () => {
               <span>04</span>
             </div>
             <div className="img-container">
-              <img src={ process.env.PUBLIC_URL + "/business/img/business/activeCharle4.png"} alt="charle"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/business/activeCharle4.png"} alt="charle"></img>
             </div>
             <div className="content-container">
               <div className="line-box">
@@ -302,7 +302,7 @@ export const CharLeBusiness = () => {
             <h2>찰리 무선 충전 기술 Active 장점</h2>
           </div>
           <div className="ActivePropsImg-container">
-            <img src={ process.env.PUBLIC_URL + "/business/img/business/activePros.png"} alt="pros"></img>
+            <img src={ process.env.PUBLIC_URL + "/img/business/activePros.png"} alt="pros"></img>
           </div>
         </ActiveProsConstainer>
       </CharLeBusinessWrapper>
