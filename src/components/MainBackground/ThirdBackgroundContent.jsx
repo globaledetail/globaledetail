@@ -140,7 +140,7 @@ export const ThirdBackgroundContent = () =>{
                     >
                         <SwiperSlide>
                             {/* NEWS1 */}
-                            <img className="icon" src={ process.env.PUBLIC_URL +"/img/icons/news.png" }></img>
+                            <img className="icon" src={ process.env.PUBLIC_URL + "/img/icons/news.png" }></img>
                             <div className="slide-container">
                                 <a href="https://n.news.naver.com/article/029/0002674819" target='_blank'> 
                                     <img src={ process.env.PUBLIC_URL + "/img/news/news1.jpg"} alt="news"/> 
