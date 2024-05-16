@@ -21,9 +21,9 @@ function App() {
       </div>
 
       <Routes>
-        <Route path='/' element={<Home></Home>}/>
-        <Route path='/intro' element={<Introduce></Introduce>}/>
-        <Route path='/business' element={<Business></Business>}/>
+        <Route path={process.env.PUBLIC_URL + '/'} element={<Home></Home>}/>
+        <Route path={process.env.PUBLIC_URL + '/intro'} element={<Introduce></Introduce>}/>
+        <Route path={process.env.PUBLIC_URL + '/business'} element={<Business></Business>}/>
       </Routes>
 
       {/* <div className='footer-container'>

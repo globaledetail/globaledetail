@@ -78,7 +78,7 @@ export const SubMenu = ({ activatedHoverData, handleSubMenuEnter, handleSubMenuL
 
           <MenuImageContainer >
             <ImageContent>
-              <img src="/img/company.jpg" alt="side"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/company.jpg"} alt="side"></img>
             </ImageContent>
           </MenuImageContainer>
       </SubMenuWrapper>

@@ -26,7 +26,7 @@ export const FirstBackground = () =>{
       <FirstBackgroundContainer >
         <BackgroundVideo className="background-video">
             <VideoElement autoPlay loop muted>
-              <source src={process.env.PUBLIC_URL + "/videos/homeVideo.mp4"} type="video/mp4" />
+              <source src={ process.env.PUBLIC_URL + "/videos/homeVideo.mp4" } type="video/mp4" />
             </VideoElement>
         </BackgroundVideo>
       </FirstBackgroundContainer>

@@ -93,6 +93,8 @@ const NavBar = () =>{
     //  페이지 이동 핸들러
   };
 
+
+  console.log(process.env.PUBLIC_URL)
   return (
     <>
       <div className={styles.navBarWrapper} >
@@ -171,7 +173,7 @@ const NavBar = () =>{
                 </Menu>
               </Box>
               {screenSize.width < 899 ? 
-                (<img src="/img/logo.png" style={{width:"25.5px", height:"26px"}} alt="logo"/>)
+                (<img src={process.env.PUBLIC_URL + "/img/logo.png"} style={{width:"25.5px", height:"26px"}} alt="logo"/>)
                 : 
                 null }
               {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}

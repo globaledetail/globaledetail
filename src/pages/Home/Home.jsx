@@ -168,7 +168,7 @@ export const Home = () => {
       <FirstBackground >
         <BackgroundVideo className="background-video">
           <VideoElement autoPlay loop muted>
-            <source src="/videos/homeVideo.mp4" type="video/mp4" />
+            <source src={process.env.PUBLIC_URL + "/videos/homeVideo.mp4"} type="video/mp4" />
           </VideoElement>
 
           <h4>Char<span>L</span>e 유선 / 무선 충전 제어</h4>
