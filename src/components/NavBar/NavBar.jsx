@@ -101,9 +101,9 @@ const NavBar = () =>{
             <Toolbar disableGutters>
               {screenSize.width > 899 ? 
                 (<Link to={"/"} style={{textDecoration: "none", cursor:"pointer"}}>
-                  <img src="/img/logo.png" style={{width:"25.5px", height:"26px"}} alt="logo"/>
+                  <img src={ process.env.PUBLIC_URL + "/img/logo.png"} style={{width:"25.5px", height:"26px"}} alt="logo"/>
                 </Link>)
-                : 
+                :
                 null }
               {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex', fontSize: "30px" }, mr: 1 }} /> */}
               <Typography
