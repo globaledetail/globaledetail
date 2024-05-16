@@ -132,15 +132,7 @@ export const CharsBusiness = () => {
             </TableContent>
           </TablesContainer>
 
-          
-
-
-
-
-
         </CharlesContentsContainer>
-
-
       </CharlesBusinessWrapper>
     </>
   )
