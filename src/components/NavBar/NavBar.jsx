@@ -211,7 +211,7 @@ const NavBar = () =>{
                         sx={{ mr: 2, my: 2, color: `${hoverStates[`${data.stateName}`]? "black":"white"}`,
                             display: 'block', fontWeight:"700", height:"100%", marginRight:"15px", marginBottom: "0px", paddingBottom: "16px" }}
                       >
-                        {data.menu}
+                        <Link to={process.env.PUBLIC_URL + data.route} style={{textDecoration: "none", cursor:"pointer", marginBottom: "0px"}}>{data.menu}</Link>
                       </Button>
                     )
                 )}

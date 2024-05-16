@@ -103,17 +103,17 @@ export const CharsBusiness = () => {
         <h1>찰리 기술소개</h1>
         <CharlesContentsContainer>
 
-          <div className="content-title">
+          {/* <div className="content-title">
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
             <h2>Chars BT 통신형</h2>
-          </div>
+          </div> */}
 
           <TablesContainer>
-            <div className="sub-title">
+            {/* <div className="sub-title">
               <h2>Char<span style={{color: "red"}}>S</span>는 하드웨어 + 디바이스 + 서버 패키지가 결합된 <span style={{color: "#3869db"}}> 유일의 충전 특허 기술 !</span></h2>
-            </div>
-
-            <TableContent>
+            </div> */}
+            <h1>Coming soon</h1>
+            {/* <TableContent>
               <div className="table">
                 <div className="tableTitle"></div>
                 <div className="tableContent"></div>
@@ -129,7 +129,7 @@ export const CharsBusiness = () => {
                 <div className="tableContent"></div>
               </div>
 
-            </TableContent>
+            </TableContent> */}
           </TablesContainer>
 
         </CharlesContentsContainer>
