@@ -152,7 +152,7 @@ export const VisionContent = () => {
         <h1>회사 비전</h1>
         <VisionContentContainer>
           <div className="logo-container">
-            <img src="/img/fullLogo.png"></img>
+            <img src={ process.env.PUBLIC_URL + "/img/fullLogo.png"}></img>
           </div>
           <div className="text-container">
             <span>
@@ -167,7 +167,7 @@ export const VisionContent = () => {
         </VisionContentContainer>
 
         <CompanyVelueContainer>
-          <img src="/img/charle.png" alt="charle"></img>
+          <img src={ process.env.PUBLIC_URL + "/img/charle.png"} alt="charle"></img>
           <h1>핵심가치</h1>
           <h2>글로벌 기업으로 나아기가기 위한 핵심가치 </h2>
           <div className="core-value-container">
@@ -187,7 +187,7 @@ export const VisionContent = () => {
         </CompanyVelueContainer>
 
         <ResultValueContainer>
-          <img src="/img/arrow.png" alt="arrow"></img>
+          <img src={ process.env.PUBLIC_URL + "/img/arrow.png"} alt="arrow"></img>
           <div className="result">
             <PublicIcon sx={{ fontSize: '60px', color: "#1eca6c" }}></PublicIcon>
             <span>더 나은 삶의 가치</span>  

@@ -148,7 +148,7 @@ export const HistoryContent = () => {
       <>
         <CompanyHistoryWapper>
           <CompanyHistoryTitleContainer >
-            <img src="/img/worldMap.png" alt="map"></img>
+            <img src={ process.env.PUBLIC_URL + "/img/worldMap.png" }alt="map"></img>
             <h1 style={{color: "black"}}>회사연혁</h1>
           </CompanyHistoryTitleContainer>
 

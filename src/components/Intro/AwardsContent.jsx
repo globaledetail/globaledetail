@@ -214,84 +214,84 @@ console.log(selectorState.awards)
 {selectorState.patents === true ?   
           (<>
             <ContentList>
-              <img src="/img/patents/patent1.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent1.png"} alt="patent"></img>
               <div className="text-container">
                 <span>후발 추돌 방지 시스템</span>
               </div>
             </ContentList>
 
             <ContentList>
-              <img src="/img/patents/patent2.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent2.png" }alt="patent"></img>
               <div className="text-container">
                 <span>자가 공명 방식 무선 충전기</span>
               </div>
             </ContentList>
 
             <ContentList>
-              <img src="/img/patents/patent3.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent3.png"} alt="patent"></img>
               <div className="text-container">
                 <span>무료 스마트폰 배터리 충정 시스템</span>
               </div>
             </ContentList>
 
             <ContentList>
-              <img src="/img/patents/patent4.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent4.png"} alt="patent"></img>
               <div className="text-container">
                 <span>스마트폰 사용 제한 시스템</span>
               </div>
             </ContentList>
 
             <ContentList>
-              <img src="/img/patents/patent5.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent5.png"} alt="patent"></img>
               <div className="text-container">
                 <span>운전중 스마트폰 사용증거 수집 시스템</span>
               </div>
             </ContentList>
 
             <ContentList>
-              <img src="/img/patents/patent6.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent6.png"} alt="patent"></img>
               <div className="text-container">
                 <span>자가 공명 방식 무선 충전기 및 동작방법</span>
               </div>
             </ContentList>
 
             <ContentList>
-              <img src="/img/patents/patent7.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent7.png"} alt="patent"></img>
               <div className="text-container">
                 <span>운전중 스마스폰 사용증거 수집 스마트폰</span>
               </div>
             </ContentList>
 
             <ContentList>
-              <img src="/img/patents/patent8.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent8.png"} alt="patent"></img>
               <div className="text-container">
                 <span>스마트 충전기를 이용한 통신 단말기 충전 시스템</span>
               </div>
             </ContentList>
 
             <ContentList>
-              <img src="/img/patents/patent9.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent9.png"} alt="patent"></img>
               <div className="text-container">
                 <span>스마트 충전기를 이용한 통신 단말기 충전 시스템</span>
               </div>
             </ContentList>
 
             <ContentList>
-              <img src="/img/patents/patent10.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent10.png"} alt="patent"></img>
               <div className="text-container">
                 <span>스마트 충전기를 이용한 통신 단말기 충전 시스템</span>
               </div>
             </ContentList>
 
             <ContentList>
-              <img src="/img/patents/patent11.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent11.png"} alt="patent"></img>
               <div className="text-container">
                 <span>스마트 충전기를 이용한 통신 단말기 충전 시스템</span>
               </div>
             </ContentList>
 
             <ContentList>
-              <img src="/img/patents/patent12.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/patent12.png"} alt="patent"></img>
               <div className="text-container">
                 <span>스마트 충전기를 이용한 통신 단말기 충전 시스템</span>
               </div>
@@ -300,14 +300,14 @@ console.log(selectorState.awards)
           : 
           (<>
             <ContentList>
-              <img src="/img/patents/award1.png" alt="patent"></img>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/award1.png"} alt="patent"></img>
               <div className="text-container">
                 <span>2024 독일 IF Awards 본상</span>
               </div>
             </ContentList>
 
             <ContentList>
-            <img src="/img/patents/award2.png" alt="patent"></img>
+            <img src={ process.env.PUBLIC_URL + "/img/patents/award2.png"} alt="patent"></img>
             <div className="text-container">
               <span>2022 특허 청장상 수상</span>
             </div>
@@ -315,7 +315,7 @@ console.log(selectorState.awards)
 
 
             <ContentList>
-            <img src="/img/patents/award3.png" alt="patent"></img>
+            <img src={ process.env.PUBLIC_URL + "/img/patents/award3.png"} alt="patent"></img>
             <div className="text-container">
               <span>2010 라스베가스 CES 최고 혁신상 수상</span>
             </div>

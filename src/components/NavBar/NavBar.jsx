@@ -102,7 +102,7 @@ const NavBar = () =>{
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               {screenSize.width > 899 ? 
-                (<Link to={"/"} style={{textDecoration: "none", cursor:"pointer"}}>
+                (<Link to={process.env.PUBLIC_URL + "/"} style={{textDecoration: "none", cursor:"pointer"}}>
                   <img src={ process.env.PUBLIC_URL + "/img/logo.png"} style={{width:"25.5px", height:"26px"}} alt="logo"/>
                 </Link>)
                 :
@@ -125,7 +125,7 @@ const NavBar = () =>{
                   marginLeft:"10px"
                 }}
               > 
-                <Link to={"/"} style={{textDecoration: "none", cursor:"pointer", marginBottom: "0px", paddingBottom: "-5px"}}>
+                <Link to={process.env.PUBLIC_URL + "/"} style={{textDecoration: "none", cursor:"pointer", marginBottom: "0px", paddingBottom: "-5px"}}>
                   <span style={{color:"white"}}>G</span>
                   <span style={{color:"white"}}>E</span>
                   <span style={{color:"white"}}>D</span>
