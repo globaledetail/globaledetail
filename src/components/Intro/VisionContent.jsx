@@ -152,7 +152,7 @@ export const VisionContent = () => {
         <h1>회사 비전</h1>
         <VisionContentContainer>
           <div className="logo-container">
-            <img src={ process.env.PUBLIC_URL + "/img/fullLogo.png"}></img>
+            <img src={ process.env.PUBLIC_URL + "/img/fullLogo.png"} alt="logo"></img>
           </div>
           <div className="text-container">
             <span>

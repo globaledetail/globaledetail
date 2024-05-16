@@ -118,7 +118,7 @@ export const Introduce = () => {
       <>
         <IntroWrapper>
           <IntroImgContainer>
-            <img src="/img/companies.png" alt="companies"></img>
+            <img src={ process.env.PUBLIC_URL + "/img/companies.png"} alt="companies"></img>
             <TabContainer>
               <div 
                 onClick={()=>{currentPageHandler('회사소개')}}

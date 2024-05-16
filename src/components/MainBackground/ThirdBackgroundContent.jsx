@@ -143,7 +143,7 @@ export const ThirdBackgroundContent = () =>{
                             <img className="icon" src={ process.env.PUBLIC_URL +"/img/icons/news.png" }></img>
                             <div className="slide-container">
                                 <a href="https://n.news.naver.com/article/029/0002674819" target='_blank'> 
-                                    <img src="/img/news/news1.jpg" alt="news"/> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/news/news1.jpg"} alt="news"/> 
                                 </a>
                             </div>
                             <a href="https://n.news.naver.com/article/029/0002674819" target='_blank'>  
@@ -155,7 +155,7 @@ export const ThirdBackgroundContent = () =>{
                             <img className="icon" src={process.env.PUBLIC_URL +"/img/icons/news.png" }></img>
                             <div className="slide-container">
                                 <a href="https://n.news.naver.com/article/015/0004261919" target='_blank'> 
-                                    <img src="/img/news/news2.jpg" alt="news"/> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/news/news2.jpg"} alt="news"/> 
                                 </a>
                             </div>
                             <a href="https://n.news.naver.com/article/015/0004261919" target='_blank'>  
@@ -167,7 +167,7 @@ export const ThirdBackgroundContent = () =>{
                             <img className="icon" src={process.env.PUBLIC_URL + "/img/icons/news.png"}></img>
                             <div className="slide-container">
                                 <a href="https://n.news.naver.com/article/018/0004271926" target='_blank'> 
-                                    <img src="/img/news/news3.png" alt="news"/> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/news/news3.png"} alt="news"/> 
                                 </a>
                             </div>
                             <a href="https://n.news.naver.com/article/018/0004271926" target='_blank'>  
@@ -179,7 +179,7 @@ export const ThirdBackgroundContent = () =>{
                             <img className="icon" src={ process.env.PUBLIC_URL + "/img/icons/news.png"}></img>
                             <div className="slide-container">
                                 <a href="https://www.news1.kr/articles/?5367331" target='_blank'> 
-                                    <img src="/img/news/news4.png" alt="news"/> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/news/news4.png"} alt="news"/> 
                                 </a>
                             </div>
                             <a href="https://www.news1.kr/articles/?5367331" target='_blank'>  
@@ -191,7 +191,7 @@ export const ThirdBackgroundContent = () =>{
                             <img className="icon" src={process.env.PUBLIC_URL + "/img/icons/awards.png"}></img>
                             <div className="slide-container">
                                 <a href="https://www.hankyung.com/article/2024031533555" target='_blank'> 
-                                    <img src="/img/awards/award2.png" alt="news"/> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/awards/award2.png"} alt="news"/> 
                                 </a>
                             </div>
                             <a href="https://www.hankyung.com/article/2024031533555" target='_blank'>  
@@ -203,7 +203,7 @@ export const ThirdBackgroundContent = () =>{
                             <img className="icon" src={process.env.PUBLIC_URL + "/img/icons/awards.png"}></img>
                             <div className="slide-container">
                                 <a href="https://www.gukjenews.com/news/articleView.html?idxno=2599665" target='_blank'> 
-                                    <img src="/img/awards/award1.png" alt="news"/> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/awards/award1.png"} alt="news"/> 
                                 </a>
                             </div>
                             <a href="https://www.gukjenews.com/news/articleView.html?idxno=2599665" target='_blank'>  
@@ -215,7 +215,7 @@ export const ThirdBackgroundContent = () =>{
                             <img className="icon" src={process.env.PUBLIC_URL + "/img/icons/news.png"}></img>
                             <div className="slide-container">
                                 <a href="https://it.chosun.com/news/articleView.html?idxno=2019032201667" target='_blank'> 
-                                    <img src="/img/news/news5.jpg" alt="news"/> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/news/news5.jpg"} alt="news"/> 
                                 </a>
                             </div>
                             <a href="https://it.chosun.com/news/articleView.html?idxno=2019032201667" target='_blank'>  
@@ -227,7 +227,7 @@ export const ThirdBackgroundContent = () =>{
                             <img className="icon" src={ process.env.PUBLIC_URL + "/img/icons/news.png"}></img>
                             <div className="slide-container">
                                 <a href="https://www.etnews.com/20191213000205" target='_blank'> 
-                                    <img src="/img/news/news6.jpg" alt="news"/> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/news/news6.jpg"} alt="news"/> 
                                 </a>
                             </div>
                             <a href="https://www.etnews.com/20191213000205" target='_blank'>  
@@ -255,7 +255,7 @@ export const ThirdBackgroundContent = () =>{
                         <img src={ process.env.PUBLIC_URL + "/img/logo/galaxia.png"} alt="joongang-logo"></img>
                     </div>
                     <div className="logoContainer">
-                        <img src={ process.env.PUBLIC_URL +"/img/logo/iClick.png"} alt="joongang-logo"></img>
+                        <img src={ process.env.PUBLIC_URL + "/img/logo/iClick.png"} alt="joongang-logo"></img>
                     </div>
                     <div className="logoContainer">
                         <img src={ process.env.PUBLIC_URL + "/img/logo/samsung.png"} alt="joongang-logo"></img>
