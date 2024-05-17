@@ -91,19 +91,11 @@ const NavBar = () =>{
     setShowSubMenu(false);
   };
 
-  const setCurrentPageHandler = () => {
-
-  }
-
   const movePageHandler = (URL) => {
-    console.log(URL)
     navigate(URL);
   };
 
   
-
-
-  console.log(process.env.PUBLIC_URL)
   return (
     <>
       <div className={styles.navBarWrapper} >
