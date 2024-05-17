@@ -4,7 +4,7 @@
       "id": 0,
       "menu": "COMPANY",
       "stateName":"COMAPNY",
-      "route": "/globaledetail/intro",
+      "route": "/intro",
       "subMenus": [
         { "id": 1, "title": "회사소개", "route": "/globaledetail/intro" },
         { "id": 2, "title": "회사연혁", "route": "/globaledetail/intro" },
@@ -16,7 +16,7 @@
       "id": 1,
       "menu": "BUSINESS",
       "stateName":"BUSINESS",
-      "route": "/globaledetail/business",
+      "route": "/business",
       "subMenus": [
         { "id": 11, "title": "Polar 전극단자 기술", "route": "/globaledetail/business"},
         { "id": 12, "title": "찰리 기술소개", "route": "/globaledetail/business"},

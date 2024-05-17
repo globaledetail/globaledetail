@@ -15,7 +15,7 @@ import { SubMenu } from "./SubMenu";
 
 import styles from './NavBar.module.css'
 import menuData from './navBarData.json'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = () =>{
 
@@ -23,9 +23,11 @@ const NavBar = () =>{
   const [ anchorElUser, setAnchorElUser ] = useState(null);
 	const [ expanded, setExpanded ] = useState(false);
   const [ screenSize, setScreenSize ] = useState({ width: window.innerWidth, height: window.innerHeight });
-  const [hoverStates, setHoverStates] = useState({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
+  const [ hoverStates, setHoverStates ] = useState({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
   const [ activatedHoverData, setActivatedHoverData] = useState({});
   const [ showSubMenu, setShowSubMenu ] = useState(false)
+  const navigate = useNavigate();
+  const [ currentPage, setCurrentPage ] = useState('');
 
   const handleOpenNavMenu = (event) => {
 
@@ -89,9 +91,16 @@ const NavBar = () =>{
     setShowSubMenu(false);
   };
 
+  const setCurrentPageHandler = () => {
+
+  }
+
   const movePageHandler = (URL) => {
-    //  페이지 이동 핸들러
+    console.log(URL)
+    navigate(URL);
   };
+
+  
 
 
   console.log(process.env.PUBLIC_URL)
@@ -126,9 +135,9 @@ const NavBar = () =>{
                 }}
               > 
                 <Link to={process.env.PUBLIC_URL + "/"} style={{textDecoration: "none", cursor:"pointer", marginBottom: "0px", paddingBottom: "-5px"}}>
-                  <span style={{color:"white"}}>G</span>
-                  <span style={{color:"white"}}>E</span>
-                  <span style={{color:"white"}}>D</span>
+                  <span style={{color:"#ca4b34"}}>G</span>
+                  <span style={{color:"#4975DB"}}>E</span>
+                  <span style={{color:"#4975DB"}}>D</span>
                 </Link>
               </Typography>
 
@@ -161,15 +170,20 @@ const NavBar = () =>{
                     display: { xs: 'block', md: 'none' },
                   }}
                 >
-                  {menuData.map((data, index) => (
-                    <MenuItem 
-                      key={data.id} 
-                      onClick={handleCloseNavMenu}
+                  {menuData.map((data, index) => {
+                    console.log(data.route)
+                    return (
+                      <MenuItem 
+                        key={data.id} 
+                        onClick={()=>{
+                          handleCloseNavMenu();
+                          movePageHandler(process.env.PUBLIC_URL+ data.route);
+                        }}
 
-                    >
-                      <Typography textAlign="center">{data.menu}</Typography>
-                    </MenuItem>
-                  ))}
+                      >
+                        <Typography textAlign="center">{data.menu}</Typography>
+                      </MenuItem>
+                  )})}
                 </Menu>
               </Box>
               {screenSize.width < 899 ? 
@@ -194,26 +208,29 @@ const NavBar = () =>{
                   fontSize: "30px",
                   marginLeft:"10px"
                 }}
+                onClick={()=>{movePageHandler()}}
               >
-                 <span style={{color:"white"}}>G </span>
-                 <span style={{color:"white"}}>E</span>
-                 <span style={{color:"white"}}>D</span>
+                 <span style={{color:"#ca4b34"}}>G </span>
+                 <span style={{color:"#4975DB"}}>E</span>
+                 <span style={{color:"#4975DB"}}>D</span>
               </Typography>
               {/*  확장 메뉴 */}
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
-                {menuData.map((data, index) => (
+                {menuData.map((data, index) => {
+                  console.log(data.route)
+                  return(
                       <Button
                         size="large"
                         key={index + data.id}
-                        onClick={handleCloseNavMenu}
+                        onClick={() =>{console.log(data.route)}}
                         onMouseEnter={() => hoverEnterHandler(index, data.stateName)}
                         onMouseLeave={() => hoverLeaveHandler(index, data.stateName)}
-                        sx={{ mr: 2, my: 2, color: `${hoverStates[`${data.stateName}`]? "black":"white"}`,
+                        sx={{ mr: 2, my: 2, color: `${hoverStates[`${data.stateName}`]? "black":"#b0b8ca"}`,
                             display: 'block', fontWeight:"700", height:"100%", marginRight:"15px", marginBottom: "0px", paddingBottom: "16px" }}
                       >
-                        <Link to={process.env.PUBLIC_URL + data.route} style={{textDecoration: "none", cursor:"pointer", marginBottom: "0px"}}>{data.menu}</Link>
+                          {data.menu}
                       </Button>
-                    )
+                    )}
                 )}
               </Box>
             </Toolbar>
