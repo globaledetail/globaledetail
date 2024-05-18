@@ -39,12 +39,9 @@
       "id": 3,
       "menu": "CONTACT",
       "stateName":"CONTACT",
-      "route": "",
+      "route": "/contacts",
       "subMenus": [
-        { "id": 31, "title": "Submenu 4-1" },
-        { "id": 32, "title": "Submenu 4-2" },
-        { "id": 33, "title": "Submenu 4-3" },
-        { "id": 34, "title": "Submenu 4-4" }
+        
       ]
     }
 ]

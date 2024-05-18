@@ -13,6 +13,15 @@ import Paper from '@mui/material/Paper';
 import { TableFooter } from "@mui/material";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import { styled as MUIstyle} from '@mui/material/styles';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
 
 const AnnouncementsWrapper = styled.div`
@@ -127,13 +136,37 @@ const rows = [
 ];
 
 
+const BootstrapDialog = MUIstyle(Dialog)(({ theme }) => ({
+  '& .MuiDialogContent-root': {
+    padding: theme.spacing(2),
+  },
+  '& .MuiDialogActions-root': {
+    padding: theme.spacing(1),
+  },
+}));
+
 export const Announcements = () => {
   const [ tableData, setTableData ] = useState([]);
   const [ currentPage, setCurrentPage ] = useState(1);
+  const [ open, setOpen ] = useState(false)
+  const [ dialogData, setDialogData ] = useState([])
 
-  const tableCellHandler = (e) =>{
 
+  const handleClickOpen = () => {
+    setOpen(true);
   };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
+  const tableCellHandler = (row) =>{
+    setOpen(true);
+    console.log(row)
+    setDialogData(row);
+  };
+
+  console.log(dialogData)
 
   useEffect(()=>{
     setTableData(rows.slice(0.5));
@@ -155,11 +188,6 @@ export const Announcements = () => {
         <AnnouncementsWrapper>
           <h1>공시정보</h1>
           <AnnouncementsContentWrapper>
-            {/* <div className="content-title">
-              <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
-              <h2>Charle Polar 정밀 AI 도킹시스템</h2>
-            </div> */}
-
 
             <AnnouncementTableContainer>
               <TableContainer component={Paper}>
@@ -171,18 +199,19 @@ export const Announcements = () => {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {tableData.map((row) => (
-                      <TableRow
-                        key={row.name}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        style={{height:"70px"}}
-                      >
-                        <TableCell component="th" scope="row" onClick={(e)=>{ tableCellHandler(e) }} style={{cursor:"pointer"}}>
-                          {row.title}
-                        </TableCell>
-                        <TableCell align="right">{row.date}</TableCell>
-                      </TableRow>
-                    ))}
+                    {tableData.map((row, idx) => {
+                      return (
+                        <TableRow
+                          key={row.name}
+                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                          style={{height:"70px"}}
+                        >
+                          <TableCell component="th" scope="row" onClick={()=>{ console.log(row); tableCellHandler(row) }} style={{cursor:"pointer"}}>
+                            {row.title}
+                          </TableCell>
+                          <TableCell align="right">{row.date}</TableCell>
+                        </TableRow>
+                      )})}
                   </TableBody>
                 </Table>
               </TableContainer>
@@ -198,6 +227,53 @@ export const Announcements = () => {
           
 
           </AnnouncementsContentWrapper>
+          {open && (
+
+          <>
+            <BootstrapDialog
+            onClose={handleClose}
+            aria-labelledby="customized-dialog-title"
+            open={open}
+            >
+              <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+                공시 상세
+              </DialogTitle>
+              <IconButton
+                aria-label="close"
+                onClick={handleClose}
+                sx={{
+                  position: 'absolute',
+                  right: 8,
+                  top: 8,
+                  color: (theme) => theme.palette.grey[500],
+                }}
+              >
+                <CloseIcon />
+              </IconButton>
+              <DialogContent dividers>
+                <Typography gutterBottom>
+                  {dialogData?.title}
+                </Typography>
+                <Typography gutterBottom>
+                  Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                  Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                </Typography>
+                <Typography gutterBottom>
+                  Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
+                  magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
+                  ullamcorper nulla non metus auctor fringilla.
+                </Typography>
+              </DialogContent>
+              <DialogActions>
+                <Button autoFocus onClick={handleClose}>
+                  닫기
+                </Button>
+              </DialogActions>
+            </BootstrapDialog>
+      
+          </>
+
+          )}
         </AnnouncementsWrapper>
       </>
     )

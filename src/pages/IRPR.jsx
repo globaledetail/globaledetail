@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 import styled from "styled-components";
 import { Announcements } from "../components/IRPR/Announcements";
+import { NewsReports } from "../components/IRPR/NewsReports";
+
+
 
 
 const IRPRWrapper = styled.div`
@@ -159,11 +162,11 @@ export const IRPR = () => {
                     <Announcements key={idx + 1}></Announcements>
                   )
                 };
-                // if( '찰리 기술소개' === page.page ){
-                //   return(
-                //     <CharLeBusiness key={idx + 2}></CharLeBusiness>
-                //   )
-                // };
+                if( '언론보도' === page.page ){
+                  return(
+                    <NewsReports key={idx + 2}></NewsReports>
+                  )
+                };
                 // if( '찰스 기술소개' === page.page ){
                 //   return (
                 //     <CharsBusiness key={idx + 3}></CharsBusiness>

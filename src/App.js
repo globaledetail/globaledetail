@@ -8,6 +8,7 @@ import { Footer } from './components/Footer/Footer';
 import { Introduce } from './pages/Introduce';
 import { Business } from './pages/Business';
 import { IRPR } from './pages/IRPR';
+import { Contacts } from './pages/Contacts';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path={process.env.PUBLIC_URL + '/intro'} element={<Introduce></Introduce>}/>
         <Route path={process.env.PUBLIC_URL + '/business'} element={<Business></Business>}/>
         <Route path={process.env.PUBLIC_URL + '/irpr'} element={<IRPR></IRPR>}/>
+        <Route path={process.env.PUBLIC_URL + '/contacts'} element={<Contacts></Contacts>}/>
       </Routes>
 
       {/* <div className='footer-container'>

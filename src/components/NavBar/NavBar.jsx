@@ -211,17 +211,17 @@ const NavBar = () =>{
                 {menuData.map((data, index) => {
                   console.log(data.route)
                   return(
-                      <Button
-                        size="large"
-                        key={index + data.id}
-                        onClick={() =>{console.log(data.route)}}
-                        onMouseEnter={() => hoverEnterHandler(index, data.stateName)}
-                        onMouseLeave={() => hoverLeaveHandler(index, data.stateName)}
-                        sx={{ mr: 2, my: 2, color: `${hoverStates[`${data.stateName}`]? "#494949":"#b0b8ca"}`,
-                            display: 'block', fontWeight:"700", height:"100%", marginRight:"15px", marginBottom: "0px", paddingBottom: "16px" }}
-                      >
-                          {data.menu}
-                      </Button>
+                    <Button
+                      size="large"
+                      key={index + data.id}
+                      onClick={() =>{movePageHandler(process.env.PUBLIC_URL+ data.route);}}
+                      onMouseEnter={() => hoverEnterHandler(index, data.stateName)}
+                      onMouseLeave={() => hoverLeaveHandler(index, data.stateName)}
+                      sx={{ mr: 2, my: 2, color: `${hoverStates[`${data.stateName}`]? "#494949":"#b0b8ca"}`,
+                          display: 'block', fontWeight:"700", height:"100%", marginRight:"15px", marginBottom: "0px", paddingBottom: "16px" }}
+                    >
+                        {data.menu}
+                    </Button>
                     )}
                 )}
               </Box>
