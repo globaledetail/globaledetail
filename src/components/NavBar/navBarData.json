@@ -6,10 +6,10 @@
       "stateName":"COMAPNY",
       "route": "/intro",
       "subMenus": [
-        { "id": 1, "title": "회사소개", "route": "/globaledetail/intro" },
-        { "id": 2, "title": "회사연혁", "route": "/globaledetail/intro" },
-        { "id": 3, "title": "회사비전", "route": "/globaledetail/intro" },
-        { "id": 4, "title": "수상 및 특허", "route": "/globaledetail/intro" }
+        { "id": 1, "title": "회사소개", "route": "/intro" },
+        { "id": 2, "title": "회사연혁", "route": "/intro" },
+        { "id": 3, "title": "회사비전", "route": "/intro" },
+        { "id": 4, "title": "수상 및 특허", "route": "/intro" }
       ]
     },
     {
@@ -18,21 +18,21 @@
       "stateName":"BUSINESS",
       "route": "/business",
       "subMenus": [
-        { "id": 11, "title": "Polar 전극단자 기술", "route": "/globaledetail/business"},
-        { "id": 12, "title": "찰리 기술소개", "route": "/globaledetail/business"},
-        { "id": 13, "title": "찰스 기술소개", "route": "/globaledetail/business" },
-        { "id": 14, "title": "리부즈", "route": "/globaledetail/business" }
+        { "id": 11, "title": "Polar 전극단자 기술", "route": "/business"},
+        { "id": 12, "title": "찰리 기술소개", "route": "/business"},
+        { "id": 13, "title": "찰스 기술소개", "route": "/business" },
+        { "id": 14, "title": "리부즈", "route": "/business" }
       ]
     },
     {
       "id": 2,
       "menu": "PR/IR",
       "stateName":"PRIR",
-      "route": "",
+      "route": "/irpr",
       "subMenus": [
-        { "id": 21, "title": "공시정보" },
-        { "id": 22, "title": "언론보도" },
-        { "id": 23, "title": "IR자료" }
+        { "id": 21, "title": "공시정보", "route": "/irpr" },
+        { "id": 22, "title": "언론보도", "route": "/irpr" },
+        { "id": 23, "title": "IR 자료", "route": "/irpr" }
       ]
     },
     {
