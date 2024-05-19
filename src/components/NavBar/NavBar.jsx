@@ -228,7 +228,7 @@ const NavBar = () =>{
             </Toolbar>
           </Container>
         </AppBar>
-        {showSubMenu === true ? 
+        {showSubMenu === true && activatedHoverData.menu !== "CONTACT" ? 
           (<SubMenu
             activatedHoverData={activatedHoverData}
             handleSubMenuEnter={handleSubMenuEnter}

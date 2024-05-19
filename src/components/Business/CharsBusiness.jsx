@@ -156,7 +156,7 @@ export const CharsBusiness = () => {
   return (
     <>
       <CharlesBusinessWrapper>
-        <h1>찰리 기술소개</h1>
+        <h1>찰스 기술소개</h1>
         <CharlesContentsContainer>
 
           <div className="content-title">

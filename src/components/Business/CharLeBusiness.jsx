@@ -227,7 +227,7 @@ export const CharLeBusiness = () => {
   return (
     <>
       <CharLeBusinessWrapper>
-        <h1>찰스 기술소개</h1>
+        <h1>찰리 기술소개</h1>
         <CharLeContentsContainer>
           <div className="content-title">
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>

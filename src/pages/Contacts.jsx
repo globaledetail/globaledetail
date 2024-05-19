@@ -115,7 +115,7 @@ export const Contacts = () => {
         <ContactsContentContainer>
           <ContactSubWrapper>
             <h1> CONTACT US</h1>
-            <ContactsContentsContainer>
+            {/* <ContactsContentsContainer>
               <h1>{`(주)LS`}</h1>
               <div style={{display:"flex", alignItems:"center", margin: "10px 0 10px 0"}}>
                 <BusinessIcon sx={{width:"30px", height:"30px"}}></BusinessIcon>
@@ -133,7 +133,7 @@ export const Contacts = () => {
               <div style={{width: "100%", height:"350px", marginTop: "30px" }}>
                 <img src={process.env.PUBLIC_URL + "/img/office1.png"} alt="map" style={{ width: "100%", height:"350px", objectFit: "cover"}}></img>
               </div>
-            </ContactsContentsContainer>
+            </ContactsContentsContainer> */}
 
 
             <ContactsContentsContainer>
