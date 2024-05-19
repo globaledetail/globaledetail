@@ -53,7 +53,6 @@ const CharLeContentsContainer = styled.div`
       }
     }
   }
-
 `;
 
 const CharLeActiveLeftContainer = styled.div`
