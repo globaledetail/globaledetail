@@ -47,6 +47,7 @@ const ContactsContentContainer = styled.div`
 
 const ContactSubWrapper = styled.div`
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,6 +73,7 @@ const ContactSubWrapper = styled.div`
 
 const ContactsContentsContainer = styled.div`
   width: 80%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -128,7 +130,7 @@ export const Contacts = () => {
               <div style={{display:"flex", alignItems:"center", margin: "10px 0 10px 0"}}>                <EmailIcon sx={{width:"30px", height:"30px"}}></EmailIcon>
                 <span style={{margin: "0px", marginLeft: "10px", marginTop:"5px", fontSize: "18px"}}>pr@lsholdings.com</span>
               </div>
-              <div style={{width: "100%", height:"250px", marginTop: "30px" }}>
+              <div style={{width: "100%", height:"350px", marginTop: "30px" }}>
                 <img src={process.env.PUBLIC_URL + "/img/office1.png"} alt="map" style={{ width: "100%", height:"350px", objectFit: "cover"}}></img>
               </div>
             </ContactsContentsContainer>

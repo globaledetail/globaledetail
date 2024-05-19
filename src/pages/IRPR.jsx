@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Announcements } from "../components/IRPR/Announcements";
 import { NewsReports } from "../components/IRPR/NewsReports";
+import { IRData } from "../components/IRPR/IRData";
 
 
 
@@ -167,11 +168,11 @@ export const IRPR = () => {
                     <NewsReports key={idx + 2}></NewsReports>
                   )
                 };
-                // if( '찰스 기술소개' === page.page ){
-                //   return (
-                //     <CharsBusiness key={idx + 3}></CharsBusiness>
-                //   )
-                // };
+                if( 'IR 자료' === page.page ){
+                  return (
+                    <IRData key={idx + 3}></IRData>
+                  )
+                };
                 // if( '리부즈' === page.page ){
                 //   return (
                 //     <ReboozBusiness key={idx + 4}></ReboozBusiness>
