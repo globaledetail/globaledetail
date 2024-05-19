@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 
 const SubMenuWrapper = styled.div`
-    background-color: #ffffff;
+    background-color: #fcfcfc;
     width: 100%;
     height: 200px;
     display: flex;
@@ -14,6 +14,20 @@ const SubMenuWrapper = styled.div`
     z-index: 99;
     transition: opacity 1ms ease; /* 투명도 변화를 천천히 처리*/
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    opacity: 0.8;
+    animation: draw 1s ease forwards;
+    @keyframes draw {
+      /* 0%: 숨겨진 상태 */
+    0% {
+      opacity: 0;
+      transform: translateY(-15%);
+    }
+    /* 100%: 완전히 나타난 상태 */
+    100% {
+      opacity: 0.8;
+      transform: translateY(0);
+    }
+}
 `;
 
 const MenusContainer = styled.div`
