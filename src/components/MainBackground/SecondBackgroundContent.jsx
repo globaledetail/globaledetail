@@ -2,6 +2,7 @@
 
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -11,7 +12,7 @@ const SecondBackgroundWrapper = styled.div`
     margin-top: 150px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 `;
 
 const ContentContainer = styled.div`
@@ -81,12 +82,19 @@ const ContentContainer = styled.div`
 
 
 export const SecondeBackgroundContent = () =>{
+    const navigate = useNavigate('');
+
+    const movePageHandler = (URL) => {
+        console.log('asdf')
+        navigate(URL);
+    }
+
     return (
         <>
             <SecondBackgroundWrapper>
                 <ContentContainer>
-                    <div className="image-container">
-                        <img src={process.env.PUBLIC_URL + `/img/charleBot2.png`} alt="charle-bot2"></img>
+                    <div className="image-container" >
+                        <img src={process.env.PUBLIC_URL + `/img/charleBot2.png`} alt="charle-bot2" ></img>
                     </div>
                     <div className="content-text-container">
                         <span> CharLe Bot</span>

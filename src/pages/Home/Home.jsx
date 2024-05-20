@@ -82,12 +82,16 @@ const FirstBackground = styled(Inner1)`
 
 const SecondBackground = styled(Inner2)`
   background-color: #111111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ThirdBackground = styled(Inner3)`
   background-color: #f9f9f9;
   display:flex;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 const Driver = styled.div`

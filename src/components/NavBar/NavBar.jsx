@@ -113,7 +113,7 @@ const NavBar = () =>{
                 variant="h6"
                 noWrap
                 component="a"
-                href="#app-bar-with-responsive-menu"
+                href="/"
                 sx={{
                   mr: 2,
                   display: { xs: 'none', md: 'flex' },
@@ -163,7 +163,6 @@ const NavBar = () =>{
                   }}
                 >
                   {menuData.map((data, index) => {
-                    console.log(data.route)
                     return (
                       <MenuItem 
                         key={data.id} 
@@ -179,7 +178,9 @@ const NavBar = () =>{
                 </Menu>
               </Box>
               {screenSize.width < 899 ? 
-                (<img src={process.env.PUBLIC_URL + "/img/logo.png"} style={{width:"25.5px", height:"26px"}} alt="logo"/>)
+                (<Link to={process.env.PUBLIC_URL + "/"} style={{textDecoration: "none", cursor:"pointer"}}>
+                <img src={process.env.PUBLIC_URL + "/img/logo.png"} style={{width:"25.5px", height:"26px"}} alt="logo"/>
+                </Link>)
                 : 
                 null }
               {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
@@ -187,7 +188,7 @@ const NavBar = () =>{
                 variant="h5"
                 noWrap
                 component="a"
-                href="#app-bar-with-responsive-menu"
+                href="/"
                 sx={{
                   mr: 2,
                   display: { xs: 'flex', md: 'none' },
@@ -200,16 +201,16 @@ const NavBar = () =>{
                   fontSize: "30px",
                   marginLeft:"10px"
                 }}
-                onClick={()=>{movePageHandler()}}
               >
-                 <span style={{color:"#ca4b34"}}>G </span>
-                 <span style={{color:"#4975DB"}}>E</span>
-                 <span style={{color:"#4975DB"}}>D</span>
+                <Link to={ process.env.PUBLIC_URL + "/"} style={{textDecoration: "none", cursor:"pointer", marginBottom: "0px", paddingBottom: "-5px"}}>
+                  <span style={{color:"#ca4b34"}}>G</span>
+                  <span style={{color:"#4975DB"}}>E</span>
+                  <span style={{color:"#4975DB"}}>D</span>
+                </Link>
               </Typography>
               {/*  확장 메뉴 */}
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
                 {menuData.map((data, index) => {
-                  console.log(data.route)
                   return(
                     <Button
                       size="large"

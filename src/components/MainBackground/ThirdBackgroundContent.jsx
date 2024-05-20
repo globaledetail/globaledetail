@@ -137,6 +137,7 @@ export const ThirdBackgroundContent = () =>{
                         pagination={true}
                         modules={[EffectCoverflow, Pagination]}
                         className="mySwiper"
+                        style={{overflow: "hidden"}}
                     >
                         <SwiperSlide>
                             {/* NEWS1 */}
