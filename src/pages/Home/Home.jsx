@@ -181,7 +181,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <Outer ref={outerDivRef} style={{overflow:"hidden"}}>
+    <Outer ref={outerDivRef}>
       <Dots currentPage={currentPage} />
 
       <FirstBackground >
