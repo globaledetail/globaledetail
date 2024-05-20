@@ -43,14 +43,29 @@ const BackgroundVideo = styled.div`
   height: 100vh;
   position: relative;
   h4{
+    width: 60%;
+    height: 80px;
+    background-color: rgba(160, 160, 160, 0.5); /* 투명도 적용할 색상 (검은색의 50% 투명도) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
     position: absolute;
-    font-size: 60px;
+    font-size: 3vw;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-weight: 900;
+    word-break: keep-all;
     span{
+      
       color: #d91d1d
+    }
+    @media screen and (max-width: 900px) {
+      font-size: 4vw;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: 16px;
     }
   }
 `;
