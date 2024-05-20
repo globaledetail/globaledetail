@@ -127,9 +127,9 @@ const NavBar = () =>{
                 }}
               > 
                 <Link to={process.env.PUBLIC_URL + "/"} style={{textDecoration: "none", cursor:"pointer", marginBottom: "0px", paddingBottom: "-5px"}}>
-                  <span style={{color:"#ca4b34"}}>G</span>
-                  <span style={{color:"#4975DB"}}>E</span>
-                  <span style={{color:"#4975DB"}}>D</span>
+                  <span style={{color:"#ca4b34", fontSize: "35px"}}>G</span>
+                  <span style={{color:"#4975DB", fontSize: "35px"}}>E</span>
+                  <span style={{color:"#4975DB", fontSize: "35px"}}>D</span>
                 </Link>
               </Typography>
 
@@ -203,9 +203,9 @@ const NavBar = () =>{
                 }}
               >
                 <Link to={ process.env.PUBLIC_URL + "/"} style={{textDecoration: "none", cursor:"pointer", marginBottom: "0px", paddingBottom: "-5px"}}>
-                  <span style={{color:"#ca4b34"}}>G</span>
-                  <span style={{color:"#4975DB"}}>E</span>
-                  <span style={{color:"#4975DB"}}>D</span>
+                  <span style={{color:"#ca4b34", fontSize: "35px"}}>G</span>
+                  <span style={{color:"#4975DB", fontSize: "35px"}}>E</span>
+                  <span style={{color:"#4975DB", fontSize: "35px"}}>D</span>
                 </Link>
               </Typography>
               {/*  확장 메뉴 */}

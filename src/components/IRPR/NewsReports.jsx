@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
 
@@ -133,8 +133,9 @@ const ContentContainer = styled.div`
 
 
 export const NewsReports = () => {
+  const sortedData = newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const [data, setData] = useState(sortedData)
 
-  console.log(newsData)
   return (
     <>
       <NewsReportsWrapper>
@@ -142,7 +143,7 @@ export const NewsReports = () => {
         <NewsReportsContentWrapper>
 
 
-          {newsData?.map((data, idx)=>{
+          {data?.map((data, idx)=>{
 
 
             return(

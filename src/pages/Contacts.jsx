@@ -140,7 +140,7 @@ export const Contacts = () => {
               <h1>{`(주)지이디`}</h1>
               <div style={{display:"flex", alignItems:"center", margin: "10px 0 10px 0"}}>
                 <BusinessIcon sx={{width:"30px", height:"30px"}}></BusinessIcon>
-                <span style={{margin: "0px", marginLeft: "10px", marginTop:"5px", fontSize: "18px"}}>서울 관악구 호암로 24길 6 제주일서로 7898 3층</span>
+                <span style={{margin: "0px", marginLeft: "10px", marginTop:"5px", fontSize: "18px"}}>서울 관악구 호암로 24길 6 </span>
               </div>
               <div style={{display:"flex", alignItems:"center", margin: "10px 0 10px 0"}}>
                 <BusinessIcon sx={{width:"30px", height:"30px"}}></BusinessIcon>
