@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import styled from "styled-components";
@@ -120,14 +120,22 @@ const TabContainer = styled.div`
 export const Business = () => {
   const [ currentPage, setCurrentPage ] = useState([{ page:'Polar 전극단자 기술', index: 0}]);
   const currentURL = useLocation();
-  
+
+
+  useEffect(()=>{
+    console.log(currentURL)
+    if(currentURL?.state){
+      setCurrentPage([currentURL?.state])
+    }
+  },[])
+
   const currentPageHandler = (pageName, index) => {
     setCurrentPage(() => {
       return [{ page: pageName, index: index }]
     });
   };
 
-  console.log(currentURL)
+
   return (
     <>
       <BusinessWrapper>

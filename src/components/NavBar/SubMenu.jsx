@@ -81,7 +81,11 @@ export const SubMenu = ({ activatedHoverData, handleSubMenuEnter, handleSubMenuL
           <MenusContainer >
             {activatedHoverData?.subMenus?.map((data,idx)=>{
               return(
-                <Link key={data.id} to={data.route} id={data.id}>
+                <Link 
+                  key={data.id} 
+                  to={data.route} 
+                  state={{page: data.title, index: idx}} 
+                >
                   <span 
                     className="sub-menu-item"
                   >{data.title}</span>
