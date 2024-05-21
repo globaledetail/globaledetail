@@ -3,6 +3,16 @@
 import styled from "styled-components";
 
 
+const DotsStyle = styled.div`
+  position: "fixed";
+  top: "45%";
+  right: 50;
+  opacity: 0.9;
+  @media screen and (mix-width: 450px) {
+    display: 'none';
+  }
+`;
+
 
 const Dot = ({ num, currentPage }) => {
     return (
@@ -24,7 +34,12 @@ const Dot = ({ num, currentPage }) => {
   
   const Dots = ({ currentPage }) => {
     return (
-      <div style={{ position: "fixed", top: "45%", right: 50 ,opacity: 0.9}}>
+      <div 
+        style={{ position: "fixed", top: "45%", right: 50 ,opacity: 0.9,
+        '@media screen (min-width: 450px)': {
+          display: 'none'
+        }
+        }}>
         <div
           style={{
             display: "flex",

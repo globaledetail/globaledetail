@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import styled from "styled-components";
 import { CharLeBusiness } from "../components/Business/CharLeBusiness"
@@ -72,6 +73,7 @@ const TabContainer = styled.div`
       display: flex;
       justify-content: center;
     }
+
   }
   @media (max-width: 450px) {
     margin-left: 0px;
@@ -84,12 +86,29 @@ const TabContainer = styled.div`
     div {
       height: 30px;
       span{
+        width: 50px;
         min-width: 0px;
-        font-size: 16px;
+        font-size: 3.5vw;
         font-weight: 600;
         color: #6f6f6f;
         display: flex;
         justify-content: center;
+        word-break: keep-all;
+      }
+    }
+  }
+  @media screen and (min-width: 580px) and (max-width: 960px) {
+    div{
+      min-width: 130px;
+      span{
+
+      }
+    }
+  }
+  @media screen and (min-width: 450px) and (max-width: 579px) {
+    div{
+      span{
+        font-size: 14px;
       }
     }
   }
@@ -100,13 +119,15 @@ const TabContainer = styled.div`
 
 export const Business = () => {
   const [ currentPage, setCurrentPage ] = useState([{ page:'Polar 전극단자 기술', index: 0}]);
-
+  const currentURL = useLocation();
+  
   const currentPageHandler = (pageName, index) => {
     setCurrentPage(() => {
       return [{ page: pageName, index: index }]
     });
   };
 
+  console.log(currentURL)
   return (
     <>
       <BusinessWrapper>

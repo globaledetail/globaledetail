@@ -182,7 +182,11 @@ export const Home = () => {
 
   return (
     <Outer ref={outerDivRef}>
-      <Dots currentPage={currentPage} />
+      {/* <Dots currentPage={currentPage} 
+        styled={{
+
+        }}
+      /> */}
 
       <FirstBackground >
         <BackgroundVideo className="background-video">
