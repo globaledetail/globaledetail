@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
 import { Announcements } from "../components/IRPR/Announcements";
 import { NewsReports } from "../components/IRPR/NewsReports";
 import { IRData } from "../components/IRPR/IRData";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 
 
@@ -97,7 +98,23 @@ const IRPRContentContainer = styled.div`
 
 
 export const IRPR = () => {
-  const [ currentPage, setCurrentPage ] = useState([{ page:'공시정보', index: 0}]);
+  const [ currentPage, setCurrentPage ] = useState([{ page:'공고정보', index: 0}]);
+  const navigate = useNavigate('');
+  const currentURL = useLocation('');
+
+  useEffect(()=>{
+    if(currentURL?.pathname === '/intro/company'){
+      setCurrentPage([{ page:'공고정보', index: 0}]);
+    };
+    if(currentURL?.pathname === '/intro/history'){
+      setCurrentPage([{ page:'언론보도', index: 1}]);
+    };
+    if(currentURL?.pathname === '/intro/vision'){
+      setCurrentPage([{ page:'IR 자료', index: 2}]);
+    };
+  },[currentURL])
+
+
 
   const currentPageHandler = (pageName, index) => {
     setCurrentPage(() => {
@@ -114,21 +131,27 @@ export const IRPR = () => {
               <img src={ process.env.PUBLIC_URL + "/img/irpr.png" } alt="companies"></img>
               <TabContainer>
                 <div 
-                  onClick={()=>{currentPageHandler('공시정보')}}
+                  onClick={()=>{
+                    currentPageHandler('공고정보');
+                    navigate('/irpr/announcements');
+                  }}
                   style={{
-                    backgroundColor: `${ currentPage[0].page === "공시정보" ? "#4975db" : "#e5e5e5" }`,
+                    backgroundColor: `${ currentPage[0].page === "공고정보" ? "#4975db" : "#e5e5e5" }`,
                     fontWeight: "800"
                   }}
                 >
                   <span style={{
-                    color: `${ currentPage[0].page === "공시정보" ? "white" : "#6f6f6f" }`,
-                    fontWeight: `${ currentPage[0].page === "공시정보" ? "800" : "600" }`,
+                    color: `${ currentPage[0].page === "공고정보" ? "white" : "#6f6f6f" }`,
+                    fontWeight: `${ currentPage[0].page === "공고정보" ? "800" : "600" }`,
                     minWidth:"135px",
-                  }}>공시정보</span>
+                  }}>공고정보</span>
                 </div>
 
                 <div 
-                  onClick={()=>{currentPageHandler('언론보도')}}
+                  onClick={()=>{
+                    currentPageHandler('언론보도');
+                    navigate('/irpr/media');
+                  }}
                   style={{
                     backgroundColor: `${ currentPage[0].page === "언론보도" ? "#4975db" : "#e5e5e5" }`,
                     fontWeight: "800"
@@ -141,7 +164,10 @@ export const IRPR = () => {
                 </div>
 
                 <div 
-                  onClick={()=>{currentPageHandler('IR 자료')}}
+                  onClick={()=>{
+                    currentPageHandler('IR 자료');
+                    navigate('/irpr/ir');
+                  }}
                   style={{
                     backgroundColor: `${ currentPage[0].page === "IR 자료" ? "#4975db" : "#e5e5e5" }`,
                     fontWeight: "800"
@@ -157,7 +183,10 @@ export const IRPR = () => {
 
 
             <IRPRContentContainer>
-              {currentPage?.map((page, idx) => {
+              <Outlet>
+
+              </Outlet>
+              {/* {currentPage?.map((page, idx) => {
                 if( '공시정보' === page.page ){
                   return(
                     <Announcements key={idx + 1}></Announcements>
@@ -178,7 +207,7 @@ export const IRPR = () => {
                 //     <ReboozBusiness key={idx + 4}></ReboozBusiness>
                 //   )
                 // };
-              })}
+              })} */}
             </IRPRContentContainer>
 
 

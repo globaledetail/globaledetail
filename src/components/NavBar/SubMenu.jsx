@@ -71,7 +71,7 @@ const ImageContent = styled.div`
 
 
 export const SubMenu = ({ activatedHoverData, handleSubMenuEnter, handleSubMenuLeave }) => {
-    console.log(activatedHoverData)
+
     return (
       <SubMenuWrapper 
         className="navbar" 

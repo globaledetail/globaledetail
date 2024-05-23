@@ -104,7 +104,6 @@ const ContactsContentsContainer = styled.div`
 
 export const Contacts = () => {
 
-
   return (
     <>
       <ContactsWrapper>
@@ -135,7 +134,6 @@ export const Contacts = () => {
               </div>
             </ContactsContentsContainer> */}
 
-
             <ContactsContentsContainer>
               <h1>{`(주)지이디`}</h1>
               <div style={{display:"flex", alignItems:"center", margin: "10px 0 10px 0"}}>
@@ -161,11 +159,6 @@ export const Contacts = () => {
             </ContactsContentsContainer>
 
           </ContactSubWrapper>
-
-          
-
-
-
 
         </ContactsContentContainer>
       </ContactsWrapper>

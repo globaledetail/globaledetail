@@ -91,47 +91,14 @@ const AnnouncementTableContainer = styled.div`
 `;
 // 최근순으로 데이터 넣어야한다
 const rows = [
-  { title: '첫번째 공시입니다.', 
-    date: "2024-04-02", 
-  },
-  { title: '두번째 공시입니다', 
-    date: "2024-04-02", 
-  },
-  { title: '세번째 공시입니다', 
-    date: "2024-04-02", 
-  },
-  { title: '네번쨰 공시입니다', 
-  date: "2024-04-02", 
-  },
-  { title: '다섯번째 공시입니다', 
-  date: "2024-04-02", 
-  },
-  { title: '여섯번째 공시입니다', 
-  date: "2024-04-02", 
-  },
-  { title: '여섯번째 공시입니다', 
-  date: "2024-04-02", 
-  },
-  { title: '여섯번째 공시입니다', 
-  date: "2024-04-02", 
-  },
-  { title: '여섯번째 공시입니다', 
-  date: "2024-04-02", 
-  },
-  { title: '여섯번째 공시입니다', 
-  date: "2024-04-02", 
-  },
-  { title: '여섯번째 공시입니다', 
-  date: "2024-04-02", 
-  },
-  { title: '여섯번째 공시입니다', 
-  date: "2024-04-02", 
-  },
-  { title: '여섯번째 공시입니다', 
-  date: "2024-04-02", 
-  },
-  { title: '여섯번째 공시입니다', 
-  date: "2024-04-02", 
+  { title: '전자증권 전환 대상 주권 권리자(주주) 보호 및 조치사항 안내',
+    paragraph1: '2019.09.16 「주식·사채 등의 전자등록에 관한 법률(이하 “전자증권법”)」이 시행됨에 따라 당사의 전자증권 전환 대상 주권 권리자를 보호하기 위하여 전자증권법 제27조 1항에 근거하여 아래의 사항을 통지합니다.',
+    paragraph2_1: '1. 전자등록일(2024년 06월 28일)부터 주주(권리자)가 소유중인 실물증권(전환 대상 주권)은 효력을 잃게 됩니다. ',
+    paragraph2_2: '2. 따라서, 주주(권리자)는 당사의 전자등록일 5영업일 전까지 소유중인 실물증권을 제출하고, 증권회사 계좌로 입고 신청하시기 바랍니다. ',
+    paragraph3: '[참고] 당사(발행인)는 전자등록일(2024년 06월 28일)의 직전영업일에 주주명부에 기재된 권리자를 기준으로 전자등록이 되도록 전자등록기관(한국예탁결제원)에 요청할 예정입니다.',
+    creator: '대표이사 강 동 원       (직인생략)',
+    companyName: '주식회사 지 이 디',
+    date: "2024년  05월  23일"
   },
 ];
 
@@ -151,7 +118,6 @@ export const Announcements = () => {
   const [ open, setOpen ] = useState(false)
   const [ dialogData, setDialogData ] = useState([])
 
-
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -159,14 +125,10 @@ export const Announcements = () => {
     setOpen(false);
   };
 
-
   const tableCellHandler = (row) =>{
     setOpen(true);
-    console.log(row)
     setDialogData(row);
   };
-
-  console.log(dialogData)
 
   useEffect(()=>{
     setTableData(rows.slice(0.5));
@@ -186,7 +148,7 @@ export const Announcements = () => {
     return (
       <>
         <AnnouncementsWrapper>
-          <h1>공시정보</h1>
+          <h1>공고정보</h1>
           <AnnouncementsContentWrapper>
 
             <AnnouncementTableContainer>
@@ -206,7 +168,7 @@ export const Announcements = () => {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           style={{height:"70px"}}
                         >
-                          <TableCell component="th" scope="row" onClick={()=>{ console.log(row); tableCellHandler(row) }} style={{cursor:"pointer"}}>
+                          <TableCell component="th" scope="row" onClick={()=>{ tableCellHandler(row) }} style={{cursor:"pointer"}}>
                             {row.title}
                           </TableCell>
                           <TableCell align="right">{row.date}</TableCell>
@@ -236,7 +198,7 @@ export const Announcements = () => {
             open={open}
             >
               <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-                공시 상세
+                공고 상세
               </DialogTitle>
               <IconButton
                 aria-label="close"
@@ -251,17 +213,32 @@ export const Announcements = () => {
                 <CloseIcon />
               </IconButton>
               <DialogContent dividers>
-                <Typography gutterBottom>
+                <Typography gutterBottom sx={{marginBottom: "30px", fontWeight: "800", textAlign: "center"}}>
                   {dialogData?.title}
                 </Typography>
-                <Typography gutterBottom>
-                  Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-                  Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                <Typography gutterBottom sx={{marginBottom: "30px"}}>
+                  {dialogData?.paragraph1}
                 </Typography>
-                <Typography gutterBottom>
-                  Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-                  magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
-                  ullamcorper nulla non metus auctor fringilla.
+                <Typography gutterBottom sx={{marginBottom: "30px", textAlign: "center" }}>
+                  <span style={{justifyContent: "center"}}>-- 아래 --</span>
+                </Typography>
+                <Typography gutterBottom sx={{marginBottom: "10px" }}>
+                  {dialogData?.paragraph2_1}
+                </Typography>
+                <Typography gutterBottom sx={{marginBottom: "30px" }}>
+                  {dialogData?.paragraph2_2}
+                </Typography>
+                <Typography gutterBottom sx={{marginBottom: "30px" }}>
+                  {dialogData?.paragraph3}
+                </Typography>
+                <Typography gutterBottom sx={{marginBottom: "20px", fontWeight: "600", textAlign: "center" }}>
+                  {dialogData?.date}
+                </Typography>
+                <Typography gutterBottom sx={{marginBottom: "20px", fontWeight: "600", textAlign: "center" }}>
+                  {dialogData?.companyName}
+                </Typography>
+                <Typography gutterBottom sx={{marginBottom: "20px", fontWeight: "600", textAlign: "center" }}>
+                  {dialogData?.creator}
                 </Typography>
               </DialogContent>
               <DialogActions>

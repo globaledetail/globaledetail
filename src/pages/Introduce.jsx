@@ -2,7 +2,7 @@
 
 
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 import { IntroCompanyContent } from "../components/Intro/IntroCompanyContent";
@@ -21,6 +21,7 @@ const IntroWrapper = styled.div`
 `;
 
 const IntroImgContainer = styled.div`
+
   height: 400px;
   width: 100%;
   background-size: cover;
@@ -101,17 +102,33 @@ const TabContainer = styled.div`
 
 
 export const Introduce = () => {
-  const [ currentPage, setCurrentPage ] = useState([{ page:'회사소개', index: 0}]);
-  const targetPageName = useNavigate();
+  const [ currentPage, setCurrentPage ] = useState([{ page:'회사소개', index: 0 }]);
+  const navigate = useNavigate();
+  const currentURL = useLocation();
 
-  useEffect(() => {
-    //파라미터를 받아서 currentPage를 바로 셋팅 해줘야한다.
-  }, [])
+
+
+  useEffect(()=>{
+    if(currentURL?.pathname === '/intro/company'){
+      setCurrentPage([{ page:'회사소개', index: 0}]);
+    };
+    if(currentURL?.pathname === '/intro/history'){
+      setCurrentPage([{ page:'회사연혁', index: 1}]);
+    };
+    if(currentURL?.pathname === '/intro/vision'){
+      setCurrentPage([{ page:'회사비전', index: 2}]);
+    };
+    if(currentURL?.pathname === '/intro/awards'){
+      setCurrentPage([{ page:'수상&특허', index: 3}]);
+    };
+  },[currentURL])
 
   const currentPageHandler = (pageName, index) => {
     setCurrentPage(() => {
       return [{ page: pageName, index: index }]
     });
+
+
   };
 
   return (
@@ -122,7 +139,10 @@ export const Introduce = () => {
             <img src={ process.env.PUBLIC_URL + "/img/companies.png"} alt="companies"></img>
             <TabContainer>
               <div 
-                onClick={()=>{currentPageHandler('회사소개')}}
+                onClick={()=>{
+                  currentPageHandler('회사소개'); 
+                  navigate('/intro/company');
+                }}
                 style={{
                   backgroundColor: `${ currentPage[0].page === "회사소개" ? "#4975db" : "#e5e5e5" }`,
                   fontWeight: "800"
@@ -135,7 +155,10 @@ export const Introduce = () => {
               </div>
 
               <div 
-                onClick={()=>{currentPageHandler('회사연혁')}}
+                onClick={()=>{
+                  currentPageHandler('회사연혁')
+                  navigate('/intro/history');
+                }}
                 style={{
                   backgroundColor: `${ currentPage[0].page === "회사연혁" ? "#4975db" : "#e5e5e5" }`,
                   fontWeight: "800"
@@ -148,7 +171,10 @@ export const Introduce = () => {
               </div>
 
               <div 
-                onClick={()=>{currentPageHandler('회사비전')}}
+                onClick={()=>{
+                  currentPageHandler('회사비전');
+                  navigate('/intro/vision');
+                }}
                 style={{
                   backgroundColor: `${ currentPage[0].page === "회사비전" ? "#4975db" : "#e5e5e5" }`,
                   fontWeight: "800"
@@ -161,7 +187,10 @@ export const Introduce = () => {
               </div>
 
               <div 
-                onClick={()=>{currentPageHandler('수상&특허')}}
+                onClick={()=>{
+                  currentPageHandler('수상&특허');
+                  navigate('/intro/awards')
+                }}
                 style={{
                   backgroundColor: `${ currentPage[0].page === "수상&특허" ? "#4975db" : "#e5e5e5" }`,
                   fontWeight: "800"
@@ -174,32 +203,13 @@ export const Introduce = () => {
               </div>
             </TabContainer>
           </IntroImgContainer>
-
+          {/* 컨텐츠 메인 페이지 */}
           <IntroContentContainer>
+            <Outlet>
 
-            {currentPage?.map((page, idx) => {
-              if( '회사소개' === page.page ){
-                return(
-                  <IntroCompanyContent key={idx + 1} />
-                )
-              };
-              if( '회사연혁' === page.page ){
-                return (
-                  <HistoryContent key={idx + 2}/>
-                )
-              };
-              if( '회사비전' === page.page ){
-                return (
-                  <VisionContent key={idx + 3}/>
-                )
-              };
-              if( '수상&특허' === page.page ){
-                return (
-                  <AwardsContent key={idx + 4}/>
-                )
-              };
-            })}
+            </Outlet>
           </IntroContentContainer>
+
         </IntroWrapper>
       </>
   )

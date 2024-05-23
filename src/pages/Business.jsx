@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 import { CharLeBusiness } from "../components/Business/CharLeBusiness"
@@ -119,15 +119,25 @@ const TabContainer = styled.div`
 
 export const Business = () => {
   const [ currentPage, setCurrentPage ] = useState([{ page:'Polar 전극단자 기술', index: 0}]);
+  const navigate = useNavigate('');
   const currentURL = useLocation();
+  
 
 
   useEffect(()=>{
-    console.log(currentURL)
-    if(currentURL?.state){
-      setCurrentPage([currentURL?.state])
-    }
-  },[])
+    if(currentURL?.pathname === '/business/polar'){
+      setCurrentPage([{ page:'Polar 전극단자 기술', index: 0}]);
+    };
+    if(currentURL?.pathname === '/business/charle'){
+      setCurrentPage([{ page:'찰리 기술소개', index: 1}]);
+    };
+    if(currentURL?.pathname === '/business/chars'){
+      setCurrentPage([{ page:'찰스 기술소개', index: 2}]);
+    };
+    if(currentURL?.pathname === '/business/rebooz'){
+      setCurrentPage([{ page:'리부즈', index: 3}]);
+    };
+  },[currentURL])
 
   const currentPageHandler = (pageName, index) => {
     setCurrentPage(() => {
@@ -144,7 +154,10 @@ export const Business = () => {
           <img src={ process.env.PUBLIC_URL + "/img/business.png" } alt="companies"></img>
           <TabContainer>
             <div 
-              onClick={()=>{currentPageHandler('Polar 전극단자 기술')}}
+              onClick={()=>{
+                currentPageHandler('Polar 전극단자 기술');
+                navigate('/business/polar');
+              }}
               style={{
                 backgroundColor: `${ currentPage[0].page === "Polar 전극단자 기술" ? "#4975db" : "#e5e5e5" }`,
                 fontWeight: "800"
@@ -158,7 +171,10 @@ export const Business = () => {
             </div>
 
             <div 
-              onClick={()=>{currentPageHandler('찰리 기술소개')}}
+              onClick={()=>{
+                currentPageHandler('찰리 기술소개');
+                navigate('/business/charle');
+              }}
               style={{
                 backgroundColor: `${ currentPage[0].page === "찰리 기술소개" ? "#4975db" : "#e5e5e5" }`,
                 fontWeight: "800"
@@ -171,7 +187,10 @@ export const Business = () => {
             </div>
 
             <div 
-              onClick={()=>{currentPageHandler('찰스 기술소개')}}
+              onClick={()=>{
+                currentPageHandler('찰스 기술소개');
+                navigate('/business/chars');
+              }}
               style={{
                 backgroundColor: `${ currentPage[0].page === "찰스 기술소개" ? "#4975db" : "#e5e5e5" }`,
                 fontWeight: "800"
@@ -184,7 +203,10 @@ export const Business = () => {
             </div>
 
             <div 
-              onClick={()=>{currentPageHandler('리부즈')}}
+              onClick={()=>{
+                currentPageHandler('리부즈');
+                navigate('/business/rebooz');
+              }}
               style={{
                 backgroundColor: `${ currentPage[0].page === "리부즈" ? "#4975db" : "#e5e5e5" }`,
                 fontWeight: "800"
@@ -199,7 +221,11 @@ export const Business = () => {
         </BusinessImgContainer>
 
         <BusinessContentContainer>
-        {currentPage?.map((page, idx) => {
+          <Outlet>
+
+
+          </Outlet>
+        {/* {currentPage?.map((page, idx) => {
               if( 'Polar 전극단자 기술' === page.page ){
                 return(
                   <PolarBusiness key={idx + 1}></PolarBusiness>
@@ -220,7 +246,7 @@ export const Business = () => {
                   <ReboozBusiness key={idx + 4}></ReboozBusiness>
                 )
               };
-            })}
+            })} */}
 
         </BusinessContentContainer>
       </BusinessWrapper>

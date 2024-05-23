@@ -122,7 +122,6 @@ const BootstrapDialog = MUIstyle(Dialog)(({ theme }) => ({
   },
 }));
 
-
 export const AwardsContent = () =>{
 const [ selectorState, setSelectorState ] = useState( {awards: true, patents: false} );
 
@@ -131,9 +130,6 @@ const selectorBtnHandler = () => {
     return { awards: !prev.awards, patents: !prev.patents }
   })
 };
-
-console.log(selectorState.awards)
-
 
 
 
@@ -322,6 +318,7 @@ console.log(selectorState.awards)
             </ContentList>
           </>)}
         </ContentsListContainer>
+{/*         
         <div>
 
         <React.Fragment>
@@ -372,7 +369,7 @@ console.log(selectorState.awards)
       </BootstrapDialog>
     </React.Fragment>
 
-        </div>
+        </div> */}
 
       </AwardsPatentsWrapper>
     </>

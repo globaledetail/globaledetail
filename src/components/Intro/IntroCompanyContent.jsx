@@ -249,8 +249,8 @@ export const IntroCompanyContent = () => {
                 </div>
                 <div className="text-container">
                   <span className="state-title">사업장</span>
-                  <span className="state-text">서울시 강남구 테헤란로 415</span>
-                  <span className="state-text">제주시 일주서로 4898 3층</span>
+                  <span className="state-text">서울 관악구 호암로 24길 6</span>
+                  {/* <span className="state-text">제주시 일주서로 4898 3층</span> */}
                 </div>
               </CompanyStateBox>
           </StatesContainer>

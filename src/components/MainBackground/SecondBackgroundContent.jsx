@@ -85,7 +85,6 @@ export const SecondeBackgroundContent = () =>{
     const navigate = useNavigate('');
 
     const movePageHandler = (URL) => {
-        console.log('asdf')
         navigate(URL);
     }
 

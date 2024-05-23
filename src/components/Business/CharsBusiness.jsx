@@ -70,6 +70,10 @@ const TablesContainer = styled.div`
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    h2{
+      font-size: 30px;
+      word-break: keep-all;
+    }
     .sub-title-sentance{
       display: flex;
       justify-content: center;
@@ -92,6 +96,10 @@ const TablesContainer = styled.div`
       align-items: center;
       flex-wrap: wrap;
       margin-bottom: 20px;
+      h2{
+        font-size: 25px !important;
+        word-break: keep-all;
+      }
       .sub-title-sentance{
         display: flex;
         justify-content: center;
@@ -206,8 +214,8 @@ export const CharsBusiness = () => {
               <div className="sub-title-sentance">
                 <span>Char<span style={{color: "red"}}>S는</span></span>
                 <span>하드웨어</span>
-                <span> + 디바이스</span>
-                <span> + 서버 패키지가 결합된</span>
+                <span> &ensp;+ 디바이스</span>
+                <span> &ensp;+ 서버 패키지가 결합된</span>
               </div>
               <span style={{color: "#3869db"}}>&ensp;유일의 충전 특허 기술 !</span>
             </div>
@@ -253,7 +261,7 @@ export const CharsBusiness = () => {
 
           <TablesContainer>
             <div className="sub-title">
-              <h2>무선 충전 ZONE의 CharS Control을 통한 초음파 통신 무선 충전 서비스제공</h2>
+              <h2 className="second-sub-title" style={{fontSize: "30px"}}>무선 충전 ZONE의 CharS Control을 통한 초음파 통신 무선 충전 서비스제공</h2>
             </div>
 
             <AdsImageContainer>
