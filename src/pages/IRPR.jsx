@@ -103,13 +103,13 @@ export const IRPR = () => {
   const currentURL = useLocation('');
 
   useEffect(()=>{
-    if(currentURL?.pathname === '/intro/company'){
+    if(currentURL?.pathname === '/irpr/announcements'){
       setCurrentPage([{ page:'공고정보', index: 0}]);
     };
-    if(currentURL?.pathname === '/intro/history'){
+    if(currentURL?.pathname === '/irpr/media'){
       setCurrentPage([{ page:'언론보도', index: 1}]);
     };
-    if(currentURL?.pathname === '/intro/vision'){
+    if(currentURL?.pathname === '/irpr/ir'){
       setCurrentPage([{ page:'IR 자료', index: 2}]);
     };
   },[currentURL])

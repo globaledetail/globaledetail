@@ -26,10 +26,12 @@ import Button from '@mui/material/Button';
 
 const AnnouncementsWrapper = styled.div`
   width: 100%;
+  /* height는 아래 다른 컨텐츠로 채워질경우 지워야한다. */
+  height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
   padding: 0 0px 0 0px;
   h1{
     font-size: 35px;
@@ -96,7 +98,7 @@ const rows = [
     paragraph2_1: '1. 전자등록일(2024년 06월 28일)부터 주주(권리자)가 소유중인 실물증권(전환 대상 주권)은 효력을 잃게 됩니다. ',
     paragraph2_2: '2. 따라서, 주주(권리자)는 당사의 전자등록일 5영업일 전까지 소유중인 실물증권을 제출하고, 증권회사 계좌로 입고 신청하시기 바랍니다. ',
     paragraph3: '[참고] 당사(발행인)는 전자등록일(2024년 06월 28일)의 직전영업일에 주주명부에 기재된 권리자를 기준으로 전자등록이 되도록 전자등록기관(한국예탁결제원)에 요청할 예정입니다.',
-    creator: '대표이사 강 동 원       (직인생략)',
+    creator: '대표이사 강 동 연       (직인생략)',
     companyName: '주식회사 지 이 디',
     date: "2024년  05월  23일"
   },
