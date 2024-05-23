@@ -63,12 +63,48 @@ const TablesContainer = styled.div`
   justify-content: center;
   align-items: center;
   .sub-title{
-    h2{
+    width: 70%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    .sub-title-sentance{
       display: flex;
       justify-content: center;
-      word-break: keep-all;
+      align-items: center;
+      flex-wrap: wrap;
       span{
+      }
+    } 
+    span{
         margin: 0;
+        font-size: 30px;
+        font-weight: 800;
+        word-break: keep-all;
+    }
+    @media (max-width: 450px) {
+      width: 70%;
+      height: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      .sub-title-sentance{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        span{
+        }
+      } 
+      span{
+          margin: 0;
+          font-size: 25px;
+          font-weight: 800;
+          word-break: keep-all;
       }
     }
   }
@@ -167,7 +203,13 @@ export const CharsBusiness = () => {
           <TablesContainer>
 
             <div className="sub-title">
-              <h2>Char<span style={{color: "red"}}>S</span>는 하드웨어 + 디바이스 + 서버 패키지가 결합된 <span style={{color: "#3869db"}}>&nbsp;유일의 충전 특허 기술 !</span></h2>
+              <div className="sub-title-sentance">
+                <span>Char<span style={{color: "red"}}>S는</span></span>
+                <span>하드웨어</span>
+                <span> + 디바이스</span>
+                <span> + 서버 패키지가 결합된</span>
+              </div>
+              <span style={{color: "#3869db"}}>&ensp;유일의 충전 특허 기술 !</span>
             </div>
 
             <TableContent>
