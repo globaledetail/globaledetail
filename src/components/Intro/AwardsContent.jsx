@@ -268,28 +268,28 @@ const selectorBtnHandler = () => {
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent9.png"} alt="patent"></img>
               <div className="text-container">
-                <span>스마트 충전기를 이용한 통신 단말기 충전 시스템</span>
+                <span>주차장에 설치되는 무선충전 시스템</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent10.png"} alt="patent"></img>
               <div className="text-container">
-                <span>스마트 충전기를 이용한 통신 단말기 충전 시스템</span>
+                <span>스마트폰에 의해 구동되는 무선 충전 시스템</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent11.png"} alt="patent"></img>
               <div className="text-container">
-                <span>스마트 충전기를 이용한 통신 단말기 충전 시스템</span>
+                <span>벨트가 연결된 생체 데이터 및 건강정보 감시 시스템</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent12.png"} alt="patent"></img>
               <div className="text-container">
-                <span>스마트 충전기를 이용한 통신 단말기 충전 시스템</span>
+                <span>전기차용 자율주행 무선충전로봇 및 관리서버</span>
               </div>
             </ContentList>
           </>) 
