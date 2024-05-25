@@ -1,72 +1,118 @@
 
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 
 import styled from "styled-components";
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
 
 
 
 const FooterWrapper = styled.footer`
-
-  height: 140px;
-  background-color: #f5f5f5;
+  margin-top: 30px;
+  width: 90%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  position : absolute;
-  bottom : 0;
+  flex-direction: column;
+  padding: 30px;
+  position: relative;
 `;
 
-const FooterContainer = styled.div`
-    padding: 20px;
-    flex:1;
-    color: #222222;
-    display: flex;
-    flex-direction: column;
+const ContentConainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+`;
+
+const MenuContainer = styled.div`
+  flex: 7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span{
+    margin: 0 20px 0 20px;
+    font-weight: 600;
+    color: #a3a3a3;
+    &:hover{
+      color: #4b4b4b;
+      cursor: pointer;
+    }
+  }
+  @media (max-width: 587px) {
+    display: grid;
     justify-content: center;
     align-items: center;
-    height: 100px;
-    span{
-      margin-bottom: 5px;
+    grid-template-columns: repeat(2, 1fr); /* 2개의 열을 생성합니다. */
+    grid-template-rows: repeat(2, 1fr); /* 2개의 행을 생성합니다. */
+    grid-gap: 20px; /* 그리드 아이템 사이의 간격 설정 */
+    span {
+      margin: 0 20px 0 20px;
+      text-align: center;
     }
-    h3{
-      margin:0px;
-      margin-bottom: 25px;
-    }
-    div{
-      display: flex;
-      flex-direction:column;
-    }
-    .icon{
-      display: flex;
-      flex-direction: row;
-    }
+}
+  
+`;
+
+const CompanyNameContainer = styled.div`
+  margin-top: 30px;
+  margin-bottom: 20px;
+  min-width: 170px;
+  flex: 3;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  span{
+    display: block;
+    color: #a3a3a3;
+    word-break: keep-all;
+  }
+`;
+
+const TopDiviedLineContainer = styled.div`
+  width: 100%;
+  border: 1px solid #ececec;
+  position: absolute;
+  top: 0;
+`;
+
+const RightDiviedLinecontainer = styled.div`
+  
+`;
+
+const CopyRightsContainer = styled.div`
+
 `;
 
 export const Footer = () => {
+  const navigate = useNavigate('');
   return (
     <>
       <FooterWrapper>
-        <FooterContainer>
-          <div>
-            <h3>서비스사업자 GED 대표 강동연</h3>
-            <div className="icon">
-              <FacebookIcon></FacebookIcon>
-              <InstagramIcon></InstagramIcon>
-            </div>
-          </div>
+        <TopDiviedLineContainer/>
 
-        </FooterContainer>
-        <FooterContainer>
-          <div>
-            <span>Address. 서울시 역삼동 708 - 28, 3층</span>
-            <span>TEL. 070 8080 5480</span>
-            <span>문의. ingers88@naver.com</span>
-          </div>
-        </FooterContainer>
+        <ContentConainer>
+          <MenuContainer>
+            <span onClick={()=>{navigate('/intro/company')}}>COMPANY</span>
+            <span onClick={()=>{navigate('/business/polar')}}>BUSINESS</span>
+            <span onClick={()=>{navigate('/irpr/announcements')}}>PR/IR</span>
+            <span onClick={()=>{navigate('/contacts')}}>CONTACT</span>
+
+          </MenuContainer>
+
+          <CompanyNameContainer>
+            <span>GED © COMPANY</span>
+            <span> ALL RIGHTS RESERVED.</span>
+
+          </CompanyNameContainer>
+
+        </ContentConainer>
+
+      
       </FooterWrapper>
     </>
   )

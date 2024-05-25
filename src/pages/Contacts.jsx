@@ -6,6 +6,7 @@ import BusinessIcon from '@mui/icons-material/Business';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
 import EmailIcon from '@mui/icons-material/Email';
+import { Footer } from "../components/Footer/Footer";
 
 const ContactsWrapper = styled.div`
   width: 100%;
@@ -159,7 +160,7 @@ export const Contacts = () => {
             </ContactsContentsContainer>
 
           </ContactSubWrapper>
-
+          <Footer/>
         </ContactsContentContainer>
       </ContactsWrapper>
     </>

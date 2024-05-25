@@ -5,6 +5,7 @@ import { Announcements } from "../components/IRPR/Announcements";
 import { NewsReports } from "../components/IRPR/NewsReports";
 import { IRData } from "../components/IRPR/IRData";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Footer } from "../components/Footer/Footer";
 
 
 
@@ -208,6 +209,7 @@ export const IRPR = () => {
                 //   )
                 // };
               })} */}
+              <Footer/>
             </IRPRContentContainer>
 
 

@@ -6,6 +6,7 @@ import { CharLeBusiness } from "../components/Business/CharLeBusiness"
 import { CharsBusiness } from "../components/Business/CharsBusiness";
 import { ReboozBusiness } from "../components/Business/Rebooz";
 import { PolarBusiness } from "../components/Business/PolarBusiness";
+import { Footer } from "../components/Footer/Footer";
 
 
 
@@ -247,7 +248,7 @@ export const Business = () => {
                 )
               };
             })} */}
-
+          <Footer/>
         </BusinessContentContainer>
       </BusinessWrapper>
     </>

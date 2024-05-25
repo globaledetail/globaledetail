@@ -9,6 +9,7 @@ import { IntroCompanyContent } from "../components/Intro/IntroCompanyContent";
 import { HistoryContent } from "../components/Intro/HistoryContent";
 import { VisionContent } from "../components/Intro/VisionContent";
 import { AwardsContent } from "../components/Intro/AwardsContent";
+import { Footer } from "../components/Footer/Footer";
 
 
 
@@ -21,7 +22,6 @@ const IntroWrapper = styled.div`
 `;
 
 const IntroImgContainer = styled.div`
-
   height: 400px;
   width: 100%;
   background-size: cover;
@@ -203,11 +203,13 @@ export const Introduce = () => {
               </div>
             </TabContainer>
           </IntroImgContainer>
+          
           {/* 컨텐츠 메인 페이지 */}
           <IntroContentContainer>
             <Outlet>
 
             </Outlet>
+            <Footer/>
           </IntroContentContainer>
 
         </IntroWrapper>
