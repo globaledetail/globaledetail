@@ -320,7 +320,7 @@ export const CharLeBusiness = () => {
           </div>
           <div className="ActivePropsImg-container">
             <img src={ process.env.PUBLIC_URL + "/img/business/charleActive.png"} alt="pros"></img>
-            <img src={ process.env.PUBLIC_URL + "/img/business/hyundaiActive.png"} alt="pros" style={{marginTop:"20px"}}></img>
+            <img src={ process.env.PUBLIC_URL + "/img/business/HyundaiActive.png"} alt="pros" style={{marginTop:"20px"}}></img>
           </div>
         </ActiveProsConstainer>
       </CharLeBusinessWrapper>
