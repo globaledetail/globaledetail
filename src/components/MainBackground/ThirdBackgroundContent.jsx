@@ -191,6 +191,18 @@ export const ThirdBackgroundContent = () =>{
                             {/* AWARD2 */}
                             <img className="icon" src={process.env.PUBLIC_URL + "/img/icons/awards.png"}></img>
                             <div className="slide-container">
+                                <a href="https://n.news.naver.com/article/382/0001126896?sid=102" target='_blank'> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/irpr/news/news10.png"} alt="news"/> 
+                                </a>
+                            </div>
+                            <a href="https://www.hankyung.com/article/2024031533555" target='_blank'>  
+                                ‘올해의 발명왕’ 김용은 책임연구원 선정, ㈜지이디 ‘산업포장’ 수상
+                            </a>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            {/* AWARD2 */}
+                            <img className="icon" src={process.env.PUBLIC_URL + "/img/icons/awards.png"}></img>
+                            <div className="slide-container">
                                 <a href="https://www.hankyung.com/article/2024031533555" target='_blank'> 
                                     <img src={ process.env.PUBLIC_URL + "/img/awards/award2.png"} alt="news"/> 
                                 </a>

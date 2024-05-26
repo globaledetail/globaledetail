@@ -164,6 +164,9 @@ export const HistoryContent = () => {
                     <li className="lists-item">
                       <h3>02</h3><p> 태국국제발명전시회 은상수상 </p>
                     </li>
+                    <li className="lists-item">
+                      <h3>03</h3><p>  제59회 발명의날 대통령 포장 </p>
+                    </li>
                   </ol>
                 </div>
               </li>
@@ -176,12 +179,6 @@ export const HistoryContent = () => {
                     </li>
                     <li className="lists-item">
                       <h3>02</h3><p> 찰리2세대개발/ Bot 구동검수용제작 </p>
-                    </li>
-                    <li className="lists-item">
-                      <h3>03</h3><p> 찰리EV무선충전지자체/대학교MOU </p>
-                    </li>
-                    <li className="lists-item">
-                      <h3>03</h3><p> 찰리EV무선충전지자체/대학교MOU </p>
                     </li>
                     <li className="lists-item">
                       <h3>03</h3><p> 찰리EV무선충전지자체/대학교MOU </p>
@@ -203,7 +200,7 @@ export const HistoryContent = () => {
                       <h3>03</h3><p> 한국콘텐츠진흥원론치패드선정 </p>
                     </li>
                     <li className="lists-item">
-                      <h3>03</h3><p> DB손해보험교통챌린지선정 </p>
+                      <h3>04</h3><p> DB손해보험교통챌린지선정 </p>
                     </li>
                   </ol>
                 </div>
@@ -236,13 +233,13 @@ export const HistoryContent = () => {
                       <h3>01</h3><p> 미래창조부장관상 </p>
                     </li>
                     <li className="lists-item">
-                      <h3>01</h3><p> 대한민국멀티미디어대상3위 </p>
+                      <h3>02</h3><p> 대한민국멀티미디어대상3위 </p>
                     </li>
                     <li className="lists-item">
-                      <h3>01</h3><p> 찰리1세대개발 </p>
+                      <h3>03</h3><p> 찰리1세대개발 </p>
                     </li>
                     <li className="lists-item">
-                      <h3>01</h3><p> 2016년6월회사설립 </p>
+                      <h3>04</h3><p> 2016년6월회사설립 </p>
                     </li>
                   </ol>
                 </div>
@@ -255,7 +252,7 @@ export const HistoryContent = () => {
                       <h3>01</h3><p> 라스베가스CES 최고혁신상수상 </p>
                     </li>
                     <li className="lists-item">
-                      <h3>01</h3><p> 제44회발명의날특허청장상수상</p>
+                      <h3>02</h3><p> 제44회발명의날특허청장상수상</p>
                     </li>
                   </ol>
                 </div>
