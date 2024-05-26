@@ -211,13 +211,31 @@ const ActiveProsConstainer = styled.div`
     }
   }
   .ActivePropsImg-container{
+    width: 100%;
+    height: auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: "20px";
     img{
-      width: 100%;
+      margin: 10px;
+      width: 45%;
       height: 500px;
       object-fit: cover;
+      min-width: 415px;
     }
-  //그리드로 나눠서 스크린 사이즈가 작아질때 이미지가 각각 하나씩 떨어져서 보여야할꺼같음
+    @media (max-width: 540px) {
+      flex-direction: column;
+      img{
+        margin: 10px;
+        width: 90%;
+        height: auto;
+        object-fit: cover;
+        min-width: 0px;
+      }
+    }
   }
 
 `;
@@ -301,7 +319,8 @@ export const CharLeBusiness = () => {
             <h2>찰리 무선 충전 기술 Active 장점</h2>
           </div>
           <div className="ActivePropsImg-container">
-            <img src={ process.env.PUBLIC_URL + "/img/business/activePros.png"} alt="pros"></img>
+            <img src={ process.env.PUBLIC_URL + "/img/business/charleActive.png"} alt="pros"></img>
+            <img src={ process.env.PUBLIC_URL + "/img/business/hyundaiActive.png"} alt="pros" style={{marginTop:"20px"}}></img>
           </div>
         </ActiveProsConstainer>
       </CharLeBusinessWrapper>

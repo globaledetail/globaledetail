@@ -51,7 +51,7 @@ const ContentContainer = styled.div`
       }
       a{
           position: absolute;
-          bottom: 21rem; /* 이미지 상단에서 수직으로 중앙으로 위치 */
+          bottom: 30rem; /* 이미지 상단에서 수직으로 중앙으로 위치 */
           left: 50%; /* 이미지 왼쪽에서 수평으로 중앙으로 위치 */
           transform: translate(-50%, -50%); /* 버튼을 정확한 중앙으로 이동 */
           padding: 12px 22px;
@@ -68,10 +68,10 @@ const ContentContainer = styled.div`
             opacity:0.6;
           }
         }
-        @media (max-width: 424px) {
+        @media (max-width: 530px) {
           a {
             position: absolute;
-            bottom: 24rem; /* 이미지 상단에서 수직으로 중앙으로 위치 */
+            bottom: 34rem; /* 이미지 상단에서 수직으로 중앙으로 위치 */
             left: 50%; /* 이미지 왼쪽에서 수평으로 중앙으로 위치 */
             transform: translate(-50%, -50%); /* 버튼을 정확한 중앙으로 이동 */
             padding: 5px 10px;
@@ -88,10 +88,30 @@ const ContentContainer = styled.div`
             }
           }
         }
-        @media (max-width: 302px) {
+        @media (max-width: 439px) {
           a {
             position: absolute;
-            bottom: 26rem; /* 이미지 상단에서 수직으로 중앙으로 위치 */
+            bottom: 38rem; /* 이미지 상단에서 수직으로 중앙으로 위치 */
+            left: 50%; /* 이미지 왼쪽에서 수평으로 중앙으로 위치 */
+            transform: translate(-50%, -50%); /* 버튼을 정확한 중앙으로 이동 */
+            padding: 5px 10px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            border: 2px solid #ffffff;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            font-weight: 700;
+            cursor: pointer;
+            &:hover{
+              opacity:0.6;
+            }
+          }
+        }
+        @media (max-width: 310px) {
+          a {
+            position: absolute;
+            bottom: 42rem; /* 이미지 상단에서 수직으로 중앙으로 위치 */
             left: 50%; /* 이미지 왼쪽에서 수평으로 중앙으로 위치 */
             transform: translate(-50%, -50%); /* 버튼을 정확한 중앙으로 이동 */
             padding: 5px 10px;
