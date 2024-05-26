@@ -81,7 +81,6 @@ const TabContainer = styled.div`
   @media (max-width: 450px) {
     margin-left: 0px;
     width: 100%;
-    height: 30px;
     bottom: 0px;
     position: absolute;
     justify-content: center;

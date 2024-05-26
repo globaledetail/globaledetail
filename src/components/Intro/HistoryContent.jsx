@@ -28,7 +28,6 @@ const CompanyHistoryTitleContainer = styled.div`
   img {
     width: 100%;
     height: 100%;
-
     object-fit: cover; 
     overflow: hidden;
     filter: opacity(0.2) drop-shadow(0 0 0 #f5f5f5);
