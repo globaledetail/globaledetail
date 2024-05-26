@@ -93,7 +93,11 @@ export const SecondeBackgroundContent = () =>{
             <SecondBackgroundWrapper>
                 <ContentContainer>
                     <div className="image-container" >
-                        <img src={process.env.PUBLIC_URL + `/img/charleBot2.png`} alt="charle-bot2" ></img>
+                        <img 
+                            src={process.env.PUBLIC_URL + `/img/charleBot2.png`} 
+                            alt="charle-bot2" 
+                            onClick={() => { navigate('/business/charle'); }}
+                        ></img>
                     </div>
                     <div className="content-text-container">
                         <span> CharLe Bot</span>
@@ -101,7 +105,11 @@ export const SecondeBackgroundContent = () =>{
                 </ContentContainer>
                 <ContentContainer>
                     <div className="image-container">
-                        <img src={process.env.PUBLIC_URL + "/img/charlePolar.png"} alt="charle-bot2"></img>
+                        <img 
+                            src={process.env.PUBLIC_URL + "/img/charlePolar.png"} 
+                            alt="charle-bot2"
+                            onClick={() => { navigate('/business/polar'); }}
+                        ></img>
                     </div>
                     <div className="content-text-container">
                         <span> CharLe Polar </span>

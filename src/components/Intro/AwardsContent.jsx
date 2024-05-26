@@ -296,6 +296,13 @@ const selectorBtnHandler = () => {
           : 
           (<>
             <ContentList>
+              <img src={ process.env.PUBLIC_URL + "/img/patents/award4.png"} alt="patent"></img>
+              <div className="text-container">
+                <span>제 59회 발명의날 대통령 포장</span>
+              </div>
+            </ContentList>
+
+            <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/award1.png"} alt="patent"></img>
               <div className="text-container">
                 <span>2024 독일 IF Awards 본상</span>
