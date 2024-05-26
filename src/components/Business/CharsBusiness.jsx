@@ -212,8 +212,8 @@ export const CharsBusiness = () => {
 
             <div className="sub-title">
               <div className="sub-title-sentance">
-                <span>Char<span style={{color: "red"}}>S는</span></span>
-                <span>하드웨어</span>
+                <span>Char<span style={{color: "red"}}>S</span>는 </span>
+                <span> 하드웨어</span>
                 <span> &ensp;+ 디바이스</span>
                 <span> &ensp;+ 서버 패키지가 결합된</span>
               </div>
@@ -227,7 +227,7 @@ export const CharsBusiness = () => {
                 </div>
                 <div className="tableContent">
                   <img src={process.env.PUBLIC_URL + "/img/chars/pbc2.png"} alt="pbc"></img>
-                  <span>CharLe IoT Charger Core Chip</span>
+                  <span>Chars IoT Charger Core Chip</span>
                 </div>
               </div>
 

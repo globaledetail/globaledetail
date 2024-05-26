@@ -188,7 +188,7 @@ export const Home = () => {
             <source src={process.env.PUBLIC_URL + "/videos/homeVideo.mp4"} type="video/mp4" />
           </VideoElement>
 
-          <h4>Char<span>L</span>e 유선 / 무선 충전 제어</h4>
+          {/* <h4>Char<span>L</span>e 유선 / 무선 충전 제어</h4> */}
         </BackgroundVideo>
       </FirstBackground>
 
