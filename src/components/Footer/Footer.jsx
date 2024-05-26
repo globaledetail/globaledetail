@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
   margin-top: 30px;
-  width: 90%;
+  width: 80%;
   height: auto;
   display: flex;
   justify-content: center;
