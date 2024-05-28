@@ -205,9 +205,7 @@ export const Introduce = () => {
           
           {/* 컨텐츠 메인 페이지 */}
           <IntroContentContainer>
-            <Outlet>
-
-            </Outlet>
+            <Outlet/>
             <Footer/>
           </IntroContentContainer>
 

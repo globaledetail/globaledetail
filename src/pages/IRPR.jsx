@@ -184,9 +184,7 @@ export const IRPR = () => {
 
 
             <IRPRContentContainer>
-              <Outlet>
-
-              </Outlet>
+              <Outlet/>
               {/* {currentPage?.map((page, idx) => {
                 if( '공시정보' === page.page ){
                   return(
@@ -211,8 +209,6 @@ export const IRPR = () => {
               })} */}
               <Footer/>
             </IRPRContentContainer>
-
-
 
         </IRPRWrapper>
           

@@ -213,10 +213,7 @@ export const Business = () => {
         </BusinessImgContainer>
 
         <BusinessContentContainer>
-          <Outlet>
-
-
-          </Outlet>
+          <Outlet/>
         {/* {currentPage?.map((page, idx) => {
               if( 'Polar 전극단자 기술' === page.page ){
                 return(
