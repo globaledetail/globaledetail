@@ -181,7 +181,6 @@ export const Home = () => {
 
         }}
       /> */}
-
       <FirstBackground >
         <BackgroundVideo className="background-video">
           <VideoElement playsInline autoPlay loop muted>
