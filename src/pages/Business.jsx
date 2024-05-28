@@ -2,12 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
-import { CharLeBusiness } from "../components/Business/CharLeBusiness"
-import { CharsBusiness } from "../components/Business/CharsBusiness";
-import { ReboozBusiness } from "../components/Business/Rebooz";
-import { PolarBusiness } from "../components/Business/PolarBusiness";
 import { Footer } from "../components/Footer/Footer";
-
 
 
 const BusinessWrapper = styled.div`
@@ -116,14 +111,11 @@ const TabContainer = styled.div`
 `;
 
 
-
-
 export const Business = () => {
   const [ currentPage, setCurrentPage ] = useState([{ page:'Polar 전극단자 기술', index: 0}]);
   const navigate = useNavigate('');
   const currentURL = useLocation();
   
-
 
   useEffect(()=>{
     if(currentURL?.pathname === '/business/polar'){
@@ -145,7 +137,6 @@ export const Business = () => {
       return [{ page: pageName, index: index }]
     });
   };
-
 
   return (
     <>

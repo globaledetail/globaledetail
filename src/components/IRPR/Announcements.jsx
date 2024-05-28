@@ -146,7 +146,6 @@ export const Announcements = () => {
     setCurrentPage(page);
   };
   
-
     return (
       <>
         <AnnouncementsWrapper>
