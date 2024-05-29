@@ -1,11 +1,9 @@
 import React,{ useEffect, useRef, useState } from "react";
 
-import Dots from "./Dots";
 import styled from "styled-components";
 
 import { SecondeBackgroundContent } from "../../components/MainBackground/SecondBackgroundContent";
 import { ThirdBackgroundContent } from "../../components/MainBackground/ThirdBackgroundContent";
-import { Footer } from "../../components/Footer/Footer";
 
 const Outer = styled.div`
   height: 100vh;

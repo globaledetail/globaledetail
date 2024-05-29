@@ -27,23 +27,13 @@ const NavBar = () =>{
   const [ activatedHoverData, setActivatedHoverData] = useState({});
   const [ showSubMenu, setShowSubMenu ] = useState(false)
   const navigate = useNavigate();
-  const [ currentPage, setCurrentPage ] = useState('');
 
   const handleOpenNavMenu = (event) => {
-
     setAnchorElNav(event.currentTarget);
-  };
-
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   useEffect(() => {
@@ -66,7 +56,6 @@ const NavBar = () =>{
   }, []);
 
   const hoverEnterHandler = (index, stateName) => {
-    // const trueCount = isHovered.reduce((acc, val) => acc + (val === true ? 1 : 0), 0);
     setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
     setHoverStates((prev) => { return {...prev, [stateName]: true } });
     setActivatedHoverData(menuData[index])
@@ -94,7 +83,6 @@ const NavBar = () =>{
   const movePageHandler = (URL) => {
     navigate(URL);
   };
-
   
   return (
     <>

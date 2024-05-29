@@ -11,14 +11,6 @@ import Button from '@mui/material/Button';
 // import Select from '@mui/material/Select';
 // import styledEngineSc from "@mui/styled-engine-sc";
 import { styled as MUIstyle} from '@mui/material/styles';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-import Typography from '@mui/material/Typography';
-
 
 
 const AwardsPatentsWrapper = styled.div`
@@ -113,15 +105,6 @@ const ContentList = styled.div`
   }
 `; 
 
-const BootstrapDialog = MUIstyle(Dialog)(({ theme }) => ({
-  '& .MuiDialogContent-root': {
-    padding: theme.spacing(2),
-  },
-  '& .MuiDialogActions-root': {
-    padding: theme.spacing(1),
-  },
-}));
-
 export const AwardsContent = () =>{
 const [ selectorState, setSelectorState ] = useState( {awards: true, patents: false} );
 
@@ -159,15 +142,6 @@ const selectorBtnHandler = () => {
 //     </FormControl>
 //   )
 // }
-
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
 
 
   return(

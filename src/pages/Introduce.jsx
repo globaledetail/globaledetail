@@ -5,10 +5,6 @@ import React, { useState, useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
-import { IntroCompanyContent } from "../components/Intro/IntroCompanyContent";
-import { HistoryContent } from "../components/Intro/HistoryContent";
-import { VisionContent } from "../components/Intro/VisionContent";
-import { AwardsContent } from "../components/Intro/AwardsContent";
 import { Footer } from "../components/Footer/Footer";
 
 

@@ -80,13 +80,6 @@ const TopDiviedLineContainer = styled.div`
   top: 0;
 `;
 
-const RightDiviedLinecontainer = styled.div`
-  
-`;
-
-const CopyRightsContainer = styled.div`
-
-`;
 
 export const Footer = () => {
   const navigate = useNavigate('');

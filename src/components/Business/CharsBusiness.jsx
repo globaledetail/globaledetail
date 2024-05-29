@@ -253,7 +253,6 @@ export const CharsBusiness = () => {
             </TableContent>
           </TablesContainer>
 
-
           <div className="content-title" style={{marginTop: "100px"}}>
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
             <h2>초음파(UltraSound) 통신형</h2>
@@ -279,9 +278,6 @@ export const CharsBusiness = () => {
             </AdsImageContainer>
 
           </TablesContainer>
-
-
-
         </CharlesContentsContainer>
       </CharlesBusinessWrapper>
     </>

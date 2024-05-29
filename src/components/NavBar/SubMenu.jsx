@@ -63,6 +63,7 @@ const ImageContent = styled.div`
   img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
     opacity: 0.9;
     clip-path: inset(0 round 0px);
     background: linear-gradient(to left, #999999, transparent); /* 왼쪽 흐릿한 부분 */
@@ -81,6 +82,7 @@ export const SubMenu = ({ activatedHoverData, handleSubMenuEnter, handleSubMenuL
           <MenusContainer >
             {activatedHoverData?.subMenus?.map((data,idx)=>{
               return(
+              
                 <Link 
                   key={data.id} 
                   to={data.route} 
@@ -93,10 +95,9 @@ export const SubMenu = ({ activatedHoverData, handleSubMenuEnter, handleSubMenuL
               )
             })}
           </MenusContainer>
-
           <MenuImageContainer >
             <ImageContent>
-              <img src={ process.env.PUBLIC_URL + "/img/company.jpg"} alt="side"></img>
+              <img src={ process.env.PUBLIC_URL + `/img/subMenu${activatedHoverData.id}.png`} alt="side"></img>
             </ImageContent>
           </MenuImageContainer>
       </SubMenuWrapper>

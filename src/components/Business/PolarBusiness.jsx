@@ -204,7 +204,6 @@ export const PolarBusiness = () => {
             </div>
           </ContentContainer>
 
-
           <div className="content-title" style={{marginTop: "50px"}}>
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
             <h2>Charle Polar 도킹시스템</h2>

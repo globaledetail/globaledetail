@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
-import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -10,7 +9,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { TableFooter } from "@mui/material";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { styled as MUIstyle} from '@mui/material/styles';
@@ -93,7 +91,8 @@ const AnnouncementTableContainer = styled.div`
 `;
 // 최근순으로 데이터 넣어야한다
 const rows = [
-  { title: '전자증권 전환 대상 주권 권리자(주주) 보호 및 조치사항 안내',
+  { id: '1',
+    title: '전자증권 전환 대상 주권 권리자(주주) 보호 및 조치사항 안내',
     paragraph1: '2019.09.16 「주식·사채 등의 전자등록에 관한 법률(이하 “전자증권법”)」이 시행됨에 따라 당사의 전자증권 전환 대상 주권 권리자를 보호하기 위하여 전자증권법 제27조 1항에 근거하여 아래의 사항을 통지합니다.',
     paragraph2_1: '1. 전자등록일(2024년 06월 28일)부터 주주(권리자)가 소유중인 실물증권(전환 대상 주권)은 효력을 잃게 됩니다. ',
     paragraph2_2: '2. 따라서, 주주(권리자)는 당사의 전자등록일 5영업일 전까지 소유중인 실물증권을 제출하고, 증권회사 계좌로 입고 신청하시기 바랍니다. ',
@@ -120,9 +119,6 @@ export const Announcements = () => {
   const [ open, setOpen ] = useState(false)
   const [ dialogData, setDialogData ] = useState([])
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
   const handleClose = () => {
     setOpen(false);
   };
@@ -157,15 +153,15 @@ export const Announcements = () => {
                 <Table sx={{ minWidth: 450 }} aria-label="simple table">
                   <TableHead>
                     <TableRow >
-                      <TableCell style={{fontWeight:"900", color: "#8a8a8a"}}>Title</TableCell>
-                      <TableCell style={{fontWeight:"900", color: "#8a8a8a"}} align="right">Date</TableCell>
+                      <TableCell key={`temp1`} style={{fontWeight:"900", color: "#8a8a8a"}}>Title</TableCell>
+                      <TableCell key={`temp2`} style={{fontWeight:"900", color: "#8a8a8a"}} align="right">Date</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {tableData.map((row, idx) => {
                       return (
                         <TableRow
-                          key={row.name}
+                          key={`${row.id}`}
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                           style={{height:"70px"}}
                         >

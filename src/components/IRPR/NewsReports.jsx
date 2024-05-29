@@ -142,13 +142,10 @@ export const NewsReports = () => {
         <h1>언론보도</h1>
         <NewsReportsContentWrapper>
 
-
           {data?.map((data, idx)=>{
-
-
             return(
               <>
-                <ContentContainer>
+                <ContentContainer key={`temp${data.id}`}>
                   <div className="imgWrapper">
                     <div className="newsImgContainer">
                       <a href={process.env.PUBLIC_URL + data.URL} style={{cursor: "pointer"}}>
@@ -172,7 +169,6 @@ export const NewsReports = () => {
                       <span>{data.createBy} &ensp; </span>
                       <span>{data.date}</span>
                     </div>
-
                   </div>
                 </ContentContainer> 
               </>
