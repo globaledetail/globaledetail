@@ -184,7 +184,6 @@ export const Announcements = () => {
               </Stack>
             </AnnouncementTableContainer>
           
-
           </AnnouncementsContentWrapper>
           {open && (
 

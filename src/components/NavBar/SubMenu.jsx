@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom"
 import styled from "styled-components";
 
@@ -69,7 +69,6 @@ const ImageContent = styled.div`
     background: linear-gradient(to left, #999999, transparent); /* 왼쪽 흐릿한 부분 */
   }
 `;
-
 
 export const SubMenu = ({ activatedHoverData, handleSubMenuEnter, handleSubMenuLeave }) => {
 

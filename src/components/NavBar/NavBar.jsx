@@ -20,7 +20,6 @@ import { Link, useNavigate } from "react-router-dom";
 const NavBar = () =>{
 
   const [ anchorElNav, setAnchorElNav ] = useState(null);
-  const [ anchorElUser, setAnchorElUser ] = useState(null);
 	const [ expanded, setExpanded ] = useState(false);
   const [ screenSize, setScreenSize ] = useState({ width: window.innerWidth, height: window.innerHeight });
   const [ hoverStates, setHoverStates ] = useState({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
