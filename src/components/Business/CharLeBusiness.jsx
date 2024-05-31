@@ -388,7 +388,7 @@ export const CharLeBusiness = () => {
         <VideoTextContainer >
           <div className="text-box">
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
-            <h2>찰리 무선 충전 기술 Active 장점</h2>
+            <h2>찰리 무선 충전 기술 </h2>
           </div>
         </VideoTextContainer>
         <CharLeTitleVedioContainer>
