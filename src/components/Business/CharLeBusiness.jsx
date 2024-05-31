@@ -394,7 +394,7 @@ export const CharLeBusiness = () => {
         <CharLeTitleVedioContainer>
             <ReactPlayer
               ref={videoState}
-              url={process.env.PUBLIC_URL + "/videos/CharLebot.mp4"}
+              url={process.env.PUBLIC_URL + "/videos/CharLeBot.mp4"}
               className='player' // 클래스 이름 지정하여 스타일 적용
               playing={playing} // 재생 상태, true = 재생중 / false = 일시 정지
               controls={true} // 유튜브 재생 컨트롤바 노출 여부
