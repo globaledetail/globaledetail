@@ -112,14 +112,11 @@ export const IRPR = () => {
     };
   },[currentURL])
 
-
-
   const currentPageHandler = (pageName, index) => {
     setCurrentPage(() => {
       return [{ page: pageName, index: index }]
     });
   };
-
 
     return (
       <>

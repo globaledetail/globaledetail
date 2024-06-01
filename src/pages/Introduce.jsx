@@ -101,8 +101,6 @@ export const Introduce = () => {
   const navigate = useNavigate();
   const currentURL = useLocation();
 
-
-
   useEffect(()=>{
     if(currentURL?.pathname === '/intro/company'){
       setCurrentPage([{ page:'회사소개', index: 0}]);
@@ -122,8 +120,6 @@ export const Introduce = () => {
     setCurrentPage(() => {
       return [{ page: pageName, index: index }]
     });
-
-
   };
 
   return (

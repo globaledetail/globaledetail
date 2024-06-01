@@ -116,7 +116,6 @@ export const Business = () => {
   const navigate = useNavigate('');
   const currentURL = useLocation();
   
-
   useEffect(()=>{
     if(currentURL?.pathname === '/business/polar'){
       setCurrentPage([{ page:'Polar 전극단자 기술', index: 0}]);
