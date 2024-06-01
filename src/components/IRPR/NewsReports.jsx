@@ -135,7 +135,6 @@ const ContentContainer = styled.div`
 export const NewsReports = () => {
   const sortedData = newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
   const [data, setData] = useState(sortedData)
-
   return (
     <>
       <NewsReportsWrapper>
@@ -175,7 +174,6 @@ export const NewsReports = () => {
             )
           })}
         </NewsReportsContentWrapper>
-
       </NewsReportsWrapper>
     </>
   )
