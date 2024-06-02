@@ -99,6 +99,7 @@ const Driver = styled.div`
 `;
 
 
+
 export const Home = () => {
   const DIVIDER_HEIGHT = 5;
   const outerDivRef = useRef();
