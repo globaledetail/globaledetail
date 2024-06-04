@@ -408,7 +408,6 @@ export const CharLeBusiness = () => {
             >
             </ReactPlayer>
 
-
         </CharLeTitleVedioContainer>
 
       </CharLeBusinessWrapper>

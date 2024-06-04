@@ -177,7 +177,6 @@ export const Home = () => {
     <Outer ref={outerDivRef}>
       {/* <Dots currentPage={currentPage} 
         styled={{
-
         }}
       /> */}
       <FirstBackground >
