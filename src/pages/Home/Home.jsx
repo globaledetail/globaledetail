@@ -98,8 +98,6 @@ const Driver = styled.div`
     background-color: gray;
 `;
 
-
-
 export const Home = () => {
   const DIVIDER_HEIGHT = 5;
   const outerDivRef = useRef();

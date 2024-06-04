@@ -179,28 +179,6 @@ export const IRPR = () => {
 
             <IRPRContentContainer>
               <Outlet/>
-              {/* {currentPage?.map((page, idx) => {
-                if( '공시정보' === page.page ){
-                  return(
-                    <Announcements key={idx + 1}></Announcements>
-                  )
-                };
-                if( '언론보도' === page.page ){
-                  return(
-                    <NewsReports key={idx + 2}></NewsReports>
-                  )
-                };
-                if( 'IR 자료' === page.page ){
-                  return (
-                    <IRData key={idx + 3}></IRData>
-                  )
-                };
-                // if( '리부즈' === page.page ){
-                //   return (
-                //     <ReboozBusiness key={idx + 4}></ReboozBusiness>
-                //   )
-                // };
-              })} */}
               <Footer/>
             </IRPRContentContainer>
 

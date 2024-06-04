@@ -213,28 +213,6 @@ export const Business = () => {
 
         <BusinessContentContainer>
           <Outlet/>
-        {/* {currentPage?.map((page, idx) => {
-              if( 'Polar 전극단자 기술' === page.page ){
-                return(
-                  <PolarBusiness key={idx + 1}></PolarBusiness>
-                )
-              };
-              if( '찰리 기술소개' === page.page ){
-                return(
-                  <CharLeBusiness key={idx + 2}></CharLeBusiness>
-                )
-              };
-              if( '찰스 기술소개' === page.page ){
-                return (
-                  <CharsBusiness key={idx + 3}></CharsBusiness>
-                )
-              };
-              if( '리부즈' === page.page ){
-                return (
-                  <ReboozBusiness key={idx + 4}></ReboozBusiness>
-                )
-              };
-            })} */}
           <Footer/>
         </BusinessContentContainer>
       </BusinessWrapper>
