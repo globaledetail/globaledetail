@@ -5,7 +5,7 @@
 
 STACK: JavaScript, React, CSS, Styled-components
 
-Web Server : Php server <br>
+Web Server Environment : UTF-8 (PHP7.4, mariadb-10.x) <br>
 Hosted Web Site From : Cafe24
 
 
