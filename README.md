@@ -6,7 +6,7 @@
 STACK: JavaScript, React, CSS, Styled-components
 
 Web Server : Php server <br>
-Hosted Web Site: Cafe24
+Hosted Web Site From : Cafe24
 
 
 [메뉴]
