@@ -1,11 +1,12 @@
 ..
 # GED_COMPANY Web-site
 
-## 기존 페이지 : http://gedkorea.com
+## 배포주소 : https://gedkorea.com
 
+STACK: JavaScript, React, CSS, Styled-components
 
-참고: https://www.chaevi.com/kr/
-
+Web Server : Php server
+Hosted Web Site: Cafe24
 
 
 [메뉴]
