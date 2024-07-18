@@ -1,11 +1,12 @@
 
 
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 import { Footer } from "../components/Footer/Footer";
+import { LanguageContext } from "../context/languageContext";
 
 
 
@@ -97,6 +98,7 @@ const TabContainer = styled.div`
 
 
 export const Introduce = () => {
+  const { isLanguage, setIsLanguage } = useContext(LanguageContext);
   const [ currentPage, setCurrentPage ] = useState([{ page:'회사소개', index: 0 }]);
   const navigate = useNavigate();
   const currentURL = useLocation();
@@ -142,7 +144,7 @@ export const Introduce = () => {
                 <span style={{
                   color: `${ currentPage[0].page === "회사소개" ? "white" : "#6f6f6f" }`,
                   fontWeight: `${ currentPage[0].page === "회사소개" ? "800" : "600" }`,
-                }}>회사소개</span>
+                }}>{isLanguage === 20 ? "회사소개":"Intro" }</span>
               </div>
 
               <div 
@@ -158,7 +160,7 @@ export const Introduce = () => {
                 <span style={{
                   color: `${ currentPage[0].page === "회사연혁" ? "white" : "#6f6f6f" }`,
                   fontWeight: `${ currentPage[0].page === "회사연혁" ? "800" : "600" }`,
-                }}>회사연혁</span>
+                }}>{isLanguage === 20 ? "회사연혁" : "History"}</span>
               </div>
 
               <div 
@@ -174,7 +176,7 @@ export const Introduce = () => {
                 <span style={{
                   color: `${ currentPage[0].page === "회사비전" ? "white" : "#6f6f6f" }`,
                   fontWeight: `${ currentPage[0].page === "회사비전" ? "800" : "600" }`,
-                }}>회사비전</span>
+                }}>{isLanguage === 20 ? "회사비전" : "Vision"}</span>
               </div>
 
               <div 
@@ -190,7 +192,7 @@ export const Introduce = () => {
                 <span style={{
                   color: `${ currentPage[0].page === "수상&특허" ? "white" : "#6f6f6f" }`,
                   fontWeight: `${ currentPage[0].page === "수상&특허" ? "800" : "600" }`,
-                }}>수상&특허</span>
+                }}>{isLanguage === 20 ? "수상&특허":"Awards" }</span>
               </div>
             </TabContainer>
           </IntroImgContainer>

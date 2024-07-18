@@ -1,10 +1,10 @@
 
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import React, { useContext, useState } from 'react';
 
 import NavBar from './components/NavBar/NavBar';
 import { Home } from './pages/Home/Home';
-import { Footer } from './components/Footer/Footer';
 import { Introduce } from './pages/Introduce';
 import { Business } from './pages/Business';
 import { IRPR } from './pages/IRPR';
@@ -20,12 +20,12 @@ import { ReboozBusiness } from './components/Business/Rebooz';
 import { Announcements } from './components/IRPR/Announcements';
 import { NewsReports } from './components/IRPR/NewsReports';
 import { IRData } from './components/IRPR/IRData';
+import { CharLeRoof } from './components/Business/CharLeRoof';
+import { LanguageContext } from './context/languageContext';
 
 function App() {
 
-
-
-
+  
   return (
     <div className="App">
       <div className='nav-container'>
@@ -43,7 +43,7 @@ function App() {
         </Route>
 
         <Route path={process.env.PUBLIC_URL + '/business'} element={<Business></Business>}>
-          <Route path={process.env.PUBLIC_URL + '/business/polar'} element={<PolarBusiness/>}/>
+          <Route path={process.env.PUBLIC_URL + '/business/roof'} element={<CharLeRoof/>}/>
           <Route path={process.env.PUBLIC_URL + '/business/charle'} element={<CharLeBusiness/>}/>
           <Route path={process.env.PUBLIC_URL + '/business/chars'} element={<CharsBusiness/>}/>
           <Route path={process.env.PUBLIC_URL + '/business/rebooz'} element={<ReboozBusiness/>}/>
@@ -57,10 +57,6 @@ function App() {
 
         <Route path={process.env.PUBLIC_URL + '/contacts'} element={<Contacts></Contacts>}/>
       </Routes>
-
-      {/* <div className='footer-container'>
-        <Footer/>
-      </div> */}
 
     </div>
   );

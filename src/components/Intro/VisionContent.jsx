@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import styled from "styled-components";
 
@@ -6,6 +6,7 @@ import BuildIcon from '@mui/icons-material/Build';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import PeopleIcon from '@mui/icons-material/People';
 import PublicIcon from '@mui/icons-material/Public';
+import { LanguageContext } from "../../context/languageContext";
 
 const VisionWrapper = styled.div`
   width: 100%;
@@ -49,7 +50,7 @@ const VisionContentContainer = styled.div`
       font-size: 20px;
       min-width: 280px;
       line-height : 2;
-      word-wrap: break-word;
+      word-break: break-all;
       margin-bottom: 50px;
     }
     .president-name{
@@ -102,7 +103,7 @@ const CompanyVelueContainer = styled.div`
       border: 0.5px solid gray;
       box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
       span{
-        font-size: 25px;
+        font-size: 20px;
         font-weight: 800;
       }
 
@@ -146,42 +147,47 @@ const ResultValueContainer = styled.div`
 
 
 export const VisionContent = () => {
+  const {isLanguage, setIsLanguage} = useContext(LanguageContext);
   return (
     <>
       <VisionWrapper>
-        <h1>회사 비전</h1>
+        <h1>{isLanguage === 20 ? "회사 비전":"Vision"}</h1>
         <VisionContentContainer>
           <div className="logo-container">
             <img src={ process.env.PUBLIC_URL + "/img/fullLogo.png"} alt="logo"></img>
           </div>
           <div className="text-container">
             <span>
-            다가올 기술들에 앞서 새로운 패러다임아래,시장을 선도하는 차별화된 
+            {isLanguage === 20 ? 
+            `            다가올 기술들에 앞서 새로운 패러다임아래,시장을 선도하는 차별화된 
             혁신 기술력을 바탕으로 사회와 기업이 함께 성장 할 수 있는 끊임없는 
-            노력과 R&D 중심의 기술력으로 더 나은 삶의 가치를 만들어 가도록 하겠습니다.
+            노력과 R&D 중심의 기술력으로 더 나은 삶의 가치를 만들어 가도록 하겠습니다.`
+            :
+            `Under the new paradigm ahead of the upcoming technologies, we will create better life values with constant efforts and R&D-oriented technology for society and companies to grow together based on differentiated innovative technologies that lead the market.`}
+
             </span>
             <p className="president-name">
-              ㈜지이디 대표이사 강동연
+              {isLanguage === 20 ? "㈜지이디 대표이사 강동연":"GED CEO Devid, Kang"}
             </p>
           </div>
         </VisionContentContainer>
 
         <CompanyVelueContainer>
           <img src={ process.env.PUBLIC_URL + "/img/charle.png"} alt="charle"></img>
-          <h1>핵심가치</h1>
-          <h2>글로벌 기업으로 나아기가기 위한 핵심가치 </h2>
+          <h1>{isLanguage === 20 ? "핵심가치":"Core value"}</h1>
+          <h2>{isLanguage === 20 ? "글로벌 기업으로 나아기가기 위한 핵심가치":"Core Value for Global Enterprise"} </h2>
           <div className="core-value-container">
             <div className="value">
               <AssignmentIcon sx={{ fontSize: '60px', color: "#a4a4a4" }}></AssignmentIcon>
-              <span>노력</span>         
+              <span>{isLanguage === 20 ? "노력":"Effort"}</span>         
             </div>
             <div className="value">
               <BuildIcon sx={{ fontSize: '60px', color: "#a4a4a4" }}></BuildIcon>
-              <span>기술력</span>         
+              <span>{isLanguage === 20 ? "기술력":"Technical"}</span>         
             </div>
             <div className="value">
               <PeopleIcon sx={{ fontSize: '60px', color: "#a4a4a4" }}></PeopleIcon>
-              <span>소통</span>         
+              <span>{isLanguage === 20 ? "소통":"Communication"}</span>         
             </div>
           </div>
         </CompanyVelueContainer>
@@ -190,7 +196,7 @@ export const VisionContent = () => {
           <img src={ process.env.PUBLIC_URL + "/img/arrow.png"} alt="arrow"></img>
           <div className="result">
             <PublicIcon sx={{ fontSize: '60px', color: "#1eca6c" }}></PublicIcon>
-            <span>더 나은 삶의 가치</span>  
+            <span>{isLanguage === 20 ? "더 나은 삶의 가치":"Value of a Better Life"}</span>  
           </div>
         </ResultValueContainer>
 

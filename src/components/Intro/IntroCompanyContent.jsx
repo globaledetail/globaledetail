@@ -1,5 +1,5 @@
 
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
 
 
@@ -9,6 +9,8 @@ import FlagIcon from '@mui/icons-material/Flag';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import Groups2Icon from '@mui/icons-material/Groups2';
 import PlaceIcon from '@mui/icons-material/Place';
+import { Language } from "@mui/icons-material";
+import { LanguageContext } from "../../context/languageContext";
 
 const IntroCompanyWapper = styled.div`
   display: flex;
@@ -173,33 +175,40 @@ const CompanyStateBox = styled.div`
 
 
 export const IntroCompanyContent = () => {
+  const {isLanguage, setIsLanguage} = useContext(LanguageContext);
   return(
     <>
       <IntroCompanyWapper>
-        <h1>회사소개</h1>
+        <h1>{isLanguage=== 20 ? "회사소개" : "Introduction"}</h1>
         <IntroContentContainer>
           <ContentTitleContainer>
-              <span className="sayHi">안녕하세요.</span>
-              <h3>주식회사 <span style={{color:"#ec5050"}}>G</span>ED 입니다.</h3>
+              <span className="sayHi">{isLanguage === 20 ? "안녕하세요.":"Hello,"}</span>
+              <h3>{isLanguage === 20 ? "주식회사":"This is "} <span style={{color:"#ec5050"}}>G</span>{isLanguage === 20 ? "ED 입니다.": "ED Co."}</h3>
               <span></span>
           </ContentTitleContainer>
           <ContentTextContainer>
-            <span>지이디는 R&D 중심의 특허기술기업으로 122건의 특허를 보유하고 있습니다.
-                특히 전력 제어 분야의 기술에 집중하고 있으며 펌웨어 블루투스 및 초음파 통신 기술을 보유하고, 공용상용전기유·무선제어 및 전기차 무선 충전 시스템 개발에 주력중입니다.
-                국내외에서 인정받은 기술인 “CharLe” , “CharS"를 기반으로 소통하며 성장하는 글로벌 기업으로 나아가는 것이 GED의 목표입니다</span>
+            <span>
+              {isLanguage === 20 ? 
+              `지이디는 R&D 중심의 특허기술기업으로 122건의 특허를 보유하고 있습니다. 특히 전력 제어 분야의 기술에 집중하고 있으며 펌웨어 블루투스 및 초음파 통신 기술을 보유하고, 공용상용전기유·무선제어 및 전기차 무선 충전 시스템 개발에 주력중입니다. 국내외에서 인정받은 기술인 “CharLe” , 'CharS' 를 기반으로 소통하며 성장하는 글로벌 기업으로 나아가는 것이 GED의 목표입니다`
+              :
+              `GED is a patented technology company focused on R&D and has 122 patents. In particular, it focuses on power control technologies, has firmware Bluetooth and ultrasonic communication technologies, and is focusing on developing common commercial electric oil/wireless control and electric vehicle wireless charging systems. GED's goal is to become a global company that grows by communicating based on the technologies "
+              "CharLe" and "CharS" recognized at home and abroad.`}
+
+                
+              </span>
           </ContentTextContainer>
         </IntroContentContainer>
 
         <CompanyStateContainer>
-          <h1>회사현황</h1>
+          <h1>{isLanguage === 20 ? "회사현황": "GED Status"}</h1>
           <StatesContainer>
               <CompanyStateBox>
                 <div className="img-container">
                   <ApartmentIcon sx={{ fontSize: '60px', color: "#222222" }}></ApartmentIcon>
                 </div>
                 <div className="text-container">
-                  <span className="state-title">회사명</span>
-                  <span className="state-text">주식회사 지이디</span>
+                  <span className="state-title">{isLanguage=== 20? "회사명": "Company Name"}</span>
+                  <span className="state-text">{isLanguage === 20 ? "주식회사 지이디": "GED"}</span>
                 </div>
               </CompanyStateBox>
 
@@ -208,8 +217,8 @@ export const IntroCompanyContent = () => {
                   <PersonIcon sx={{ fontSize: '60px', color: "#222222" }}></PersonIcon>
                 </div>
                 <div className="text-container">
-                  <span className="state-title">대표이사</span>
-                  <span className="state-text">강 동연 대표</span>
+                  <span className="state-title">{isLanguage === 20 ? "대표이사":"CEO"}</span>
+                  <span className="state-text">{isLanguage === 20 ? "강 동연 대표":"CEO David, Kang"}</span>
                 </div>
               </CompanyStateBox>
 
@@ -218,8 +227,8 @@ export const IntroCompanyContent = () => {
                   <FlagIcon sx={{ fontSize: '60px', color: "#222222" }}></FlagIcon>
                 </div>
                 <div className="text-container">
-                  <span className="state-title">설립일</span>
-                  <span className="state-text">2016년 6월 22일</span>
+                  <span className="state-title">{isLanguage === 20 ? "설립일":"Established Date"}</span>
+                  <span className="state-text">{isLanguage === 20 ? "2016년 6월 22일": "22. 6. 2016"}</span>
                 </div>
               </CompanyStateBox>
 
@@ -228,8 +237,8 @@ export const IntroCompanyContent = () => {
                   <AttachMoneyIcon sx={{ fontSize: '60px', color: "#222222" }}></AttachMoneyIcon>
                 </div>
                 <div className="text-container">
-                  <span className="state-title">자본금</span>
-                  <span className="state-text">9 억원</span>
+                  <span className="state-title">{isLanguage === 20 ? "자본금":"Capital"}</span>
+                  <span className="state-text">{isLanguage === 20 ? "9억원": "Approx. 900 million won"}</span>
                 </div>
               </CompanyStateBox>
 
@@ -238,8 +247,8 @@ export const IntroCompanyContent = () => {
                   <Groups2Icon sx={{ fontSize: '60px', color: "#222222" }}></Groups2Icon>
                 </div>
                 <div className="text-container">
-                  <span className="state-title">임직원</span>
-                  <span className="state-text">8명</span>
+                  <span className="state-title">{isLanguage === 20 ? "임직원":"Employees"}</span>
+                  <span className="state-text">{isLanguage === 20 ? "8명":"8 people"}</span>
                 </div>
               </CompanyStateBox>
 
@@ -248,8 +257,8 @@ export const IntroCompanyContent = () => {
                   <PlaceIcon sx={{ fontSize: '60px', color: "#222222" }}></PlaceIcon>
                 </div>
                 <div className="text-container">
-                  <span className="state-title">사업장</span>
-                  <span className="state-text">서울 관악구 호암로 24길 6</span>
+                  <span className="state-title">{isLanguage === 20 ? "사업장": "Location"}</span>
+                  <span className="state-text">{isLanguage === 20 ? "서울 관악구 호암로 24길 6":"6, Hoam-ro 24-gil, Gwanak-gu, Seoul, Korea"}</span>
                   {/* <span className="state-text">제주시 일주서로 4898 3층</span> */}
                 </div>
               </CompanyStateBox>

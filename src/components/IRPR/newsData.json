@@ -80,5 +80,41 @@
       "date": "2024-05-21",
       "createBy": "스포츠동아",
       "imgPath": "news10.png" 
+    },
+    {
+      "id": 11,
+      "title": "지이디, 'Rebooz 머신' 중동국부펀드 통해 아부다비 공항 실물테스트",
+      "URL":"https://www.news1.kr/industry/sb-founded/5457275",
+      "content": "Rebooz기술은 전기분해로 물 2ℓ 10㎾의 전기만으로 빠르게 수소로 생성해 차량의 분해 없이 흡기부터 배기 단계에 이르는 차량 계통 전체의 불순물을 제거하는 '수소 엔진크리닝' 기술이다.",
+      "date": "2024-06-24",
+      "createBy": "뉴스1",
+      "imgPath": "news11.png" 
+    },
+    {
+      "id": 12,
+      "title": "전기차 보급 확대, 관련사고도 급증···지이디, '찰리루프' 고안 눈길",
+      "URL":"https://www.seoulfn.com/news/articleView.html?idxno=524413",
+      "content": "환경에 대한 관심 등으로 전기차 보급이 점차적으로 확대되면서 화재 등 관련 사고도 급증하고 있다. 그중 가장 심각한 것이 사고 충격으로 인한 고전압배터리 폭발로 화재 위험성이 부각되고 있다.",
+      "date": "2024-06-30",
+      "createBy": "서울파이낸스",
+      "imgPath": "news12.png" 
+    },
+    {
+      "id": 13,
+      "title": "지이디, 세계 최초 전기차 비상문 특허 의장·상표 고안 ‘눈길’",
+      "URL":"https://sports.donga.com/article/all/20240630/125693499/1",
+      "content": "전기차의 리튬이온배터리는 열폭주 현상으로 화재 시 차량 내의 온도가 순식간에 800도까지 치솟고 또한 충돌로 인한 전기적 오류·프레임 손상 등을 이유로 문 잠김 현상도 발생한다. 이로 인해 실제로 치명적인 전기차 사망사고가 끊이질 않고 있다.",
+      "date": "2024-06-30",
+      "createBy": "스포츠동아",
+      "imgPath": "news13.png" 
+    },
+    {
+      "id": 14,
+      "title": "GED Designs World's First Electric Vehicle Emergency Door Patent, Design, Trademark 'Attention'",
+      "URL":"https://www.itbiznews.com/news/articleView.html?idxno=139050",
+      "content": "GED (CEO Kang Dong-yeon) is drawing attention by registering patents, designs and trademarks for the world's first electric vehicle emergency door, Charlie Roof. GED is a small and medium-sized company in R&D patent technology that is developing a wireless charging system for electric vehicles.",
+      "date": "2024-07-05",
+      "createBy": "ITBizNews",
+      "imgPath": "news14.png" 
     }
 ]

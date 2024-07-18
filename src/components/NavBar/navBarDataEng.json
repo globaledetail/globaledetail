@@ -1,0 +1,47 @@
+
+[
+    {
+      "id": 0,
+      "menu": "COMPANY",
+      "stateName":"COMAPNY",
+      "route": "/intro/company",
+      "subMenus": [
+        { "id": 1, "title": "Introduction", "route": "/intro/company" },
+        { "id": 2, "title": "History", "route": "/intro/history" },
+        { "id": 3, "title": "Vision", "route": "/intro/vision" },
+        { "id": 4, "title": "Awards & Patents", "route": "/intro/awards" }
+      ]
+    },
+    {
+      "id": 1,
+      "menu": "BUSINESS",
+      "stateName":"BUSINESS",
+      "route": "/business/roof",
+      "subMenus": [
+        { "id": 11, "title": "CharLe Roof", "route": "/business/roof"},
+        { "id": 12, "title": "CharLe Tech", "route": "/business/charle"},
+        { "id": 13, "title": "Chars Tech", "route": "/business/chars" },
+        { "id": 14, "title": "Rebooz", "route": "/business/rebooz" }
+      ]
+    },
+    {
+      "id": 2,
+      "menu": "PR/IR",
+      "stateName":"PRIR",
+      "route": "/irpr/announcements",
+      "subMenus": [
+        { "id": 21, "title": "Announcements", "route": "/irpr/announcements" },
+        { "id": 22, "title": "News", "route": "/irpr/media" },
+        { "id": 23, "title": "IR INFO", "route": "/irpr/ir" }
+      ]
+    },
+    {
+      "id": 3,
+      "menu": "CONTACT",
+      "stateName":"CONTACT",
+      "route": "/contacts",
+      "subMenus": [
+        
+      ]
+    }
+]

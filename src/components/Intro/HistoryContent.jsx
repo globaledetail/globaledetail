@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import styled from "styled-components";
+import { LanguageContext } from "../../context/languageContext";
 
 
 
@@ -143,12 +144,13 @@ const HistoryContentContainer = styled.div`
 
 
 export const HistoryContent = () => {
+  const {isLanguage, setIsLanguage} = useContext(LanguageContext);
     return (
       <>
         <CompanyHistoryWapper>
           <CompanyHistoryTitleContainer >
             <img src={ process.env.PUBLIC_URL + "/img/worldMap.png" }alt="map"></img>
-            <h1 style={{color: "black"}}>회사연혁</h1>
+            <h1 style={{color: "black"}}>{isLanguage === 20 ? "회사연혁": "History"}</h1>
           </CompanyHistoryTitleContainer>
 
           
@@ -159,13 +161,13 @@ export const HistoryContent = () => {
                 <div className="history-item-contents">
                   <ol className="lists">
                     <li className="lists-item">
-                      <h3>01</h3><p> 독일IF 어워드 차량부문 Winner본상 수상 </p>
+                      <h3>01</h3><p> {isLanguage === 20 ? "독일IF 어워드 차량부문 Winner본상 수상":"German IF Awards Main Prize"} </p>
                     </li>
                     <li className="lists-item">
-                      <h3>02</h3><p> 태국국제발명전시회 은상수상 </p>
+                      <h3>02</h3><p> {isLanguage === 20 ? "태국국제발명전시회 은상수상":"Thailand's International Invention Exhibition Silver Prize"}</p>
                     </li>
                     <li className="lists-item">
-                      <h3>03</h3><p>  제59회 발명의날 대통령 포장 </p>
+                      <h3>03</h3><p> {isLanguage === 20 ? "제59회 발명의날 대통령 포장":`59th Invention Day "medal of Presidential"`} </p>
                     </li>
                   </ol>
                 </div>
@@ -175,13 +177,13 @@ export const HistoryContent = () => {
                 <div className="history-item-contents">
                   <ol className="lists">
                     <li className="lists-item">
-                      <h3>01</h3><p> 세계최초FOD제거기술브루솔특허기획 </p>
+                      <h3>01</h3><p>{isLanguage === 20 ? "세계 최초 FOD 제거 기술 브루솔 특허기획":`The world's first FOD removal technology "Brusol" patent`} </p>
                     </li>
                     <li className="lists-item">
-                      <h3>02</h3><p> 찰리2세대개발/ Bot 구동검수용제작 </p>
+                      <h3>02</h3><p>{isLanguage === 20 ? "찰리2세대개발/ Bot 구동검수용제작":"Charle 2nd Generation Development / Production for Bot Drive Inspection "} </p>
                     </li>
                     <li className="lists-item">
-                      <h3>03</h3><p> 찰리EV무선충전지자체/대학교MOU </p>
+                      <h3>03</h3><p> {isLanguage === 20 ? "찰리 EV무선 충전지자체 / 대학교 MOU":"CharLe EV wireless charging local government and university MOU"}</p>
                     </li>
                   </ol>
                 </div>
@@ -191,16 +193,16 @@ export const HistoryContent = () => {
                 <div className="history-item-contents">
                   <ol className="lists">
                     <li className="lists-item">
-                      <h3>01</h3><p> 보건부정책공모전 2위 수상 </p>
+                      <h3>01</h3><p> {isLanguage === 20 ? "보건부정책공모전 2위 수상":"2nd place in the Ministry of Health and Welfare Policy Contest"} </p>
                     </li>
                     <li className="lists-item">
-                      <h3>02</h3><p> 대한민국발명특허대전수상 </p>
+                      <h3>02</h3><p>{isLanguage === 20 ? "대한민국발명특허대전수상":"Korea's Invention and Patent Exhibition Award"} </p>
                     </li>
                     <li className="lists-item">
-                      <h3>03</h3><p> 한국콘텐츠진흥원론치패드선정 </p>
+                      <h3>03</h3><p>{isLanguage === 20 ? "한국콘텐츠진흥원론치패드선정 ":"Selected a lanunch pad by Korean content Agency"} </p>
                     </li>
                     <li className="lists-item">
-                      <h3>04</h3><p> DB손해보험교통챌린지선정 </p>
+                      <h3>04</h3><p>{isLanguage === 20 ? "DB손해보험교통챌린지선정":"Direct DB Transport Challenge Awarded"} </p>
                     </li>
                   </ol>
                 </div>
@@ -210,7 +212,7 @@ export const HistoryContent = () => {
                 <div className="history-item-contents">
                   <ol className="lists">
                     <li className="lists-item">
-                      <h3>01</h3><p> KOTRASelect USA 버지니아주정부계약 </p>
+                      <h3>01</h3><p>{isLanguage === 20 ? "KOTRASelect USA 버지니아주정부계약":"KOTRA Slect USA Virginia contract"} </p>
                     </li>
                   </ol>
                 </div>
@@ -220,7 +222,7 @@ export const HistoryContent = () => {
                 <div className="history-item-contents">
                   <ol className="lists">
                     <li className="lists-item">
-                      <h3>01</h3><p> 서울경찰청사회적기업수상 </p>
+                      <h3>01</h3><p>{isLanguage === 20 ? "서울경찰청사회적기업수상":"Seoul Metropolitan Police Agency Wins Social Enterprise Award"}</p>
                     </li>
                   </ol>
                 </div>
@@ -230,16 +232,16 @@ export const HistoryContent = () => {
                 <div className="history-item-contents">
                   <ol className="lists">
                     <li className="lists-item">
-                      <h3>01</h3><p> 미래창조부장관상 </p>
+                      <h3>01</h3><p>{isLanguage === 20 ? "미래창조부장관상":"Minister of Science, ICT and Future Planning Award"} </p>
                     </li>
                     <li className="lists-item">
-                      <h3>02</h3><p> 대한민국멀티미디어대상3위 </p>
+                      <h3>02</h3><p>{isLanguage === 20 ? "대한민국멀티미디어대상3위":"3rd place for Multimedia Awards"} </p>
                     </li>
                     <li className="lists-item">
-                      <h3>03</h3><p> 찰리1세대개발 </p>
+                      <h3>03</h3><p>{isLanguage === 20 ? "찰리1세대개발":"CharLe 1st Generation Development"} </p>
                     </li>
                     <li className="lists-item">
-                      <h3>04</h3><p> 2016년6월회사설립 </p>
+                      <h3>04</h3><p>{isLanguage === 20 ? "2016년6월회사설립":"Established in June 2016"} </p>
                     </li>
                   </ol>
                 </div>
@@ -249,10 +251,10 @@ export const HistoryContent = () => {
                 <div className="history-item-contents">
                   <ol className="lists">
                     <li className="lists-item">
-                      <h3>01</h3><p> 라스베가스CES 최고혁신상수상 </p>
+                      <h3>01</h3><p>{isLanguage === 20 ? "라스베가스CES 최고혁신상수상":"CES Best innovation"} </p>
                     </li>
                     <li className="lists-item">
-                      <h3>02</h3><p> 제44회발명의날특허청장상수상</p>
+                      <h3>02</h3><p>{isLanguage === 20 ? "제44회 발명의날 특허청장상 수상":"44th the Commissioner of the Korean Intellectual Property Office Award"}</p>
                     </li>
                   </ol>
                 </div>

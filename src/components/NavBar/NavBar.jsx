@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,13 +12,17 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { SubMenu } from "./SubMenu";
+import SelectLanguage from "../SelectLanguage/SelectLanguage";
 
 import styles from './NavBar.module.css'
-import menuData from './navBarData.json'
+import menuDataKor from './navBarDataKor.json'
+import menuDataEng from './navBarDataEng.json'
 import { Link, useNavigate } from "react-router-dom";
+import { LanguageContext } from "../../context/languageContext";
 
 const NavBar = () =>{
-
+  const { isLanguage, setIsLanguage } = useContext(LanguageContext);
+  const [ menu, setMenu ] = useState(menuDataKor);
   const [ anchorElNav, setAnchorElNav ] = useState(null);
 	const [ expanded, setExpanded ] = useState(false);
   const [ screenSize, setScreenSize ] = useState({ width: window.innerWidth, height: window.innerHeight });
@@ -26,6 +30,10 @@ const NavBar = () =>{
   const [ activatedHoverData, setActivatedHoverData] = useState({});
   const [ showSubMenu, setShowSubMenu ] = useState(false)
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    setMenu(isLanguage === 20 ? menuDataKor: menuDataEng);
+  },[isLanguage])
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -57,7 +65,7 @@ const NavBar = () =>{
   const hoverEnterHandler = (index, stateName) => {
     setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
     setHoverStates((prev) => { return {...prev, [stateName]: true } });
-    setActivatedHoverData(menuData[index])
+    setActivatedHoverData(menu[index])
     setShowSubMenu(true);
   };
 
@@ -149,7 +157,7 @@ const NavBar = () =>{
                     display: { xs: 'block', md: 'none' },
                   }}
                 >
-                  {menuData.map((data, index) => {
+                  {menu.map((data, index) => {
                     return (
                       <MenuItem 
                         key={data.id} 
@@ -197,7 +205,7 @@ const NavBar = () =>{
               </Typography>
               {/*  확장 메뉴 */}
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
-                {menuData.map((data, index) => {
+                {menu.map((data, index) => {
                   return(
                     <Button
                       size="large"
@@ -213,6 +221,7 @@ const NavBar = () =>{
                     )}
                 )}
               </Box>
+              <SelectLanguage/>
             </Toolbar>
           </Container>
         </AppBar>

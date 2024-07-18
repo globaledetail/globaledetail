@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import styled from "styled-components";
 
@@ -20,6 +20,9 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { LanguageContext } from "../../context/languageContext";
+
+
 
 
 const AnnouncementsWrapper = styled.div`
@@ -114,6 +117,7 @@ const BootstrapDialog = MUIstyle(Dialog)(({ theme }) => ({
 }));
 
 export const Announcements = () => {
+  const { isLanguage, setIsLanguage } = useContext(LanguageContext);
   const [ tableData, setTableData ] = useState([]);
   const [ currentPage, setCurrentPage ] = useState(1);
   const [ open, setOpen ] = useState(false)
@@ -145,7 +149,7 @@ export const Announcements = () => {
     return (
       <>
         <AnnouncementsWrapper>
-          <h1>공고정보</h1>
+          <h1>{isLanguage === 20 ? "공고정보":"Announcements"}</h1>
           <AnnouncementsContentWrapper>
 
             <AnnouncementTableContainer>
