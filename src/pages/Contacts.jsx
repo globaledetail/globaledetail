@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import styled from "styled-components";
 
@@ -7,6 +7,7 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
 import EmailIcon from '@mui/icons-material/Email';
 import { Footer } from "../components/Footer/Footer";
+import { LanguageContext } from "../context/languageContext";
 
 const ContactsWrapper = styled.div`
   width: 100%;
@@ -104,7 +105,7 @@ const ContactsContentsContainer = styled.div`
 `;
 
 export const Contacts = () => {
-
+  const { isLanguage, setIsLanguage } = useContext(LanguageContext);
   return (
     <>
       <ContactsWrapper>
@@ -136,14 +137,14 @@ export const Contacts = () => {
             </ContactsContentsContainer> */}
 
             <ContactsContentsContainer>
-              <h1>{`(주)지이디`}</h1>
+              <h1>{isLanguage === 20 ? `(주)지이디` : "GED Co."}</h1>
               <div style={{display:"flex", alignItems:"center", margin: "10px 0 10px 0"}}>
                 <BusinessIcon sx={{width:"30px", height:"30px"}}></BusinessIcon>
-                <span style={{margin: "0px", marginLeft: "10px", marginTop:"5px", fontSize: "18px"}}>서울 관악구 호암로 24길 6 </span>
+                <span style={{margin: "0px", marginLeft: "10px", marginTop:"5px", fontSize: "18px"}}>{isLanguage === 20 ? "서울 관악구 호암로 24길 6":"6, Hoam-ro 24-gil, Gwanak-gu, Seoul, South Korea"} </span>
               </div>
               <div style={{display:"flex", alignItems:"center", margin: "10px 0 10px 0"}}>
                 <BusinessIcon sx={{width:"30px", height:"30px"}}></BusinessIcon>
-                <span style={{margin: "0px", marginLeft: "10px", marginTop:"5px", fontSize: "18px"}}> 제주일서로 7898 3층</span>
+                <span style={{margin: "0px", marginLeft: "10px", marginTop:"5px", fontSize: "18px"}}> {isLanguage === 20 ? "제주일서로 7898 3층":"3rd Floor, 7898, Jeju Ilsa-ro, Jeju-si, Jeju-do, South Korea"}</span>
               </div>
               <div style={{display:"flex", alignItems:"center", margin: "10px 0 10px 0"}}>                <LocalPhoneIcon sx={{width:"30px", height:"30px"}}></LocalPhoneIcon>
                 <span style={{margin: "0px", marginLeft: "10px", marginTop:"5px", fontSize: "18px"}}>070-8080-5480</span>

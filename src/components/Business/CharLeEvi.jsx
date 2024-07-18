@@ -1,12 +1,11 @@
 
-import React, { useRef, useState, useEffect, useContext } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import ReactPlayer from 'react-player';
 
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
-import { LanguageContext } from "../../context/languageContext";
 
-const PolarWrapper = styled.div`
+const EviWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -30,7 +29,7 @@ const PolarWrapper = styled.div`
   }
 `;
 
-const PolarTitleVedioContainer = styled.div`
+const EviTitleVedioContainer = styled.div`
   width: 90%;
   display: flex;
   overflow: hidden;
@@ -55,7 +54,7 @@ const PolarTitleVedioContainer = styled.div`
   }
 `;
 
-const PolarContentWrapper = styled.div`
+const EviContentWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -155,8 +154,7 @@ const ContentContainer = styled.div`
 
 `;
 
-export const PolarBusiness = () => {
-  const {isLanguage, setIsLanguage} = useContext(LanguageContext);
+export const CharLeEvi = () => {
   const [ playing, setPlaying ] = useState(false);
   const videoState = useRef(null);
   const [ ready, setReady ] = useState(false);
@@ -177,64 +175,43 @@ export const PolarBusiness = () => {
 
   return (
     <>
-      {/* <PolarWrapper>
-        <h1>Polar 전극단자 기술 소개</h1> */}
-        <PolarContentWrapper>
+      {/* <EviWrapper> */}
+        <EviContentWrapper>
           
-          <div className="content-title">
+          {/* <div className="content-title">
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
-            <h2>
-              {isLanguage === 20 ?  
-              "Charle Polar 정밀 AI 도킹시스템"
-              : 
-              "Charle Polar Precision AI Docking System"}
-              </h2>
+            <h2>Charle Roof 비상탈출</h2>
           </div>
 
           <ContentContainer>
             <div className="content">
               <div className="img-container">
-                <img src={process.env.PUBLIC_URL + "/img/polar/polarFull.png"} alt="bot"></img>
+                <img src={process.env.PUBLIC_URL + "/img/charLeRoof/CharLeRoof1.png"} alt="bot"></img>
               </div>
               <div className="text-container">
-                <span>
-                  {isLanguage === 20 ? 
-                  "전기차, 지게차, 농기계 등에 적용 가능한 무선충전 확장기술"
-                  : 
-                  "Wireless charging expansion technology that can be applied to electric vehicles, forklift electric vehicles, and agricultural machinery electric vehicles."}
-                </span>
+                <span>비상시 사용 가능한 비상탈출</span>
               </div>
             </div>
 
             <div className="content">
               <div className="img-container">
-                <img src={process.env.PUBLIC_URL + "/img/polar/polarWorking.png"} alt="bot"></img>
+                <img src={process.env.PUBLIC_URL + "/img/charLeRoof/CharLeRoof2.png"} alt="bot"></img>
               </div>
               <div className="text-container">
-                <span>
-                  {isLanguage === 20 ? 
-                  "인공지능 기술로 목표물을 찾아 로봇팔을 움직이고 충전을 제어하며 통신하는 최신 기술들의 집합체"
-                  :
-                  "It is a collection of the latest technologies that find targets with artificial intelligence technology, move the robot arm, control charging, and communicate."}
-                  </span>
+                <span>다양한 구조가 가능한 세계 최초로 전기차 비상문 찰리 루프</span>
               </div>
             </div>
           </ContentContainer>
 
           <div className="content-title" style={{marginTop: "50px"}}>
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
-            <h2>
-              {isLanguage === 20 ? 
-              "Charle Polar 도킹시스템"
-              : 
-              "Charle Polar Docking System"}
-            </h2>
-          </div>
+            <h2>Charle 루프 시스템</h2>
+          </div> */}
 
-          <PolarTitleVedioContainer>
+          <EviTitleVedioContainer>
             <ReactPlayer
               ref={videoState}
-              url={process.env.PUBLIC_URL + "/videos/polar.mp4"}
+              url={process.env.PUBLIC_URL + "/videos/CharLeEvi.mp4"}
               className='player' // 클래스 이름 지정하여 스타일 적용
               playing={playing} // 재생 상태, true = 재생중 / false = 일시 정지
               controls={true} // 유튜브 재생 컨트롤바 노출 여부
@@ -247,11 +224,11 @@ export const PolarBusiness = () => {
               style={{ objectFit: "cover", borderRadius:" 20px", position: "relative" }}
             >
             </ReactPlayer>
-          </PolarTitleVedioContainer>
+          </EviTitleVedioContainer>
 
-        </PolarContentWrapper>
-      {/* </PolarWrapper>
-     */}
+        </EviContentWrapper>
+      {/* </EviWrapper> */}
+    
     </>
   )
 }

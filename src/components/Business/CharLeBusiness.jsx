@@ -1,10 +1,13 @@
 
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 
 import styled from "styled-components";
 
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import ReactPlayer from 'react-player';
+import { PolarBusiness } from "./PolarBusiness";
+import { CharLeEvi } from "./CharLeEvi";
+import { LanguageContext } from "../../context/languageContext";
 
 const CharLeBusinessWrapper = styled.div`
   width: 100%;
@@ -284,8 +287,37 @@ const VideoTextContainer = styled.div`
 
 `;
 
+const ContentTitleContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  h2{
+    font-size: 35px;
+    color: #7f7f7f;
+    margin-bottom: 10px;
+  }
+`;
+
+const DividerContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const Line = styled.hr`
+  width: 40%;
+  height: 5px;
+  background-color: #d3d3d3;
+  border: none;
+  margin: 20px 0;
+  border-radius: 5px;
+
+`
+
 
 export const CharLeBusiness = () => {
+  const {isLanguage, setIsLanguage} = useContext(LanguageContext);
   const [ playing, setPlaying ] = useState(false);
   const videoState = useRef(null);
   const [ ready, setReady ] = useState(false);
@@ -306,11 +338,23 @@ export const CharLeBusiness = () => {
   return (
     <>
       <CharLeBusinessWrapper>
-        <h1>찰리 기술소개</h1>
+        <h1>{isLanguage === 20 ? "찰리 기술소개" : "CharLe Technologies"}</h1>
+
+        <ContentTitleContainer>
+          <h2>{isLanguage === 20 ? "찰리 봇 2" : "CharLe Bot 2"}</h2>
+        </ContentTitleContainer>
+        <DividerContainer>
+            <Line/>
+          </DividerContainer>
         <CharLeContentsContainer>
           <div className="content-title">
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
-            <h2>Polar 전극단자기술 기반의 Active ( 레일형 )</h2>
+            <h2>
+              {isLanguage === 20 ? 
+              "Polar 전극단자기술 기반의 Active ( 레일형 )" 
+              :
+              "Charle Polar Precision AI Docking System"}
+            </h2>
           </div>
 
           <CharLeActiveLeftContainer className="charLeActive-box">
@@ -320,7 +364,12 @@ export const CharLeBusiness = () => {
             <div className="content-container">
               <div className="line-box">
                 {/* <div className="line"></div> */}
-                <span>표준 자가 유도 충전 기술 확장한 IoT기반 무선 충전 시스템 </span>
+                <span>
+                  {isLanguage === 20 ?  
+                  "표준 자가 유도 충전 기술 확장한 IoT기반 무선 충전 시스템" 
+                  : 
+                  "LoT based wireless charging system with expanded standard magnetic induction charging technology"} 
+                </span>
               </div>
             </div>
             <div className="img-container">
@@ -338,7 +387,12 @@ export const CharLeBusiness = () => {
             <div className="content-container">
               <div className="line-box">
                 {/* <div className="line"></div> */}
-                <span>지하 주차장용 AI무인 무선 충전 로봇 개발</span>
+                <span>
+                  {isLanguage === 20 ? 
+                  "지하 주차장용 AI무인 무선 충전 로봇 개발" 
+                  :
+                  "Development of AI Unmanned Wireless Charging Robot for Underground Parking Lot"}
+                </span>
               </div>
             </div>
           </CharLeActiveRightContainer>
@@ -350,7 +404,12 @@ export const CharLeBusiness = () => {
             <div className="content-container">
               <div className="line-box">
                 {/* <div className="line"></div> */}
-                <span>최적 효율 충전을 위한 전기차 무선 충전 최적 좌표 검출</span>
+                <span>
+                {isLanguage === 20 ? 
+                "최적 효율 충전을 위한 전기차 무선 충전 최적 좌표 검출"
+                : 
+                "Detecting optimal coordinates for wireless charging of electric vehicles for optimal efficiency charging"}
+                </span>
               </div>
             </div>
             <div className="img-container">
@@ -368,7 +427,12 @@ export const CharLeBusiness = () => {
             <div className="content-container">
               <div className="line-box">
                 {/* <div className="line"></div> */}
-                <span>운전자 스마트폰을 활용한 완전 무인 운영 시스템 구현</span>
+                <span>
+                {isLanguage === 20 ?
+                  "운전자 스마트폰을 활용한 완전 무인 운영 시스템 구현"
+                  :
+                  " Implementation of a fully unmanned operating system using smartphones"}          
+                </span>
               </div>
             </div>
           </CharLeActiveRightContainer>
@@ -377,7 +441,11 @@ export const CharLeBusiness = () => {
         <ActiveProsConstainer>
           <div className="activeProps-title">
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
-            <h2>찰리 무선 충전 기술 Active 장점</h2>
+            <h2>{isLanguage === 20 ? 
+            "찰리 무선 충전 기술 Active 장점"
+            : 
+            "CharLe Wireless Charging Technology Active Advantage"}
+            </h2>
           </div>
           <div className="ActivePropsImg-container">
             <img src={ process.env.PUBLIC_URL + "/img/business/charleActive.png"} alt="pros"></img>
@@ -388,7 +456,12 @@ export const CharLeBusiness = () => {
         <VideoTextContainer >
           <div className="text-box">
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
-            <h2>찰리 무선 충전 기술 </h2>
+            <h2>
+            {isLanguage === 20 ? 
+            "찰리 무선 충전 기술" 
+            : 
+            "CharLe Wireless Charging Technology"} 
+            </h2>
           </div>
         </VideoTextContainer>
         <CharLeTitleVedioContainer>
@@ -407,8 +480,39 @@ export const CharLeBusiness = () => {
               style={{ objectFit: "cover", borderRadius:" 20px", position: "relative" }}
             >
             </ReactPlayer>
-
         </CharLeTitleVedioContainer>
+
+        <CharLeContentsContainer>
+          <ContentTitleContainer>
+            <h2>
+              {isLanguage === 20 ? 
+              "찰리 폴라" 
+              : 
+              "CharLe Polar"}
+            </h2>
+          </ContentTitleContainer>
+          <DividerContainer>
+            <Line/>
+          </DividerContainer>
+            <PolarBusiness/>
+        </CharLeContentsContainer>
+
+        <CharLeContentsContainer>
+          <ContentTitleContainer>
+            <h2>
+            {isLanguage === 20 ? 
+              "찰리 Evi"
+              :
+              "CharLe Evi"}
+            </h2>
+          </ContentTitleContainer>
+
+          <DividerContainer>
+            <Line/>
+          </DividerContainer>
+
+            <CharLeEvi/>
+        </CharLeContentsContainer>
 
       </CharLeBusinessWrapper>
 

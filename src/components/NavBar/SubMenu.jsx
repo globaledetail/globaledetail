@@ -102,3 +102,4 @@ export const SubMenu = ({ activatedHoverData, handleSubMenuEnter, handleSubMenuL
       </SubMenuWrapper>
     );
 }
+

@@ -1,7 +1,8 @@
 
-import React from "react";
+import React, { useContext } from "react";
 
 import styled from "styled-components";
+import { LanguageContext } from "../../context/languageContext";
 
 
 const ReboozeBusinessWrapper = styled.div`
@@ -136,6 +137,7 @@ const ContentContainer = styled.div`
         justify-content: center;
         align-items: center;
         word-break: keep-all;
+        font-size: 18px;
       }
     }
   }
@@ -144,21 +146,30 @@ const ContentContainer = styled.div`
 
 
 export const ReboozBusiness = () => {
+  const {isLanguage, setIsLanguage} = useContext(LanguageContext);
   return (
     <>
       <ReboozeBusinessWrapper>
-        <h1>리부즈 소개</h1>
+        <h1>{isLanguage === 20 ? "리부즈 소개": "REBOOZ"}</h1>
 
         <ContentContainer>
           <div className="iamge-and-intro">
             <div className="image">
                 <img src={ process.env.PUBLIC_URL + "/img/chars/rebooz.png"} alt="rebooz"></img>
-                <a href={'http://rebooz.co.kr'}>리부즈 사이트로 이동</a>
+                <a href={'http://rebooz.co.kr'}>{isLanguage === 20 ? "리부즈 사이트로 이동": "See More"}</a>
             </div>
 
             <div className="intro">
-              <h2> 리부즈는 클리닝 기술로써 100% 청정 에너지 수소 및 수성 공정입니다.</h2>
-              <h2> 엔진의 어느 부분도 분해하지 않고 전체 클리닝을 할수 있어 엔진 오일이 손상되지 않습니다.</h2>
+              <h2> {isLanguage === 20 ? 
+              "리부즈는 클리닝 기술로써 100% 청정 에너지 수소 및 수성 공정입니다."
+              :
+              "REBOOZ is a cleaning technology that is 100% clean energy hydrogen and water-based process."}
+              </h2>
+              <h2> {isLanguage === 20 ? 
+              "엔진의 어느 부분도 분해하지 않고 전체 클리닝을 할수 있어 엔진 오일이 손상되지 않습니다."
+              : 
+              "Full cleaning can be done without disassembling any part of the engine so that the engine oil is not damaged."}
+              </h2>
             </div>
           </div>
         </ContentContainer>

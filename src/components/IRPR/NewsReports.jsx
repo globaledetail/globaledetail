@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import styled from "styled-components";
 
 import newsData from "./newsData.json"
+import { LanguageContext } from "../../context/languageContext";
 
 
 
@@ -133,12 +134,13 @@ const ContentContainer = styled.div`
 
 
 export const NewsReports = () => {
+  const { isLanguage, setIsLanguage } = useContext(LanguageContext);
   const sortedData = newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
   const [data, setData] = useState(sortedData)
   return (
     <>
       <NewsReportsWrapper>
-        <h1>언론보도</h1>
+        <h1>{isLanguage === 20 ? "언론보도":"News"}</h1>
         <NewsReportsContentWrapper>
 
           {data?.map((data, idx)=>{

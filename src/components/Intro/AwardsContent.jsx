@@ -1,10 +1,11 @@
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import styled from "styled-components";
 
 import Button from '@mui/material/Button';
 import { styled as MUIstyle} from '@mui/material/styles';
+import { LanguageContext } from "../../context/languageContext";
 
 
 const AwardsPatentsWrapper = styled.div`
@@ -101,6 +102,7 @@ const ContentList = styled.div`
 
 export const AwardsContent = () =>{
 const [ selectorState, setSelectorState ] = useState( {awards: true, patents: false} );
+const {isLanguage, setIsLanguage} = useContext(LanguageContext);
 
 const selectorBtnHandler = () => {
   setSelectorState((prev)=>{
@@ -141,12 +143,12 @@ const selectorBtnHandler = () => {
   return(
     <>
       <AwardsPatentsWrapper>
-        <h1>수상 및 특허</h1>
+        <h1>{isLanguage === 20 ? "수상 및 특허" : "Awards & Patents"}</h1>
         <div style={{marginBottom: "40px"}}>
-          <span style={{fontWeight: "800", fontSize:"15px"}}>주식회사 GED 
-            <span style={{color: "#4975DB"}}> 수상</span> 및 
-            <span style={{color: "#4975DB"}}> 특허</span>
-            입니다</span>
+          <span style={{fontWeight: "800", fontSize:"15px"}}>{isLanguage === 20 ? "주식회사 GED":"GED"} 
+            <span style={{color: "#4975DB"}}> {isLanguage === 20 ? "수상":"Awards"}</span> {isLanguage === 20 ? "및":"&"} 
+            <span style={{color: "#4975DB"}}> {isLanguage === 20 ? "특허":"Patents"}</span>
+            {isLanguage === 20 ? "입니다":""}</span>
         </div>
 
         <AwardsPatentsSelectorContainer>
@@ -159,7 +161,7 @@ const selectorBtnHandler = () => {
               border: `1px solid ${ selectorState.awards ? "#4975DB" : "#ffffff" }`,
             }}
             onClick={()=>{ selectorBtnHandler() }} 
-          >수상</Button>
+          >{isLanguage === 20 ? "수상":"Awards"}</Button>
           <Button 
             variant="contained" 
             size="large" 
@@ -169,7 +171,7 @@ const selectorBtnHandler = () => {
               color: `${ selectorState.patents ? "#ffffff" : "#999999" }`,
               border: `1px solid ${ selectorState.patents ? "#4975DB" : "#ffffff" }`,
             }}
-          >특허</Button>
+          >{isLanguage === 20 ? "특허":"Patents"}</Button>
 
         </AwardsPatentsSelectorContainer>
 
@@ -180,84 +182,84 @@ const selectorBtnHandler = () => {
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent1.png"} alt="patent"></img>
               <div className="text-container">
-                <span>후발 추돌 방지 시스템</span>
+                <span>{isLanguage === 20 ? "후발 추돌 방지 시스템":""}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent2.png" }alt="patent"></img>
               <div className="text-container">
-                <span>자가 공명 방식 무선 충전기</span>
+                <span>{isLanguage === 20 ? "자가 공명 방식 무선 충전기":""}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent3.png"} alt="patent"></img>
               <div className="text-container">
-                <span>무료 스마트폰 배터리 충정 시스템</span>
+                <span>{isLanguage === 20 ? "무료 스마트폰 배터리 충정 시스템":""}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent4.png"} alt="patent"></img>
               <div className="text-container">
-                <span>스마트폰 사용 제한 시스템</span>
+                <span>{isLanguage === 20 ? "스마트폰 사용 제한 시스템":""}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent5.png"} alt="patent"></img>
               <div className="text-container">
-                <span>운전중 스마트폰 사용증거 수집 시스템</span>
+                <span>{isLanguage === 20 ? "운전중 스마트폰 사용증거 수집 시스템":""}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent6.png"} alt="patent"></img>
               <div className="text-container">
-                <span>자가 공명 방식 무선 충전기 및 동작방법</span>
+                <span>{isLanguage === 20 ? "자가 공명 방식 무선 충전기 및 동작방법":""}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent7.png"} alt="patent"></img>
               <div className="text-container">
-                <span>운전중 스마스폰 사용증거 수집 스마트폰</span>
+                <span>{isLanguage === 20 ? "운전중 스마스폰 사용증거 수집 스마트폰":""}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent8.png"} alt="patent"></img>
               <div className="text-container">
-                <span>스마트 충전기를 이용한 통신 단말기 충전 시스템</span>
+                <span>{isLanguage === 20 ? "스마트 충전기를 이용한 통신 단말기 충전 시스템":""}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent9.png"} alt="patent"></img>
               <div className="text-container">
-                <span>주차장에 설치되는 무선충전 시스템</span>
+                <span>{isLanguage === 20 ? "주차장에 설치되는 무선충전 시스템":""}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent10.png"} alt="patent"></img>
               <div className="text-container">
-                <span>스마트폰에 의해 구동되는 무선 충전 시스템</span>
+                <span>{isLanguage === 20 ? "스마트폰에 의해 구동되는 무선 충전 시스템":""}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent11.png"} alt="patent"></img>
               <div className="text-container">
-                <span>벨트가 연결된 생체 데이터 및 건강정보 감시 시스템</span>
+                <span>{isLanguage === 20 ? "벨트가 연결된 생체 데이터 및 건강정보 감시 시스템":""}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/patent12.png"} alt="patent"></img>
               <div className="text-container">
-                <span>전기차용 자율주행 무선충전로봇 및 관리서버</span>
+                <span>{isLanguage === 20 ? "전기차용 자율주행 무선충전로봇 및 관리서버":""}</span>
               </div>
             </ContentList>
           </>) 
@@ -266,21 +268,21 @@ const selectorBtnHandler = () => {
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/award4.png"} alt="patent"></img>
               <div className="text-container">
-                <span>제 59회 발명의날 대통령 포장</span>
+                <span>{isLanguage === 20 ? "제 59회 발명의날 대통령 포장":`59th Invention Day "medal of Presidential"`}</span>
               </div>
             </ContentList>
 
             <ContentList>
               <img src={ process.env.PUBLIC_URL + "/img/patents/award1.png"} alt="patent"></img>
               <div className="text-container">
-                <span>2024 독일 IF Awards 본상</span>
+                <span>{isLanguage === 20 ? "2024 독일 IF Awards 본상":"German IF Awards Main Prize"}</span>
               </div>
             </ContentList>
 
             <ContentList>
             <img src={ process.env.PUBLIC_URL + "/img/patents/award2.png"} alt="patent"></img>
             <div className="text-container">
-              <span>2022 특허 청장상 수상</span>
+              <span>{isLanguage === 20 ? "2022 특허 청장상 수상":"Korea's Invention and Patent Exhibition Award"}</span>
             </div>
             </ContentList>
 
@@ -288,7 +290,7 @@ const selectorBtnHandler = () => {
             <ContentList>
             <img src={ process.env.PUBLIC_URL + "/img/patents/award3.png"} alt="patent"></img>
             <div className="text-container">
-              <span>2010 라스베가스 CES 최고 혁신상 수상</span>
+              <span>{isLanguage === 20 ? "2010 라스베가스 CES 최고 혁신상 수상":"CES Best innovation"}</span>
             </div>
             </ContentList>
           </>)}

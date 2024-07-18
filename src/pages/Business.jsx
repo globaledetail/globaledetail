@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 import { Footer } from "../components/Footer/Footer";
+import { LanguageContext } from "../context/languageContext";
 
 
 const BusinessWrapper = styled.div`
@@ -112,13 +113,14 @@ const TabContainer = styled.div`
 
 
 export const Business = () => {
+  const { isLanguage, setIsLanguage } = useContext(LanguageContext);
   const [ currentPage, setCurrentPage ] = useState([{ page:'Polar 전극단자 기술', index: 0}]);
   const navigate = useNavigate('');
   const currentURL = useLocation();
   
   useEffect(()=>{
-    if(currentURL?.pathname === '/business/polar'){
-      setCurrentPage([{ page:'Polar 전극단자 기술', index: 0}]);
+    if(currentURL?.pathname === '/business/roof'){
+        setCurrentPage([{ page:'찰리 루프', index: 0}]);
     };
     if(currentURL?.pathname === '/business/charle'){
       setCurrentPage([{ page:'찰리 기술소개', index: 1}]);
@@ -146,19 +148,19 @@ export const Business = () => {
           <TabContainer>
             <div 
               onClick={()=>{
-                currentPageHandler('Polar 전극단자 기술');
-                navigate('/business/polar');
+                currentPageHandler('찰리 루프');
+                navigate('/business/roof');
               }}
               style={{
-                backgroundColor: `${ currentPage[0].page === "Polar 전극단자 기술" ? "#4975db" : "#e5e5e5" }`,
+                backgroundColor: `${ currentPage[0].page === "찰리 루프" ? "#4975db" : "#e5e5e5" }`,
                 fontWeight: "800"
               }}
             >
               <span style={{
-                color: `${ currentPage[0].page === "Polar 전극단자 기술" ? "white" : "#6f6f6f" }`,
-                fontWeight: `${ currentPage[0].page === "Polar 전극단자 기술" ? "800" : "600" }`,
+                color: `${ currentPage[0].page === "찰리 루프" ? "white" : "#6f6f6f" }`,
+                fontWeight: `${ currentPage[0].page === "찰리 루프" ? "800" : "600" }`,
                 minWidth:"135px",
-              }}>Polar 전극단자 기술</span>
+              }}>{isLanguage === 20 ? "찰리 루프":"CharLe Roof"}</span>
             </div>
 
             <div 
@@ -174,7 +176,7 @@ export const Business = () => {
               <span style={{
                 color: `${ currentPage[0].page === "찰리 기술소개" ? "white" : "#6f6f6f" }`,
                 fontWeight: `${ currentPage[0].page === "찰리 기술소개" ? "800" : "600" }`,
-              }}>찰리 기술소개</span>
+              }}>{isLanguage === 20 ? "찰리 기술소개":"CharLe Tech"}</span>
             </div>
 
             <div 
@@ -190,7 +192,7 @@ export const Business = () => {
               <span style={{
                 color: `${ currentPage[0].page === "찰스 기술소개" ? "white" : "#6f6f6f" }`,
                 fontWeight: `${ currentPage[0].page === "찰스 기술소개" ? "800" : "600" }`,
-              }}>찰스 기술소개</span>
+              }}>{isLanguage === 20 ? "찰스 기술소개" : "Chars Tech"  }</span>
             </div>
 
             <div 
@@ -206,7 +208,7 @@ export const Business = () => {
               <span style={{
                 color: `${ currentPage[0].page === "리부즈" ? "white" : "#6f6f6f" }`,
                 fontWeight: `${ currentPage[0].page === "리부즈" ? "800" : "600" }`,
-              }}>리부즈</span>
+              }}>{isLanguage === 20 ?"리부즈":"Rebooz"}</span>
             </div>
           </TabContainer>
         </BusinessImgContainer>

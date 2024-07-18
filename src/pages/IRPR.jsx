@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Footer } from "../components/Footer/Footer";
+import { LanguageContext } from "../context/languageContext";
 
 
 
@@ -96,6 +97,7 @@ const IRPRContentContainer = styled.div`
 
 
 export const IRPR = () => {
+  const { isLanguage, setIsLanguage } = useContext(LanguageContext);
   const [ currentPage, setCurrentPage ] = useState([{ page:'공고정보', index: 0}]);
   const navigate = useNavigate('');
   const currentURL = useLocation('');
@@ -139,7 +141,7 @@ export const IRPR = () => {
                     color: `${ currentPage[0].page === "공고정보" ? "white" : "#6f6f6f" }`,
                     fontWeight: `${ currentPage[0].page === "공고정보" ? "800" : "600" }`,
                     minWidth:"135px",
-                  }}>공고정보</span>
+                  }}>{isLanguage === 20 ? "공고정보":"Announcements"}</span>
                 </div>
 
                 <div 
@@ -155,7 +157,7 @@ export const IRPR = () => {
                   <span style={{
                     color: `${ currentPage[0].page === "언론보도" ? "white" : "#6f6f6f" }`,
                     fontWeight: `${ currentPage[0].page === "언론보도" ? "800" : "600" }`,
-                  }}>언론보도</span>
+                  }}>{isLanguage === 20 ? "언론보도": "News"}</span>
                 </div>
 
                 <div 
@@ -171,7 +173,7 @@ export const IRPR = () => {
                   <span style={{
                     color: `${ currentPage[0].page === "IR 자료" ? "white" : "#6f6f6f" }`,
                     fontWeight: `${ currentPage[0].page === "IR 자료" ? "800" : "600" }`,
-                  }}>IR 자료</span>
+                  }}>{isLanguage === 20 ? "IR 자료":"IR INFO"}</span>
                 </div>
               </TabContainer>  
             </IRPRImgContainer>

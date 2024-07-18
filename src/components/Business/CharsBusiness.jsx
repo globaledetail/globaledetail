@@ -1,9 +1,10 @@
 
-import React from "react";
+import React, { useContext } from "react";
 
 import styled from "styled-components";
 
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
+import { LanguageContext } from "../../context/languageContext";
 
 const CharlesBusinessWrapper = styled.div`
   width: 100%;
@@ -195,29 +196,35 @@ const AdsImageContainer = styled.div`
   }
 `;
 
+const ContentTitleContainer = styled.div`
+  width: 100%;
+
+`
+
 
 export const CharsBusiness = () => {
+  const {isLanguage, setIsLanguage} = useContext(LanguageContext);
   return (
     <>
       <CharlesBusinessWrapper>
-        <h1>찰스 기술소개</h1>
+        <h1>{isLanguage === 20 ? "찰스 기술소개": "CharS Technologies"}</h1>
         <CharlesContentsContainer>
 
           <div className="content-title">
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
-            <h2>Chars BT 통신형</h2>
+            <h2>{isLanguage === 20 ? "Chars BT 통신형" : "Chars BT Type"}</h2>
           </div>
 
           <TablesContainer>
 
             <div className="sub-title">
               <div className="sub-title-sentance">
-                <span>Char<span style={{color: "red"}}>S</span>는 </span>
-                <span> 하드웨어</span>
-                <span> &ensp;+ 디바이스</span>
-                <span> &ensp;+ 서버 패키지가 결합된</span>
+                <span>Char<span style={{color: "red"}}>S</span>{isLanguage === 20 ? "는": " is"}&ensp;</span>
+                <span> {isLanguage === 20 ? "하드웨어" : "combined Hardware"}</span>
+                <span> &ensp;{isLanguage === 20 ? "+ 디바이스" : "+ Device"} </span>
+                <span> &ensp;{isLanguage === 20 ? "+ 서버 패키지가 결합된" : "+ Server package and"}</span>
               </div>
-              <span style={{color: "#3869db"}}>&ensp;유일의 충전 특허 기술 !</span>
+              <span style={{color: "#3869db"}}>&ensp;{isLanguage === 20 ? "유일의 충전 특허 기술 !" : "is the only charging patent technology !"}</span>
             </div>
 
             <TableContent>
@@ -255,12 +262,17 @@ export const CharsBusiness = () => {
 
           <div className="content-title" style={{marginTop: "100px"}}>
             <ElectricBoltIcon sx={{padding:"0 0px 0 30px", width: "30px", height: "30px"}}></ElectricBoltIcon>
-            <h2>초음파(UltraSound) 통신형</h2>
+            <h2>{ isLanguage === 20 ? "초음파(UltraSound) 통신형":"Chars Ultra Sound Type"}</h2>
           </div>
 
           <TablesContainer>
             <div className="sub-title">
-              <h2 className="second-sub-title" style={{fontSize: "30px"}}>무선 충전 ZONE의 CharS Control을 통한 초음파 통신 무선 충전 서비스제공</h2>
+              <h2 className="second-sub-title" style={{fontSize: "25px"}}>
+                {isLanguage === 20 ? 
+                "무선 충전 ZONE의 CharS Control을 통한 초음파 통신 무선 충전 서비스제공"
+                : 
+                "Wireless Charging Provides Wireless Charging Service with CharS Control on ZONE"}
+              </h2>
             </div>
 
             <AdsImageContainer>
