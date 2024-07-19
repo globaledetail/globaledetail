@@ -166,9 +166,9 @@ export const ReboozBusiness = () => {
               "REBOOZ is a cleaning technology that is 100% clean energy hydrogen and water-based process."}
               </h2>
               <h2> {isLanguage === 20 ? 
-              "엔진의 어느 부분도 분해하지 않고 전체 클리닝을 할수 있어 엔진 오일이 손상되지 않습니다."
+              "엔진의 어느 부분도 분해하지 않고 전체 클리닝을 할수 있어 엔진이 손상되지 않습니다."
               : 
-              "Full cleaning can be done without disassembling any part of the engine so that the engine oil is not damaged."}
+              "Full cleaning can be done without disassembling any part of the engine so that the engin is not damaged."}
               </h2>
             </div>
           </div>
