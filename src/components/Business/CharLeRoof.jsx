@@ -242,7 +242,7 @@ export const CharLeRoof = () => {
               <PtagStyle>{isLanguage === 20 ?  "⦁ 일정한 충격 값에서 작동":"⦁ Open at constant impact value" }</PtagStyle>
               <PtagStyle>{isLanguage === 20 ?  "⦁ 상시 수동으로 개/폐 가능":"⦁ Manual Open at all times"}</PtagStyle>
               <PtagStyle>{isLanguage === 20 ?  "⦁ 구조자 반자동 개방 기능":"⦁ Helpers Semi-Automatic Open Features"}</PtagStyle>
-              <PtagStyle>{isLanguage === 20 ?  "⦁ 문을 닫힘 현상 대비 가능":"⦁ Can be prepared for closing the door"}</PtagStyle>
+              <PtagStyle>{isLanguage === 20 ?  "⦁ 문닫힘 현상 대비 가능":"⦁ Can be prepared for closing the door"}</PtagStyle>
               <PtagStyle>{isLanguage  === 20 ?  "⦁ 개폐 방향 설정 간편":"⦁ Easy to set opening and closing directions"}</PtagStyle>
             </div>
           </ContentContainer>
