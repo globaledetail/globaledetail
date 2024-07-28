@@ -151,20 +151,9 @@ export const ThirdBackgroundContent = () =>{
                                 ㈜지이디GED 찰스 주니어, 빅데이터 기반 스마트 충전 시대 연다.
                             </a>
                         </SwiperSlide>
+
                         <SwiperSlide>
                             {/* NEWS2 */}
-                            <img className="icon" src={process.env.PUBLIC_URL +"/img/icons/news.png" }></img>
-                            <div className="slide-container">
-                                <a href="https://n.news.naver.com/article/015/0004261919" target='_blank'> 
-                                    <img src={ process.env.PUBLIC_URL + "/img/news/news2.jpg"} alt="news"/> 
-                                </a>
-                            </div>
-                            <a href="https://n.news.naver.com/article/015/0004261919" target='_blank'>  
-                                중소상공인총연합회-지이디, ‘모바일광고 지원 프로젝트’ 협약 체결
-                            </a>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            {/* NEWS3 */}
                             <img className="icon" src={process.env.PUBLIC_URL + "/img/icons/news.png"}></img>
                             <div className="slide-container">
                                 <a href="https://n.news.naver.com/article/018/0004271926" target='_blank'> 
@@ -176,27 +165,40 @@ export const ThirdBackgroundContent = () =>{
                             </a>
                         </SwiperSlide>
                         <SwiperSlide>
+                            {/* NEWS3 */}
+                            <img className="icon" src={process.env.PUBLIC_URL +"/img/icons/news.png" }></img>
+                            <div className="slide-container">
+                                <a href="https://www.news1.kr/industry/sb-founded/5457275" target='_blank'> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/irpr/news/news11.png"} alt="news"/> 
+                                </a>
+                            </div>
+                            <a href="https://n.news.naver.com/article/015/0004261919" target='_blank'>  
+                            지이디, 'Rebooz 머신' 중동국부펀드 통해 아부다비 공항 실물테스트
+                            </a>
+                        </SwiperSlide>
+
+                        <SwiperSlide>
                             {/* NEWS4 */}
                             <img className="icon" src={ process.env.PUBLIC_URL + "/img/icons/news.png"}></img>
                             <div className="slide-container">
-                                <a href="https://www.news1.kr/articles/?5367331" target='_blank'> 
-                                    <img src={ process.env.PUBLIC_URL + "/img/news/news4.png"} alt="news"/> 
+                                <a href="https://sports.donga.com/article/all/20240630/125693499/1" target='_blank'> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/irpr/news/news13.png"} alt="news"/> 
                                 </a>
                             </div>
                             <a href="https://www.news1.kr/articles/?5367331" target='_blank'>  
-                                지이디, 전극단자 모듈형 충전시스템 '찰리-Polar' 특허·출시 예고
+                            지이디, 세계 최초 전기차 비상문 특허 의장·상표 고안 ‘눈길’
                             </a>
                         </SwiperSlide>
                         <SwiperSlide>
                             {/* AWARD2 */}
-                            <img className="icon" src={process.env.PUBLIC_URL + "/img/icons/awards.png"}></img>
+                            <img className="icon" src={process.env.PUBLIC_URL + "/img/icons/news.png"}></img>
                             <div className="slide-container">
-                                <a href="https://n.news.naver.com/article/382/0001126896?sid=102" target='_blank'> 
-                                    <img src={ process.env.PUBLIC_URL + "/img/irpr/news/news10.png"} alt="news"/> 
+                                <a href="https://www.itbiznews.com/news/articleView.html?idxno=139050" target='_blank'> 
+                                    <img src={ process.env.PUBLIC_URL + "/img/irpr/news/news14.png"} alt="news"/> 
                                 </a>
                             </div>
                             <a href="https://www.hankyung.com/article/2024031533555" target='_blank'>  
-                                ‘올해의 발명왕’ 김용은 책임연구원 선정, ㈜지이디 ‘산업포장’ 수상
+                            GED Designs World's First Electric Vehicle Emergency Door Patent
                             </a>
                         </SwiperSlide>
                         <SwiperSlide>
