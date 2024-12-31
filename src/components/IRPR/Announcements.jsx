@@ -94,6 +94,21 @@ const AnnouncementTableContainer = styled.div`
 `;
 // 최근순으로 데이터 넣어야한다
 const rows = [
+  { id: '2',
+    title: '(주)지이디 2025 Lasvegas CES 참가의 건',
+    paragraph0:[ 
+      {일시: "2025년 1월 13일 ~ 동년 동월 16일 까지"},
+      {참가지위: "CTA 심사 통과에 따른 CES 한국관 부스 사용 및 참가"},
+      {참가기술: "자동차 비상탈출문 포에버스&포에버더블에스(ForeverS, ForeverSS)"}
+    ],
+    paragraph1: '안녕하세요, 주식회사 지이디 입니다. 당사의 2025년 CES 박람회 참가에 관한 내용을 다음과 같이 공지합니다.',
+    paragraph2_1: '전세계 전기차 화재사고의 원인을 근본적으로 해결할 수 있는 비상탈출문 기술로 2025 CES에 한국을 대표하는 기업으로 영광스럽게 참가하게 되었습니다.',
+    paragraph2_2: '당사는 CTA(주최단체)의 기술 심사를 통해 개별적으로 선별된 케이스로, 부스비 및 기타 프로모션 비용 등을 지원받아 독보적인 지위로 본 박람회에 참가할 수 있게 되었습니다. ',
+    paragraph3: '1억 불 이상의 수주를 목표로 참가하는 본 박람회 참가에 대해 당사를 향한 많은 응원 부탁드리며 아울러 저희 지이디를 아껴주시는 많은 분들에게 새해 복 많이 받으시라는 감사의 인사를 올립니다.',
+    creator: '대표이사 강 동 연       (직인생략)',
+    companyName: '주식회사 지 이 디',
+    date: "2024년 12월 31일"
+  },
   { id: '1',
     title: '전자증권 전환 대상 주권 권리자(주주) 보호 및 조치사항 안내',
     paragraph1: '2019.09.16 「주식·사채 등의 전자등록에 관한 법률(이하 “전자증권법”)」이 시행됨에 따라 당사의 전자증권 전환 대상 주권 권리자를 보호하기 위하여 전자증권법 제27조 1항에 근거하여 아래의 사항을 통지합니다.',
@@ -190,7 +205,6 @@ export const Announcements = () => {
           
           </AnnouncementsContentWrapper>
           {open && (
-
           <>
             <BootstrapDialog
             onClose={handleClose}
@@ -222,6 +236,21 @@ export const Announcements = () => {
                 <Typography gutterBottom sx={{marginBottom: "30px", textAlign: "center" }}>
                   <span style={{justifyContent: "center"}}>-- 아래 --</span>
                 </Typography>
+
+                <Typography gutterBottom sx={{marginBottom: "10px" }}>
+                  {dialogData && dialogData.paragraph0 && dialogData?.paragraph0.map((data) => {
+                    const subject = Object.keys(data);
+                    const content = Object.values(data)
+                    return (
+                      <>
+                        <div key={data.id}>
+                          <span>{subject} : </span><span>{content}</span>
+                        </div>
+                      </>
+                    )
+                  })}
+                </Typography>
+
                 <Typography gutterBottom sx={{marginBottom: "10px" }}>
                   {dialogData?.paragraph2_1}
                 </Typography>
