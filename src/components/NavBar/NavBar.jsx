@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
@@ -26,7 +27,7 @@ const NavBar = () =>{
   const [ anchorElNav, setAnchorElNav ] = useState(null);
 	const [ expanded, setExpanded ] = useState(false);
   const [ screenSize, setScreenSize ] = useState({ width: window.innerWidth, height: window.innerHeight });
-  const [ hoverStates, setHoverStates ] = useState({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
+  const [ hoverStates, setHoverStates ] = useState({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false, GEDSITE: false });
   const [ activatedHoverData, setActivatedHoverData] = useState({});
   const [ showSubMenu, setShowSubMenu ] = useState(false)
   const navigate = useNavigate();
@@ -63,32 +64,70 @@ const NavBar = () =>{
   }, []);
 
   const hoverEnterHandler = (index, stateName) => {
-    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
+    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false, GEDSITE: false });
     setHoverStates((prev) => { return {...prev, [stateName]: true } });
     setActivatedHoverData(menu[index])
     setShowSubMenu(true);
   };
 
   const hoverLeaveHandler = (index) => {
-    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
+    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false, GEDSITE: false });
     setShowSubMenu(false);
   };
 
   const handleSubMenuEnter = (stateName) => {
     // 서브메뉴에 마우스가 들어왔을 때, 타이머 초기화하여 서브메뉴 유지
-    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
+    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false, GEDSITE: false });
     setHoverStates((prev) => { return {...prev, [stateName]: true } });
     setShowSubMenu(true)
   };
 
   const handleSubMenuLeave = () => {
     // 서브메뉴에서 마우스가 벗어났을 때, 타이머 시작하여 submenu가 사라지도록 함
-    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false });
+    setHoverStates({ COMPANY: false, BUSINESS: false, PRIR: false, CONTACTS: false, GEDSITE: false });
     setShowSubMenu(false);
   };
 
   const movePageHandler = (URL) => {
     navigate(URL);
+  };
+
+  const handleMenuClick = (data) => {
+    if (data.externalLink) {
+      window.open(data.route, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    movePageHandler(process.env.PUBLIC_URL + data.route);
+  };
+
+  const renderMenuLabel = (data) => {
+    if (data.menuLines) {
+      return (
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            lineHeight: 1.2,
+            fontWeight: 700,
+          }}
+        >
+          {data.menuLines.map((line, i) => {
+            const isLastLine = i === data.menuLines.length - 1;
+            if (isLastLine && data.externalLink) {
+              return (
+                <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                  <span>{line}</span>
+                  <OpenInNewIcon sx={{ fontSize: '16px' }} />
+                </Box>
+              );
+            }
+            return <span key={i}>{line}</span>;
+          })}
+        </Box>
+      );
+    }
+    return data.menu;
   };
   
   return (
@@ -163,11 +202,13 @@ const NavBar = () =>{
                         key={data.id} 
                         onClick={()=>{
                           handleCloseNavMenu();
-                          movePageHandler(process.env.PUBLIC_URL+ data.route);
+                          handleMenuClick(data);
                         }}
 
                       >
-                        <Typography textAlign="center">{data.menu}</Typography>
+                        <Typography textAlign="center">
+                          {renderMenuLabel(data)}
+                        </Typography>
                       </MenuItem>
                   )})}
                 </Menu>
@@ -210,13 +251,14 @@ const NavBar = () =>{
                     <Button
                       size="large"
                       key={index + data.id}
-                      onClick={() =>{movePageHandler(process.env.PUBLIC_URL+ data.route);}}
+                      onClick={() => handleMenuClick(data)}
                       onMouseEnter={() => hoverEnterHandler(index, data.stateName)}
                       onMouseLeave={() => hoverLeaveHandler(index, data.stateName)}
                       sx={{ mr: 2, my: 2, color: `${hoverStates[`${data.stateName}`]? "#494949":"#b0b8ca"}`,
-                          display: 'block', fontWeight:"700", height:"100%", marginRight:"15px", marginBottom: "0px", paddingBottom: "16px" }}
+                          display: 'flex', alignItems: 'center', gap: 0.5, fontWeight:"700", height:"100%", marginRight:"15px", marginBottom: "0px", paddingBottom: "16px",
+                          ...(data.menuLines && { minWidth: 'auto', px: 1 }) }}
                     >
-                        {data.menu}
+                        {renderMenuLabel(data)}
                     </Button>
                     )}
                 )}
@@ -225,7 +267,7 @@ const NavBar = () =>{
             </Toolbar>
           </Container>
         </AppBar>
-        {showSubMenu === true && activatedHoverData.menu !== "CONTACT" ? 
+        {showSubMenu === true && activatedHoverData.menu !== "CONTACT" && !activatedHoverData.externalLink ? 
           (<SubMenu
             activatedHoverData={activatedHoverData}
             handleSubMenuEnter={handleSubMenuEnter}

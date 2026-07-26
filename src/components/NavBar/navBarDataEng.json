@@ -43,5 +43,14 @@
       "subMenus": [
         
       ]
+    },
+    {
+      "id": 4,
+      "menu": "GED Notice Site Link",
+      "menuLines": ["GED Notice", "Site Link"],
+      "stateName": "GEDSITE",
+      "route": "https://link.inpock.co.kr/ged",
+      "externalLink": true,
+      "subMenus": []
     }
 ]

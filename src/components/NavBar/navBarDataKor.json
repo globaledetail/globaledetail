@@ -43,5 +43,14 @@
       "subMenus": [
         
       ]
+    },
+    {
+      "id": 4,
+      "menu": "GED 공지사항 사이트 이동",
+      "menuLines": ["GED 공지사항", "사이트 이동"],
+      "stateName": "GEDSITE",
+      "route": "https://link.inpock.co.kr/ged",
+      "externalLink": true,
+      "subMenus": []
     }
 ]
